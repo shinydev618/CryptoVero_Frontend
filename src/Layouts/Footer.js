@@ -9,6 +9,7 @@ const Footer = () => {
 const StyledComponent = styled(Box)`
   display: flex;
   width: 100%;
+  
 `;
 
 export default Footer;

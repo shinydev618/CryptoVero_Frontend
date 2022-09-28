@@ -495,6 +495,7 @@ const PartTestimonials01 = styled(Box)`
   flex-direction: column;
   align-items: center;
   margin-top: 100px;
+  margin-bottom: 200px;
 `;
 
 const TextTestimonialsSmallTitle01 = styled(Box)`

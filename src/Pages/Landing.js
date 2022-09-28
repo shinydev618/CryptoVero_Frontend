@@ -2,6 +2,7 @@ import React from "react";
 import { Box } from "@mui/material";
 import styled from "styled-components";
 import CustomMainButton from "../Components/CustomMainButton";
+import CustomGetStartedPriceBox from "../Components/CustomGetStartedPriceBox";
 import CustomEachTestimonials from "../Components/CustomEachTestimonials";
 // import CustomImageSupport from "../Components/CustomImageSupport";
 import imgComputer from "../Assets/Images/background/playing with a computer.png";
@@ -11,7 +12,7 @@ import imgSupport03 from "../Assets/Images/mark/support03.png";
 import imgSupport04 from "../Assets/Images/mark/support04.png";
 import imgDashboard01 from "../Assets/Images/background/dashboard01.png";
 import imgWorking01 from "../Assets/Images/background/working01.png";
-import { dataTestimonials } from "../Config/data";
+import { dataGetStartedPrice, dataTestimonials } from "../Config/data";
 
 const Landing = () => {
   return (
@@ -97,11 +98,9 @@ const Landing = () => {
         <PartGetStarted01>
           <TextGetStartedTitle01>Get started for free</TextGetStartedTitle01>
           <PartPrice01>
-            <PartPriceFree01>
-              <TextEachPriceSmallTitle01></TextEachPriceSmallTitle01>
-            </PartPriceFree01>
-            <PartPricePro01></PartPricePro01>
-            <PartPriceEnterprise01></PartPriceEnterprise01>
+            {dataGetStartedPrice.map((each, index) => {
+              return <CustomGetStartedPriceBox data={each} key={index} color={"black"} />;
+            })}
           </PartPrice01>
         </PartGetStarted01>
         <PartGenerate01>
@@ -377,37 +376,8 @@ const PartPrice01 = styled(Box)`
   display: flex;
   width: 100%;
   justify-content: space-between;
-`;
-
-const PartPriceFree01 = styled(Box)`
-  display: flex;
-  width: 345px;
-  border-radius: 16px;
-  padding: 30px;
-  box-sizing: border-box;
-  flex-direction: column;
-`;
-
-const PartPricePro01 = styled(Box)`
-  display: flex;
-  width: 345px;
-  border-radius: 16px;
-  padding: 30px;
-  box-sizing: border-box;
-  flex-direction: column;
-`;
-
-const PartPriceEnterprise01 = styled(Box)`
-  display: flex;
-  width: 345px;
-  border-radius: 16px;
-  padding: 30px;
-  box-sizing: border-box;
-  flex-direction: column;
-`;
-
-const TextEachPriceSmallTitle01 = styled(Box)`
-  display: flex;
+  gap: 10px;
+  margin-top: 50px;
 `;
 
 const PartGenerate01 = styled(Box)`
@@ -416,6 +386,7 @@ const PartGenerate01 = styled(Box)`
   align-items: center;
   justify-content: space-between;
   gap: 50px;
+  margin-top: 100px;
 `;
 
 const PartGenerateText01 = styled(Box)`

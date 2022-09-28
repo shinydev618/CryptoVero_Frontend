@@ -2,6 +2,7 @@ import React from "react";
 import { Box } from "@mui/material";
 import styled from "styled-components";
 import CustomMainButton from "../Components/CustomMainButton";
+import CustomEachTestimonials from "../Components/CustomEachTestimonials";
 // import CustomImageSupport from "../Components/CustomImageSupport";
 import imgComputer from "../Assets/Images/background/playing with a computer.png";
 import imgSupport01 from "../Assets/Images/mark/support01.png";
@@ -9,6 +10,28 @@ import imgSupport02 from "../Assets/Images/mark/support02.png";
 import imgSupport03 from "../Assets/Images/mark/support03.png";
 import imgSupport04 from "../Assets/Images/mark/support04.png";
 import imgDashboard01 from "../Assets/Images/background/dashboard01.png";
+import imgWorking01 from "../Assets/Images/background/working01.png";
+import imgPeople01 from "../Assets/Images/photo/risto.png";
+import imgPeople02 from "../Assets/Images/photo/bethany.png";
+import imgPeople03 from "../Assets/Images/photo/laura.png";
+
+const dataTestimonials = [
+  {
+    image: imgPeople01,
+    name: "Risto Korkeamäki",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
+  },
+  {
+    image: imgPeople02,
+    name: "Risto Korkeamäki",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
+  },
+  {
+    image: imgPeople03,
+    name: "Risto Korkeamäki",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
+  },
+];
 
 const Landing = () => {
   return (
@@ -28,16 +51,16 @@ const Landing = () => {
               Take Crypto Tax stress away! We are a certified Tax Software.
               Compile your Finnish taxes fast. We show you every step
             </PartTopContentText01>
-            <Box display="flex" ml={"200px"} mt={"50px"}>
+            <PartTopButton01>
               <CustomMainButton
-                width={"135px"}
-                height={"60px"}
+                width={"100%"}
+                height={"100%"}
                 text={"Try Now!"}
                 backColor={"#0D1942"}
                 color={"white"}
                 borderRadius={"12px"}
               />
-            </Box>
+            </PartTopButton01>
           </PartTopLeft01>
           <PartTopRight01>
             <img src={imgComputer} width={"100%"} height={"100%"} alt="" />
@@ -79,18 +102,69 @@ const Landing = () => {
               of thousands of trades, we have the tools for <br />
               you!
             </PartTopContentText02>
-            <Box display="flex">
+            <PartGraphButton01>
               <CustomMainButton
-                width={"185px"}
-                height={"60px"}
+                width={"100%"}
+                height={"100%"}
                 text={"Start for free"}
                 backColor={"#0D1942"}
                 color={"white"}
                 borderRadius={"12px"}
               />
-            </Box>
+            </PartGraphButton01>
           </PartGroupRight01>
         </PartGraph01>
+        <PartGetStarted01>
+          <TextGetStartedTitle01>Get started for free</TextGetStartedTitle01>
+          <PartPrice01>
+            <PartPriceFree01>
+              <TextEachPriceSmallTitle01></TextEachPriceSmallTitle01>
+            </PartPriceFree01>
+            <PartPricePro01></PartPricePro01>
+            <PartPriceEnterprise01></PartPriceEnterprise01>
+          </PartPrice01>
+        </PartGetStarted01>
+        <PartGenerate01>
+          <PartGenerateText01>
+            <TextGenerateTitle01>
+              Generate VeroToimisto
+              <br /> forms instantly <br />
+              Get detailed Analysis
+            </TextGenerateTitle01>
+            <TextGenerateContent01>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor inct alt nulla pariatur. Excepteur sint occaecat
+              cupidatat non proident, sunt in culpa qui officia deserunt mollit
+              anim iborum.
+            </TextGenerateContent01>
+            <PartGenerateButton01>
+              <CustomMainButton
+                width={"100%"}
+                height={"100%"}
+                text={"Start for free"}
+                backColor={"#0D1942"}
+                color={"white"}
+                borderRadius={"12px"}
+              />
+            </PartGenerateButton01>
+          </PartGenerateText01>
+          <PartGenerateImage01>
+            <img src={imgWorking01} width={"100%"} height={"100%"} alt={""} />
+          </PartGenerateImage01>
+        </PartGenerate01>
+        <PartTestimonials01>
+          <TextTestimonialsSmallTitle01>
+            Testimonials
+          </TextTestimonialsSmallTitle01>
+          <TextTestimonialsBigTitle01>
+            Read what others are saying
+          </TextTestimonialsBigTitle01>
+          <PartTestimonialsContent01>
+            {dataTestimonials.map((each, index) => {
+              return <CustomEachTestimonials data={each} key={index} />;
+            })}
+          </PartTestimonialsContent01>
+        </PartTestimonials01>
       </PartMax01>
     </StyledComponent>
   );
@@ -162,6 +236,20 @@ const PartTopContentText01 = styled(Box)`
   margin-left: 50px;
   margin-top: 50px;
   color: #000000;
+`;
+
+const PartTopButton01 = styled(Box)`
+  display: flex;
+  margin-left: 200px;
+  margin-top: 50px;
+  width: 135px;
+  height: 60px;
+`;
+
+const PartGraphButton01 = styled(Box)`
+  display: flex;
+  width: 185px;
+  height: 60px;
 `;
 
 const PartSupportedPlatforms01 = styled(Box)`
@@ -273,6 +361,170 @@ const PartTopContentText02 = styled(Box)`
   color: #000000;
   margin-top: 30px;
   margin-bottom: 30px;
+`;
+
+const PartGetStarted01 = styled(Box)`
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+`;
+const TextGetStartedTitle01 = styled(Box)`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 100%;
+  /* or 30px */
+  text-transform: capitalize;
+`;
+
+const PartPrice01 = styled(Box)`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+`;
+
+const PartPriceFree01 = styled(Box)`
+  display: flex;
+  width: 345px;
+  border-radius: 16px;
+  padding: 30px;
+  box-sizing: border-box;
+  flex-direction: column;
+`;
+
+const PartPricePro01 = styled(Box)`
+  display: flex;
+  width: 345px;
+  border-radius: 16px;
+  padding: 30px;
+  box-sizing: border-box;
+  flex-direction: column;
+`;
+
+const PartPriceEnterprise01 = styled(Box)`
+  display: flex;
+  width: 345px;
+  border-radius: 16px;
+  padding: 30px;
+  box-sizing: border-box;
+  flex-direction: column;
+`;
+
+const TextEachPriceSmallTitle01 = styled(Box)`
+  display: flex;
+`;
+
+const PartGenerate01 = styled(Box)`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+`;
+
+const PartGenerateText01 = styled(Box)`
+  display: flex;
+  flex: 1;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+`;
+
+const TextGenerateTitle01 = styled(Box)`
+  display: flex;
+  width: 100%;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 100%;
+  /* or 30px */
+
+  text-transform: capitalize;
+
+  color: #000000;
+`;
+
+const TextGenerateContent01 = styled(Box)`
+  display: flex;
+  width: 100%;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  /* or 153% */
+
+  color: #000000;
+  margin-top: 50px;
+`;
+
+const PartGenerateButton01 = styled(Box)`
+  display: flex;
+  width: 185px;
+  height: 60px;
+  margin-top: 50px;
+`;
+
+const PartGenerateImage01 = styled(Box)`
+  display: flex;
+  flex: 1.5;
+  width: 100%;
+  align-items: center;
+`;
+
+const PartTestimonials01 = styled(Box)`
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 100px;
+`;
+
+const TextTestimonialsSmallTitle01 = styled(Box)`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  /* or 138% */
+
+  text-align: center;
+  letter-spacing: 0.1em;
+
+  color: #000000;
+`;
+
+const TextTestimonialsBigTitle01 = styled(Box)`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 100%;
+  /* identical to box height, or 30px */
+
+  text-transform: capitalize;
+
+  color: #000000;
+`;
+
+const PartTestimonialsContent01 = styled(Box)`
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  justify-content: space-between;
+  margin-top: 100px;
 `;
 
 export default Landing;

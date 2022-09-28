@@ -47,6 +47,7 @@ const PartMark01 = styled(Box)`
   /* identical to box height, or 138% */
 
   color: #ffffff;
+  cursor: pointer;
 `;
 
 const PartLink01 = styled(Box)`
@@ -64,6 +65,11 @@ const LinkEach01 = styled(Box)`
   /* identical to box height, or 138% */
   color: #ffffff;
   cursor: pointer;
+
+  transition: 0.3s;
+  &:hover {
+    color: #69a0c1;
+  }
 `;
 
 export default Header;

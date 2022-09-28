@@ -37,6 +37,14 @@ const StyledComponent = styled(Box)`
   text-align: center;
   letter-spacing: 0.1em;
   cursor: pointer;
+
+  transition: .3s;
+  &:hover{
+    color: #69a0c1;
+  }
+  &:active{
+    font-size: 18px;
+  }
 `;
 
 export default CustomMainButton;

@@ -3,39 +3,13 @@ import { Box } from "@mui/material";
 import styled from "styled-components";
 import imgFooter01 from "../Assets/Images/background/footer01.png";
 import CustomFooterLink from "../Components/CustomFooterLink";
-
-const dataLink = [
-  {
-    header: "CryptoVero",
-    content: [
-      { text: "Home", link: "" },
-      { text: "About", link: "" },
-      { text: "Blog", link: "" },
-    ],
-  },
-  {
-    header: "Legal",
-    content: [
-      { text: "Security", link: "" },
-      { text: "Disclaimer", link: "" },
-      { text: "Privacy", link: "" },
-    ],
-  },
-  {
-    header: "Contact",
-    content: [
-      { text: "Email", link: "" },
-      { text: "LinkedIn", link: "" },
-      { text: "Instagram", link: "" },
-    ],
-  },
-];
+import { dataFooterLink } from "../Config/data";
 
 const Footer = () => {
   return (
     <StyledComponent>
       <PartMax01>
-        {dataLink.map((each, index) => {
+        {dataFooterLink.map((each, index) => {
           return <CustomFooterLink data={each} key={index} />;
         })}
       </PartMax01>

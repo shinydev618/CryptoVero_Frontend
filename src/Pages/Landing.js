@@ -11,27 +11,7 @@ import imgSupport03 from "../Assets/Images/mark/support03.png";
 import imgSupport04 from "../Assets/Images/mark/support04.png";
 import imgDashboard01 from "../Assets/Images/background/dashboard01.png";
 import imgWorking01 from "../Assets/Images/background/working01.png";
-import imgPeople01 from "../Assets/Images/photo/risto.png";
-import imgPeople02 from "../Assets/Images/photo/bethany.png";
-import imgPeople03 from "../Assets/Images/photo/laura.png";
-
-const dataTestimonials = [
-  {
-    image: imgPeople01,
-    name: "Risto Korkeamäki",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
-  },
-  {
-    image: imgPeople02,
-    name: "Risto Korkeamäki",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
-  },
-  {
-    image: imgPeople03,
-    name: "Risto Korkeamäki",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
-  },
-];
+import { dataTestimonials } from "../Config/data";
 
 const Landing = () => {
   return (

@@ -164,6 +164,16 @@ const Landing = () => {
               return <CustomEachTestimonials data={each} key={index} />;
             })}
           </PartTestimonialsContent01>
+          <PartTestimonialsButton01>
+            <CustomMainButton
+              width={"100%"}
+              height={"100%"}
+              text={"Try Now"}
+              backColor={"#0D1942"}
+              color={"white"}
+              borderRadius={"12px"}
+            />
+          </PartTestimonialsButton01>
         </PartTestimonials01>
       </PartMax01>
     </StyledComponent>
@@ -483,6 +493,7 @@ const PartTestimonials01 = styled(Box)`
   display: flex;
   width: 100%;
   flex-direction: column;
+  align-items: center;
   margin-top: 100px;
 `;
 
@@ -525,6 +536,13 @@ const PartTestimonialsContent01 = styled(Box)`
   gap: 20px;
   justify-content: space-between;
   margin-top: 100px;
+`;
+
+const PartTestimonialsButton01 = styled(Box)`
+  display: flex;
+  width: 360px;
+  height: 60px;
+  margin-top: 50px;
 `;
 
 export default Landing;

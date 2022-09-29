@@ -5,6 +5,7 @@ import imgPeople03 from "../Assets/Images/photo/laura.png";
 export const dataGetStartedPrice = [
   {
     type: "Free",
+    title: "Free",
     description: "Email Support",
     content: [
       {
@@ -51,6 +52,7 @@ export const dataGetStartedPrice = [
   },
   {
     type: "Free",
+    title: "$100/month",
     description: "Live Web Chat Support",
     content: [
       {
@@ -97,6 +99,7 @@ export const dataGetStartedPrice = [
   },
   {
     type: "Enterprise",
+    title: "$300/month",
     description: "Dedicated Concierge + Live Web Chat",
     content: [
       {

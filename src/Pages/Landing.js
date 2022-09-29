@@ -376,7 +376,7 @@ const PartPrice01 = styled(Box)`
   display: flex;
   width: 100%;
   justify-content: space-between;
-  gap: 10px;
+  gap: 20px;
   margin-top: 50px;
 `;
 

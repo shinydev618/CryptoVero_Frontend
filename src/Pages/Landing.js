@@ -99,7 +99,7 @@ const Landing = () => {
           <TextGetStartedTitle01>Get started for free</TextGetStartedTitle01>
           <PartPrice01>
             {dataGetStartedPrice.map((each, index) => {
-              return <CustomGetStartedPriceBox data={each} key={index} color={"black"} />;
+              return <CustomGetStartedPriceBox data={each} key={index} />;
             })}
           </PartPrice01>
         </PartGetStarted01>

@@ -7,6 +7,7 @@ export const dataGetStartedPrice = [
     type: "Free",
     title: "Free",
     description: "Email Support",
+    color:'rgb(255,187,0)',
     content: [
       {
         text: "Data Ingestion Across 500+ Platforms",
@@ -51,9 +52,10 @@ export const dataGetStartedPrice = [
     ],
   },
   {
-    type: "Free",
+    type: "Pro",
     title: "$100/month",
     description: "Live Web Chat Support",
+    color:'rgb(0,153,255)',
     content: [
       {
         text: "Data Ingestion Across 500+ Platforms",
@@ -101,6 +103,7 @@ export const dataGetStartedPrice = [
     type: "Enterprise",
     title: "$300/month",
     description: "Dedicated Concierge + Live Web Chat",
+    color:'rgb(136,87,255)',
     content: [
       {
         text: "Data Ingestion Across 500+ Platforms",

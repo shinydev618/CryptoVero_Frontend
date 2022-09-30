@@ -163,6 +163,7 @@ const StyledComponent = styled(Box)`
   display: flex;
   width: 100%;
   justify-content: center;
+  background-color: #FAF9FF;
 `;
 
 const PartMax01 = styled(Box)`

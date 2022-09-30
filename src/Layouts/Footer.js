@@ -117,6 +117,5 @@ const ButtonLink01 = styled(Box)`
   border-radius: 100%;
   margin-right: 20px;
   cursor: pointer;
-  
 `;
 export default Footer;

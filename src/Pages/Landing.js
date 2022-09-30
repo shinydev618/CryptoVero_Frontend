@@ -171,7 +171,7 @@ const PartMax01 = styled(Box)`
   width: 100%;
   max-width: 1440px;
   flex-direction: column;
-  padding: 0px 190px 0px 190px;
+  padding: 0px 200px;
   box-sizing: border-box;
 `;
 

@@ -6,51 +6,54 @@ const CustomFooterLink = ({ data }) => {
   return (
     <StyledComponent>
       <TextHeader>{data.header}</TextHeader>
-      {data.content.map((each, index) => {
-        return (
-          <a href={each.link} style={{ textDecoration: "none" }} key={index} >
-            <TextLink01>{each.text}</TextLink01>
-          </a>
-        );
-      })}
+      <PartLink01>
+        {data.content.map((each, index) => {
+          return (
+            <a href={each.link} style={{ textDecoration: "none" }} key={index}>
+              <TextLink01>{each.text}</TextLink01>
+            </a>
+          );
+        })}
+      </PartLink01>
     </StyledComponent>
   );
 };
 
 const StyledComponent = styled(Box)`
   display: flex;
-
+  height: 100%;
   flex-direction: column;
+  justify-content: space-between;
 `;
 
 const TextHeader = styled(Box)`
-  font-family: "Roboto";
+  font-family: "Outfit";
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
-  line-height: 19px;
-  /* identical to box height */
-
+  font-size: 24px;
   color: #ffffff;
-  margin-bottom: 10px;
 `;
 
 const TextLink01 = styled(Box)`
-  margin-top: 20px;
+  margin-top: 15px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  /* identical to box height */
+  font-size: 18px;
+  /* or 267% */
 
   color: #ffffff;
-  cursor: pointer;
+  opacity: 0.7;
 
   transition: 0.3s;
   &:hover {
-    color: #69a0c1;
+    color: #005e95;
   }
+`;
+
+const PartLink01 = styled(Box)`
+  display: flex;
+  flex-direction: column;
 `;
 
 export default CustomFooterLink;

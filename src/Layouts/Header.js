@@ -50,7 +50,7 @@ const PartMax01 = styled(Box)`
   display: flex;
   width: 100%;
   max-width: 1440px;
-  padding: 0px 200px 0px 200px;
+  padding: 0px 200px;
   box-sizing: border-box;
   justify-content: space-between;
   align-items: center;

@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 import styled from "styled-components";
 import CustomMainButton from "../Components/CustomMainButton";
 import CustomGetStartedPriceBox from "../Components/CustomGetStartedPriceBox";
-import CustomEachTestimonials from "../Components/CustomEachTestimonials";
+// import CustomEachTestimonials from "../Components/CustomEachTestimonials";
 import CustomSupportImageBox from "../Components/CustomSupportImageBox";
 import imgComputer from "../Assets/Images/background/playing with a computer.png";
 import imgSupport01 from "../Assets/Images/mark/support01.png";
@@ -13,6 +13,7 @@ import imgSupport04 from "../Assets/Images/mark/support04.png";
 import imgSupport05 from "../Assets/Images/mark/support05.png";
 import imgDashboard01 from "../Assets/Images/background/dashboard01.png";
 import imgAnalysis01 from "../Assets/Images/background/analysis01.png";
+import imgBackRound01 from "../Assets/Images/background/round01.png";
 import { dataGetStartedPrice, dataTestimonials } from "../Config/data";
 
 const Landing = () => {
@@ -157,36 +158,37 @@ const Landing = () => {
             />
           </PartTestimonialsButton01>
         </PartTestimonials01> */}
-        <PartDashboard01>
-          <PartGroupTaxQuestion01>
-            <img src={imgComputer} width={"100%"} height={"100%"} alt="" />
-          </PartGroupTaxQuestion01>
-          <PartGroupRight01>
-            <PartTopTitleText02>
-              We Guide You Through All Your Tax Questions
-            </PartTopTitleText02>
-            <PartTopContentText02>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor inct alt nulla pariatur. Excepteur sint occaecat
-              cupidatat non proident, sunt in culpa qui officia deserunt mollit
-              anim iborum.
-            </PartTopContentText02>
-            <PartGraphButton01>
-              <CustomMainButton
-                width={"100%"}
-                height={"100%"}
-                text={"Start for free"}
-                backColor={"#005E95"}
-                color={"white"}
-                borderRadius={"100px"}
-                boxShadow={"0px 22px 55px rgba(0, 94, 149, 0.46)"}
-              />
-            </PartGraphButton01>
-          </PartGroupRight01>
-        </PartDashboard01>
       </PartMax01>
+      <PartTaxQuestion01>
+        <PartGroupTaxQuestion01>
+          <img src={imgComputer} width={"100%"} height={"100%"} alt="" />
+        </PartGroupTaxQuestion01>
+        <PartGroupRight01>
+          <PartTopTitleText02>
+            We Guide You Through All Your Tax Questions
+          </PartTopTitleText02>
+          <PartTopContentText02>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor inct alt nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim iborum.
+          </PartTopContentText02>
+          <PartGraphButton01>
+            <CustomMainButton
+              width={"100%"}
+              height={"100%"}
+              text={"Start for free"}
+              backColor={"#005E95"}
+              color={"white"}
+              borderRadius={"100px"}
+              boxShadow={"0px 22px 55px rgba(0, 94, 149, 0.46)"}
+            />
+          </PartGraphButton01>
+        </PartGroupRight01>
+      </PartTaxQuestion01>
       <PartBackCircle01></PartBackCircle01>
       <PartBackCircle02></PartBackCircle02>
+      <PartBackCircle03></PartBackCircle03>
     </StyledComponent>
   );
 };
@@ -197,6 +199,7 @@ const StyledComponent = styled(Box)`
   width: 100%;
   justify-content: center;
   background-color: #faf9ff;
+  flex-direction: column;
 `;
 
 const PartMax01 = styled(Box)`
@@ -504,6 +507,18 @@ const PartBackCircle02 = styled(Box)`
   top: -405px;
 `;
 
+const PartBackCircle03 = styled(Box)`
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  background: #005e95;
+  opacity: 0.15;
+  border: 1px solid #0d1942;
+  filter: blur(200px);
+  right: -400px;
+  top: 800px;
+`;
+
 const TextCurveline01 = styled(Box)`
   position: relative;
   width: 270px;
@@ -534,6 +549,21 @@ const PartGroupTaxQuestion01 = styled(Box)`
   display: flex;
   width: 650px;
   height: 650px;
+  margin-top: 50px;
+`;
+
+const PartTaxQuestion01 = styled(Box)`
+  display: flex;
+  width: 100%;
+  background-image: url(${imgBackRound01});
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 0px 200px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+  margin-top: 100px;
 `;
 
 export default Landing;

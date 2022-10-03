@@ -187,7 +187,6 @@ const Landing = () => {
             </PartGraphButton01>
           </PartGroupRight01>
         </PartMaxTaxQuestions01>
-
       </PartTaxQuestion01>
       <PartBackCircle01></PartBackCircle01>
       <PartBackCircle02></PartBackCircle02>
@@ -214,15 +213,37 @@ const PartMax01 = styled(Box)`
   padding: 0px 250px;
   box-sizing: border-box;
   align-items: center;
+  margin-top: 100px;
+
+  transition: 0.5s;
+  @media (max-width: 1600px) {
+    margin-top: 120px;
+    padding: 0px 150px;
+  }
+  @media (max-width: 1200px) {
+    padding: 0px 80px;
+  }
+  @media (max-width: 1024px) {
+    margin-top: 60px;
+    padding: 0px 50px;
+  }
+  @media (max-width: 500px) {
+    padding: 0px 30px;
+  }
 `;
 
 const PartTop01 = styled(Box)`
   display: flex;
   width: 100%;
-  height: 500px;
   align-items: center;
   justify-content: space-between;
   margin-top: 100px;
+
+  transition: 0.5s;
+  @media (max-width: 1400px) {
+    margin-top: 0px;
+    flex-direction: column-reverse;
+  }
 `;
 
 const PartTopLeft01 = styled(Box)`
@@ -231,21 +252,36 @@ const PartTopLeft01 = styled(Box)`
   top: 100px;
   flex: 1;
   width: 100%;
+
+  transition: 0.5s;
+  @media (max-width: 1400px) {
+    align-items: center;
+  }
 `;
 
 const PartTopTitleText01 = styled(Box)`
   display: flex;
-  width: 670px;
   font-family: "Outfit";
   font-style: normal;
   font-weight: 700;
   font-size: 64px;
   line-height: 123.5%;
   /* or 79px */
-
   text-transform: capitalize;
 
   color: #0d1942;
+
+  transition: 0.5s;
+  @media (max-width: 1400px) {
+    justify-content: center;
+    text-align: center;
+  }
+  @media (max-width: 1024px) {
+    font-size: 50px;
+  }
+  @media (max-width: 500px) {
+    font-size: 38px;
+  }
 `;
 
 const PartTopRight01 = styled(Box)`
@@ -253,12 +289,15 @@ const PartTopRight01 = styled(Box)`
   justify-content: center;
   align-items: center;
   width: 650px;
-  height: 630px;
+
+  transition: 0.5s;
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
 `;
 
 const PartTopContentText01 = styled(Box)`
   display: flex;
-  width: 600px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -269,6 +308,20 @@ const PartTopContentText01 = styled(Box)`
   color: #716f96;
   /* or 153% */
   margin-top: 50px;
+
+  transition: 0.5s;
+  @media (max-width: 1400px) {
+    justify-content: center;
+    text-align: center;
+  }
+  @media (max-width: 1024px) {
+    margin-top: 30px;
+    font-size: 18px;
+  }
+  @media (max-width: 500px) {
+    margin-top: 20px;
+    font-size: 16px;
+  }
 `;
 
 const PartTopButton01 = styled(Box)`
@@ -276,6 +329,15 @@ const PartTopButton01 = styled(Box)`
   width: 200px;
   height: 65px;
   margin-top: 50px;
+
+  transition: 0.5s;
+  @media (max-width: 1024px) {
+    margin-top: 30px;
+  }
+  @media (max-width: 500px) {
+    margin-top: 20px;
+    width: 100%;
+  }
 `;
 
 const PartGraphButton01 = styled(Box)`
@@ -538,6 +600,16 @@ const TextCurveline01 = styled(Box)`
   color: #005e95;
   margin-top: 0px;
 
+  transition: 0.5s;
+  @media (max-width: 1024px) {
+    font-size: 50px;
+    width: 200px;
+  }
+  @media (max-width: 500px) {
+    font-size: 38px;
+    width: 150px;
+  }
+
   &::after {
     content: "";
     position: absolute;
@@ -576,6 +648,6 @@ const PartMaxTaxQuestions01 = styled(Box)`
   padding: 0px 250px;
   box-sizing: border-box;
   gap: 100px;
-`
+`;
 
 export default Landing;

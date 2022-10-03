@@ -56,6 +56,24 @@ const PartMax01 = styled(Box)`
   box-sizing: border-box;
   justify-content: space-between;
   align-items: center;
+
+  transition: .5s;
+  @media(max-width: 1600px)
+  {
+    padding: 0px 150px;
+  }
+  @media(max-width: 1200px)
+  {
+    padding: 0px 80px;
+  }
+  @media(max-width: 1024px)
+  {
+    padding: 0px 50px;
+  }
+  @media(max-width: 500px)
+  {
+    padding: 0px 30px;
+  }
 `;
 
 const PartMark01 = styled(Box)`

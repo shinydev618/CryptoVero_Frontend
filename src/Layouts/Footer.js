@@ -45,25 +45,64 @@ const PartMax01 = styled(Box)`
   padding: 70px 250px;
   box-sizing: border-box;
   align-items: center;
+
+  transition: .5s;
+  @media(max-width: 1600px)
+  {
+    padding: 70px 150px;
+  }
+  @media(max-width: 1200px)
+  {
+    padding: 70px 80px;
+  }
+  @media(max-width: 1024px)
+  {
+    flex-direction: column;
+    padding-top: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 500px;
+  }
+  @media(max-width: 500px)
+  {
+    height: 500px;
+    padding: 100px 30px 30px;
+  }
 `;
 
 const PartLeft01 = styled(Box)`
   display: flex;
   flex: 1;
+  width :100%;
   height: 100%;
   flex-direction: column;
+
+  transition: .5s;
+  @media(max-width: 1600px)
+  {
+    align-items: center;
+  }
 `;
 
 const PartRight01 = styled(Box)`
   display: flex;
   flex: 1;
+  width :100%;
   height: 100%;
   justify-content: center;
   align-items: center;
   justify-content: space-between;
+
+  transition: .5s;
+  @media(max-width: 600px)
+  {
+
+  }
 `;
 
 const TextTitle01 = styled(Box)`
+  display: flex;
+
   font-family: "Outfit";
   font-style: normal;
   font-weight: 700;
@@ -87,6 +126,15 @@ const TextDescription01 = styled(Box)`
 
   color: #ffffff;
   opacity: 0.7;
+
+  
+  transition: .5s;
+  @media(max-width: 1024px)
+  {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
 `;
 
 

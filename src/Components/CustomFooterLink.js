@@ -58,7 +58,8 @@ const TextLink01 = styled(Box)`
 
   transition: 0.3s;
   &:hover {
-    color: #005e95;
+    opacity: 1;
+    text-shadow: 0px 0px 10px white;
   }
 `;
 

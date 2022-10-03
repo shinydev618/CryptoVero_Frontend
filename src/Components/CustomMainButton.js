@@ -10,7 +10,7 @@ const CustomMainButton = ({
   color,
   borderRadius,
   border,
-  boxShadow
+  boxShadow,
 }) => {
   return (
     <StyledComponent
@@ -45,12 +45,12 @@ const StyledComponent = styled(Box)`
 
   transition: 0.3s;
   &:hover {
-    color: #69a0c1;
-    box-shadow: 0px 0px 25px rgba(0,0,0,0.5);
+    text-shadow: 0px 0px 10px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
   }
   &:active {
-    color: #69a0c1;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    text-shadow: 0px 0px 3px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   }
 `;
 

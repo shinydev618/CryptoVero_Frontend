@@ -4,7 +4,7 @@ import styled from "styled-components";
 import imgLogo01 from "../Assets/Images/mark/logo01.png";
 
 const Header = () => {
-  const [flagLanguage, setFlagLanguage] = useState(false);
+  const [flagLanguage, setFlagLanguage] = useState(true);
   return (
     <StyledComponent>
       <PartMax01>
@@ -12,10 +12,11 @@ const Header = () => {
           <img src={imgLogo01} width={"100%"} height={"100%"} alt={""} />
         </PartMark01>
         <PartLink01>
-          <LinkEach01>Learn</LinkEach01>
+          <LinkEach01>Solution</LinkEach01>
           <LinkEach01>Pricing</LinkEach01>
-          <LinkEach01>Sign in</LinkEach01>
-          <LinkEach01>Get Started for Free</LinkEach01>
+          <LinkEach01>Contact Us</LinkEach01>
+          <LinkEach01>Sign Up</LinkEach01>
+          <LinkEach01>Login</LinkEach01>
           <ButtonSwitchLanguage01>
             <Box display={"flex"} width="100%" height="100%">
               <ButtonLeft01

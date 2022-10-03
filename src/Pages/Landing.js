@@ -160,31 +160,34 @@ const Landing = () => {
         </PartTestimonials01> */}
       </PartMax01>
       <PartTaxQuestion01>
-        <PartGroupTaxQuestion01>
-          <img src={imgComputer} width={"100%"} height={"100%"} alt="" />
-        </PartGroupTaxQuestion01>
-        <PartGroupRight01>
-          <PartTopTitleText02>
-            We Guide You Through All Your Tax Questions
-          </PartTopTitleText02>
-          <PartTopContentText02>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor inct alt nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim iborum.
-          </PartTopContentText02>
-          <PartGraphButton01>
-            <CustomMainButton
-              width={"100%"}
-              height={"100%"}
-              text={"Start for free"}
-              backColor={"#005E95"}
-              color={"white"}
-              borderRadius={"100px"}
-              boxShadow={"0px 22px 55px rgba(0, 94, 149, 0.46)"}
-            />
-          </PartGraphButton01>
-        </PartGroupRight01>
+        <PartMaxTaxQuestions01>
+          <PartGroupTaxQuestion01>
+            <img src={imgComputer} width={"100%"} height={"100%"} alt="" />
+          </PartGroupTaxQuestion01>
+          <PartGroupRight01>
+            <PartTopTitleText02>
+              We Guide You Through All Your Tax Questions
+            </PartTopTitleText02>
+            <PartTopContentText02>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor inct alt nulla pariatur. Excepteur sint occaecat
+              cupidatat non proident, sunt in culpa qui officia deserunt mollit
+              anim iborum.
+            </PartTopContentText02>
+            <PartGraphButton01>
+              <CustomMainButton
+                width={"100%"}
+                height={"100%"}
+                text={"Start for free"}
+                backColor={"#005E95"}
+                color={"white"}
+                borderRadius={"100px"}
+                boxShadow={"0px 22px 55px rgba(0, 94, 149, 0.46)"}
+              />
+            </PartGraphButton01>
+          </PartGroupRight01>
+        </PartMaxTaxQuestions01>
+
       </PartTaxQuestion01>
       <PartBackCircle01></PartBackCircle01>
       <PartBackCircle02></PartBackCircle02>
@@ -200,6 +203,7 @@ const StyledComponent = styled(Box)`
   justify-content: center;
   background-color: #faf9ff;
   flex-direction: column;
+  align-items: center;
 `;
 
 const PartMax01 = styled(Box)`
@@ -209,6 +213,7 @@ const PartMax01 = styled(Box)`
   flex-direction: column;
   padding: 0px 250px;
   box-sizing: border-box;
+  align-items: center;
 `;
 
 const PartTop01 = styled(Box)`
@@ -558,12 +563,19 @@ const PartTaxQuestion01 = styled(Box)`
   background-image: url(${imgBackRound01});
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  padding: 0px 200px;
-  box-sizing: border-box;
-  align-items: center;
-  justify-content: space-between;
-  gap: 100px;
+  justify-content: center;
   margin-top: 100px;
 `;
+
+const PartMaxTaxQuestions01 = styled(Box)`
+  display: flex;
+  max-width: 1920px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 250px;
+  box-sizing: border-box;
+  gap: 100px;
+`
 
 export default Landing;

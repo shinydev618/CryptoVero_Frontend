@@ -4,9 +4,6 @@ import styled from "styled-components";
 import imgFooter01 from "../Assets/Images/background/footer01.png";
 import CustomFooterLink from "../Components/CustomFooterLink";
 import { dataFooterLink } from "../Config/data";
-import imgEmail from "../Assets/Images/icons/email.png";
-import imgLinkedIn from "../Assets/Images/icons/linkedIn.png";
-import imgInstagram from "../Assets/Images/icons/instagram.png";
 
 const Footer = () => {
   return (
@@ -17,17 +14,6 @@ const Footer = () => {
           <TextDescription01>
             Lorem ipsum is typically a corrupted finibus bonorum et malorum',
           </TextDescription01>
-          <PartLinkButton01>
-            <ButtonLink01>
-              <img src={imgEmail} width={"17px"} height={"12px"} alt="" />
-            </ButtonLink01>
-            <ButtonLink01>
-              <img src={imgLinkedIn} width={"16px"} height={"16px"} alt="" />
-            </ButtonLink01>
-            <ButtonLink01>
-              <img src={imgInstagram} width={"16px"} height={"16px"} alt="" />
-            </ButtonLink01>
-          </PartLinkButton01>
         </PartLeft01>
         <PartRight01>
           {dataFooterLink.map((each, index) => {
@@ -66,8 +52,6 @@ const PartLeft01 = styled(Box)`
   flex: 1;
   height: 100%;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 30px;
 `;
 
 const PartRight01 = styled(Box)`
@@ -91,6 +75,8 @@ const TextTitle01 = styled(Box)`
 `;
 
 const TextDescription01 = styled(Box)`
+  display: flex;
+  margin-top: 20px;
   width: 350px;
   font-family: "Roboto";
   font-style: normal;
@@ -103,19 +89,5 @@ const TextDescription01 = styled(Box)`
   opacity: 0.7;
 `;
 
-const PartLinkButton01 = styled(Box)`
-  display: flex;
-`;
-const ButtonLink01 = styled(Box)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 36px;
-  height: 36px;
-  background: #005e95;
-  border-radius: 100%;
-  margin-right: 20px;
-  cursor: pointer;
-`;
 
 export default Footer;

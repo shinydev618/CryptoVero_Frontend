@@ -1,6 +1,10 @@
 import imgPeople01 from "../Assets/Images/photo/risto.png";
 import imgPeople02 from "../Assets/Images/photo/bethany.png";
 import imgPeople03 from "../Assets/Images/photo/laura.png";
+import imgEmail from "../Assets/Images/icons/email_circle.png";
+import imgLinkedIn from "../Assets/Images/icons/linkedIn_circle.png";
+import imgInstagram from "../Assets/Images/icons/instagram_circle.png";
+
 
 export const dataGetStartedPrice = [
   {
@@ -174,25 +178,25 @@ export const dataFooterLink = [
   {
     header: "CryptoVero",
     content: [
-      { text: "Home", link: "" },
-      { text: "About", link: "" },
-      { text: "Blog", link: "" },
+      { text: "Home", link: "", icon:"" },
+      { text: "About", link: "", icon:"" },
+      { text: "Blog", link: "", icon:"" },
     ],
   },
   {
     header: "Legal",
     content: [
-      { text: "Security", link: "" },
-      { text: "Disclaimer", link: "" },
-      { text: "Privacy", link: "" },
+      { text: "Security", link: "", icon:"" },
+      { text: "Disclaimer", link: "", icon:"" },
+      { text: "Privacy", link: "", icon:"" },
     ],
   },
   {
     header: "Contact",
     content: [
-      { text: "Email", link: "" },
-      { text: "LinkedIn", link: "" },
-      { text: "Instagram", link: "" },
+      { text: "Email", link: "", icon:imgEmail },
+      { text: "LinkedIn", link: "", icon:imgLinkedIn },
+      { text: "Instagram", link: "", icon:imgInstagram },
     ],
   },
 ];

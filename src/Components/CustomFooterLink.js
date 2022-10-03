@@ -10,7 +10,18 @@ const CustomFooterLink = ({ data }) => {
         {data.content.map((each, index) => {
           return (
             <a href={each.link} style={{ textDecoration: "none" }} key={index}>
-              <TextLink01>{each.text}</TextLink01>
+              <Box display={"flex"} alignItems="center" mt={"20px"}>
+                {
+                  each.icon ?
+                    <>
+                      <Icon01>
+                        <img src={each.icon} width={"100%"} height={"100%"} alt="" />
+                      </Icon01>
+                      <TextLink01>{each.text}</TextLink01>
+                    </>
+                    : <TextLink01>{each.text}</TextLink01>
+                }
+              </Box>
             </a>
           );
         })}
@@ -35,7 +46,7 @@ const TextHeader = styled(Box)`
 `;
 
 const TextLink01 = styled(Box)`
-  margin-top: 15px;
+  align-items: center;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -55,5 +66,16 @@ const PartLink01 = styled(Box)`
   display: flex;
   flex-direction: column;
 `;
+
+const Icon01 = styled(Box)`
+  display: flex;
+  width: 24px;
+  height: 24px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background-color: #005E95;
+  margin-right: 10px;
+`
 
 export default CustomFooterLink;

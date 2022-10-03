@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Box } from "@mui/material";
 import styled from "styled-components";
 import imgLogo01 from "../Assets/Images/mark/logo01.png";
+import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 
 const Header = () => {
   const [flagLanguage, setFlagLanguage] = useState(true);
@@ -34,6 +35,9 @@ const Header = () => {
             </Box>
           </ButtonSwitchLanguage01>
         </PartLink01>
+        <ButtonMenu01>
+          <MenuRoundedIcon />
+        </ButtonMenu01>
       </PartMax01>
     </StyledComponent>
   );
@@ -41,11 +45,17 @@ const Header = () => {
 
 const StyledComponent = styled(Box)`
   display: flex;
+  position: fixed;
   width: 100%;
   min-height: 100px;
   justify-content: center;
   background-color: #ffffff;
   z-index: 100;
+
+  transition: 0.5s;
+  @media (max-width: 1024px) {
+    min-height: 60px;
+  }
 `;
 
 const PartMax01 = styled(Box)`
@@ -57,21 +67,17 @@ const PartMax01 = styled(Box)`
   justify-content: space-between;
   align-items: center;
 
-  transition: .5s;
-  @media(max-width: 1600px)
-  {
+  transition: 0.5s;
+  @media (max-width: 1600px) {
     padding: 0px 150px;
   }
-  @media(max-width: 1200px)
-  {
+  @media (max-width: 1200px) {
     padding: 0px 80px;
   }
-  @media(max-width: 1024px)
-  {
+  @media (max-width: 1024px) {
     padding: 0px 50px;
   }
-  @media(max-width: 500px)
-  {
+  @media (max-width: 500px) {
     padding: 0px 30px;
   }
 `;
@@ -81,6 +87,12 @@ const PartMark01 = styled(Box)`
   width: 235px;
   height: 35px;
   cursor: pointer;
+
+  transition: 0.5s;
+  @media (max-width: 1024px) {
+    width: 165px;
+    height: 25px;
+  }
 `;
 
 const PartLink01 = styled(Box)`
@@ -89,6 +101,11 @@ const PartLink01 = styled(Box)`
   align-items: center;
 
   gap: 30px;
+
+  transition: 0.5s;
+  @media (max-width: 1024px) {
+    display: none;
+  }
 `;
 
 const LinkEach01 = styled(Box)`
@@ -142,7 +159,7 @@ const ButtonLeft01 = styled(Box)`
   text-transform: uppercase;
   cursor: pointer;
 
-  transition: .3s;
+  transition: 0.3s;
 `;
 
 const ButtonRight01 = styled(Box)`
@@ -166,7 +183,20 @@ const ButtonRight01 = styled(Box)`
   border-radius: 10000px;
   cursor: pointer;
 
-  transition: .3s;
+  transition: 0.3s;
+`;
+
+const ButtonMenu01 = styled(Box)`
+  display: none;
+  color: #0d1942;
+  cursor: pointer;
+  > svg {
+    font-size: 2rem;
+  }
+  transition: 0.5s;
+  @media (max-width: 1024px) {
+    display: flex;
+  }
 `;
 
 export default Header;

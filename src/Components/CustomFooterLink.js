@@ -11,16 +11,21 @@ const CustomFooterLink = ({ data }) => {
           return (
             <a href={each.link} style={{ textDecoration: "none" }} key={index}>
               <Box display={"flex"} alignItems="center" mt={"20px"}>
-                {
-                  each.icon ?
-                    <>
-                      <Icon01>
-                        <img src={each.icon} width={"100%"} height={"100%"} alt="" />
-                      </Icon01>
-                      <TextLink01>{each.text}</TextLink01>
-                    </>
-                    : <TextLink01>{each.text}</TextLink01>
-                }
+                {each.icon ? (
+                  <>
+                    <Icon01>
+                      <img
+                        src={each.icon}
+                        width={"100%"}
+                        height={"100%"}
+                        alt=""
+                      />
+                    </Icon01>
+                    <TextLink01>{each.text}</TextLink01>
+                  </>
+                ) : (
+                  <TextLink01>{each.text}</TextLink01>
+                )}
               </Box>
             </a>
           );
@@ -35,6 +40,11 @@ const StyledComponent = styled(Box)`
   height: 100%;
   flex-direction: column;
   justify-content: space-between;
+
+  transition: 0.5s;
+  @media (max-width: 500px) {
+    height: 0%;
+  }
 `;
 
 const TextHeader = styled(Box)`
@@ -75,8 +85,8 @@ const Icon01 = styled(Box)`
   justify-content: center;
   align-items: center;
   border-radius: 100%;
-  background-color: #005E95;
+  background-color: #005e95;
   margin-right: 10px;
-`
+`;
 
 export default CustomFooterLink;

@@ -2,6 +2,7 @@ import React from "react";
 import { Box } from "@mui/material";
 import styled from "styled-components";
 import imgFooter01 from "../Assets/Images/background/footer01.png";
+import imgFooter02 from "../Assets/Images/background/footer02.png";
 import CustomFooterLink from "../Components/CustomFooterLink";
 import { dataFooterLink } from "../Config/data";
 
@@ -35,6 +36,14 @@ const StyledComponent = styled(Box)`
   /* background-color: #0d1942; */
   justify-content: center;
   align-items: center;
+
+  transition: 0.5s;
+  @media (max-width: 500px) {
+    background-image: url(${imgFooter02});
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
 `;
 
 const PartMax01 = styled(Box)`
@@ -46,57 +55,61 @@ const PartMax01 = styled(Box)`
   box-sizing: border-box;
   align-items: center;
 
-  transition: .5s;
-  @media(max-width: 1600px)
-  {
+  transition: 0.5s;
+  @media (max-width: 1600px) {
     padding: 70px 150px;
   }
-  @media(max-width: 1200px)
-  {
+  @media (max-width: 1200px) {
     padding: 70px 80px;
   }
-  @media(max-width: 1024px)
-  {
+  @media (max-width: 1024px) {
     flex-direction: column;
     padding-top: 100px;
     padding-left: 50px;
     padding-right: 50px;
     height: 500px;
   }
-  @media(max-width: 500px)
-  {
-    height: 500px;
-    padding: 100px 30px 30px;
+  @media (max-width: 500px) {
+    flex-direction: column;
+    padding-top: 100px;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 700px;
   }
 `;
 
 const PartLeft01 = styled(Box)`
   display: flex;
   flex: 1;
-  width :100%;
+  width: 100%;
   height: 100%;
   flex-direction: column;
 
-  transition: .5s;
-  @media(max-width: 1600px)
-  {
+  transition: 0.5s;
+  @media (max-width: 1600px) {
     align-items: center;
+  }
+
+  @media (max-width: 500px) {
+    flex: none;
+    height: 20%;
   }
 `;
 
 const PartRight01 = styled(Box)`
   display: flex;
   flex: 1;
-  width :100%;
+  width: 100%;
   height: 100%;
   justify-content: center;
   align-items: center;
   justify-content: space-between;
 
-  transition: .5s;
-  @media(max-width: 600px)
-  {
-
+  transition: 0.5s;
+  @media (max-width: 500px) {
+    flex-wrap: wrap;
+    flex: none;
+    height: 70%;
   }
 `;
 
@@ -127,15 +140,12 @@ const TextDescription01 = styled(Box)`
   color: #ffffff;
   opacity: 0.7;
 
-  
-  transition: .5s;
-  @media(max-width: 1024px)
-  {
+  transition: 0.5s;
+  @media (max-width: 1024px) {
     width: 100%;
     justify-content: center;
     text-align: center;
   }
 `;
-
 
 export default Footer;

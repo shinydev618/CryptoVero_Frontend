@@ -68,12 +68,15 @@ const CustomGetStartedPriceBox = ({ data }) => {
           border={!data.popular ? "1px solid #0099FF" : "1px solid white"}
         />
       </PartButton01>
+      {data.popular ? <PartPopular01>Most Popular</PartPopular01> : <></>}
     </StyledComponent>
   );
 };
 
 const StyledComponent = styled(Box)`
   display: flex;
+  position: relative;
+
   flex: 1;
   width: 100%;
   border-radius: 20px;
@@ -85,6 +88,29 @@ const StyledComponent = styled(Box)`
   &:hover {
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
   }
+`;
+
+const PartPopular01 = styled(Box)`
+  display: flex;
+  position: absolute;
+  right: 0px;
+  top: 30px;
+  width: 150px;
+  height: 40px;
+  background: #7771f1;
+  border-radius: 19px 0px 0px 19px;
+  justify-content: center;
+  align-items: center;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15.8378px;
+  line-height: 26px;
+  /* or 165% */
+
+  text-align: center;
+
+  color: #ffffff;
 `;
 
 const TextType01 = styled(Box)`
@@ -170,12 +196,6 @@ const STitle01 = styled(Box)`
   /* identical to box height, or 174% */
 
   text-align: center;
-`;
-
-const PartGroupTaxQuestion01 = styled(Box)`
-  display: flex;
-  width: 650px;
-  height: 650px;
 `;
 
 export default CustomGetStartedPriceBox;

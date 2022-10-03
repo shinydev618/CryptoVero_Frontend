@@ -1,7 +1,6 @@
 import React from "react";
 import { Box } from "@mui/material";
 import styled from "styled-components";
-import BlockIcon from "@mui/icons-material/Block";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CustomMainButton from "./CustomMainButton";
 

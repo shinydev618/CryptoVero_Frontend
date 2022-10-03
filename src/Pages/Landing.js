@@ -14,7 +14,7 @@ import imgSupport05 from "../Assets/Images/mark/support05.png";
 import imgDashboard01 from "../Assets/Images/background/dashboard01.png";
 import imgAnalysis01 from "../Assets/Images/background/analysis01.png";
 import imgBackRound01 from "../Assets/Images/background/round01.png";
-import { dataGetStartedPrice, dataTestimonials } from "../Config/data";
+import { dataGetStartedPrice } from "../Config/data";
 
 const Landing = () => {
   return (
@@ -426,62 +426,62 @@ const PartGenerateImage01 = styled(Box)`
   height: 450px;
 `;
 
-const PartTestimonials01 = styled(Box)`
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 100px;
-  margin-bottom: 200px;
-`;
+// const PartTestimonials01 = styled(Box)`
+//   display: flex;
+//   width: 100%;
+//   flex-direction: column;
+//   align-items: center;
+//   margin-top: 100px;
+//   margin-bottom: 200px;
+// `;
 
-const TextTestimonialsSmallTitle01 = styled(Box)`
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  font-family: "Outfit";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 28px;
-  /* or 138% */
+// const TextTestimonialsSmallTitle01 = styled(Box)`
+//   display: flex;
+//   width: 100%;
+//   justify-content: center;
+//   font-family: "Outfit";
+//   font-style: normal;
+//   font-weight: 600;
+//   font-size: 20px;
+//   line-height: 28px;
+//   /* or 138% */
 
-  text-align: center;
-  letter-spacing: 0.1em;
+//   text-align: center;
+//   letter-spacing: 0.1em;
 
-  color: #000000;
-`;
+//   color: #000000;
+// `;
 
-const TextTestimonialsBigTitle01 = styled(Box)`
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  font-family: "Outfit";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 100%;
-  /* identical to box height, or 30px */
+// const TextTestimonialsBigTitle01 = styled(Box)`
+//   display: flex;
+//   width: 100%;
+//   justify-content: center;
+//   font-family: "Outfit";
+//   font-style: normal;
+//   font-weight: 700;
+//   font-size: 30px;
+//   line-height: 100%;
+//   /* identical to box height, or 30px */
 
-  text-transform: capitalize;
+//   text-transform: capitalize;
 
-  color: #000000;
-`;
+//   color: #000000;
+// `;
 
-const PartTestimonialsContent01 = styled(Box)`
-  display: flex;
-  width: 100%;
-  gap: 20px;
-  justify-content: space-between;
-  margin-top: 100px;
-`;
+// const PartTestimonialsContent01 = styled(Box)`
+//   display: flex;
+//   width: 100%;
+//   gap: 20px;
+//   justify-content: space-between;
+//   margin-top: 100px;
+// `;
 
-const PartTestimonialsButton01 = styled(Box)`
-  display: flex;
-  width: 360px;
-  height: 60px;
-  margin-top: 50px;
-`;
+// const PartTestimonialsButton01 = styled(Box)`
+//   display: flex;
+//   width: 360px;
+//   height: 60px;
+//   margin-top: 50px;
+// `;
 
 const PartBackCircle01 = styled(Box)`
   position: absolute;

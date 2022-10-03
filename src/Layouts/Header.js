@@ -44,13 +44,14 @@ const StyledComponent = styled(Box)`
   min-height: 100px;
   justify-content: center;
   background-color: #ffffff;
+  z-index: 100;
 `;
 
 const PartMax01 = styled(Box)`
   display: flex;
+  max-width: 1920px;
   width: 100%;
-  max-width: 1440px;
-  padding: 0px 200px;
+  padding: 0px 250px;
   box-sizing: border-box;
   justify-content: space-between;
   align-items: center;

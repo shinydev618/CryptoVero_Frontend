@@ -9,6 +9,8 @@ const CustomMainButton = ({
   backColor,
   color,
   borderRadius,
+  border,
+  boxShadow
 }) => {
   return (
     <StyledComponent
@@ -17,6 +19,8 @@ const CustomMainButton = ({
       bgcolor={backColor}
       color={color}
       borderRadius={borderRadius}
+      border={border}
+      boxShadow={boxShadow}
     >
       {text}
     </StyledComponent>
@@ -29,21 +33,24 @@ const StyledComponent = styled(Box)`
   align-items: center;
   font-family: "Outfit";
   font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
+  font-weight: 700;
+  font-size: 18px;
   line-height: 28px;
-  /* identical to box height, or 138% */
+  /* identical to box height, or 156% */
 
   text-align: center;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   cursor: pointer;
 
-  transition: .3s;
-  &:hover{
+  transition: 0.3s;
+  &:hover {
     color: #69a0c1;
+    box-shadow: 0px 0px 25px rgba(0,0,0,0.5);
   }
-  &:active{
-    font-size: 18px;
+  &:active {
+    color: #69a0c1;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
   }
 `;
 

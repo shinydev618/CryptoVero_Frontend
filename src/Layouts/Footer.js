@@ -42,22 +42,21 @@ const Footer = () => {
 const StyledComponent = styled(Box)`
   display: flex;
   width: 100%;
-  background-color: #0d1942;
-
-  /* background-image: url(${imgFooter01});
+  background-image: url(${imgFooter01});
+  background-position: center;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  background-position: center; */
+  /* background-color: #0d1942; */
   justify-content: center;
   align-items: center;
 `;
 
 const PartMax01 = styled(Box)`
   display: flex;
-  width: 100%;
   height: 300px;
-  max-width: 1440px;
-  padding: 70px 200px;
+  max-width: 1920px;
+  width: 100%;
+  padding: 70px 250px;
   box-sizing: border-box;
   align-items: center;
 `;
@@ -118,4 +117,5 @@ const ButtonLink01 = styled(Box)`
   margin-right: 20px;
   cursor: pointer;
 `;
+
 export default Footer;

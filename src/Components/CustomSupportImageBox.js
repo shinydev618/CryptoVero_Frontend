@@ -2,10 +2,10 @@ import React from "react";
 import { Box } from "@mui/material";
 import styled from "styled-components";
 
-const CustomImageSupport = ({ width, height, image }) => {
+const CustomSupportImageBox = ({ width, height, image }) => {
   return (
     <StyledComponent width={width} height={height}>
-      <image src={image} width={"100%"} height={"100%"} />
+      <img src={image} width={"100%"} height={"100%"} alt="" />
     </StyledComponent>
   );
 };
@@ -16,4 +16,4 @@ const StyledComponent = styled(Box)`
   align-items: center;
 `;
 
-export default CustomImageSupport;
+export default CustomSupportImageBox;

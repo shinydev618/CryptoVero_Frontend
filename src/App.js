@@ -19,6 +19,7 @@ const StyledComponent = styled(Box)`
   display: flex;
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
   flex-direction: column;
   background-color: white;
 `;

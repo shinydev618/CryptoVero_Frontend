@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import { Box } from "@mui/material";
+import { Box, Modal } from "@mui/material";
 import styled from "styled-components";
 import imgLogo01 from "../Assets/Images/mark/logo01.png";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 
 const Header = () => {
+  const handleMenuClose = () => setMenuOpen(false);
+  const handleMenuOpen = () => setMenuOpen(true);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [flagLanguage, setFlagLanguage] = useState(true);
   return (
     <StyledComponent>
@@ -35,10 +38,20 @@ const Header = () => {
             </Box>
           </ButtonSwitchLanguage01>
         </PartLink01>
-        <ButtonMenu01>
+        <ButtonMenu01 onClick={() => handleMenuOpen()}>
           <MenuRoundedIcon />
         </ButtonMenu01>
       </PartMax01>
+      <Modal
+        open={menuOpen}
+        onClose={handleMenuClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <ModalMenuBox01>
+
+        </ModalMenuBox01>
+      </Modal>
     </StyledComponent>
   );
 };
@@ -198,5 +211,47 @@ const ButtonMenu01 = styled(Box)`
     display: flex;
   }
 `;
+
+const ModalMenuBox01 = styled(Box)`
+  display: flex;
+  position: fixed;
+  right: 0px;
+  width: 350px;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+  backdrop-filter: blur(3px);
+  padding: 50px;
+  box-sizing: border-box;
+  background-color: white;
+  transition: box-shadow 300ms;
+  transition: transform 505ms cubic-bezier(0, 0, 0.2, 1) 0ms !important;
+  outline: none;
+  animation: back_animation1 0.5s 1;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  @keyframes back_animation1 {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+
+  @media (max-width: 500px) {
+    transition: 0.5s !important;
+    padding: 20px;
+  }
+`;
+
+// export const customBackdrop = styled(Box)`
+//   width: 100%;
+//   height: 100%;
+//   position: fixed;
+//   background-color: black;
+
+//   opacity: 0.8;
+// `;
 
 export default Header;

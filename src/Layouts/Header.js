@@ -4,8 +4,10 @@ import styled from "styled-components";
 import imgLogo01 from "../Assets/Images/mark/logo01.png";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   const handleMenuClose = () => setMenuOpen(false);
   const handleMenuOpen = () => setMenuOpen(true);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,7 +21,10 @@ const Header = () => {
         <PartLink01>
           <LinkEach01>Solution</LinkEach01>
           <LinkEach01>Pricing</LinkEach01>
-          <LinkEach01>Contact Us</LinkEach01>
+          <LinkEach01 onClick={() => {
+            navigate('/ContactUs');
+            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+          }}>Contact Us</LinkEach01>
           <LinkEach01>Sign Up</LinkEach01>
           <LinkEach01>Log In</LinkEach01>
           <ButtonSwitchLanguage01>
@@ -50,27 +55,29 @@ const Header = () => {
         aria-describedby="modal-modal-description"
       >
         <ModalMenuBox01>
-          <Link01  onClick={()=>{
+          <Link01 onClick={() => {
             handleMenuClose();
           }} borderBottom={"1px solid rgba(13, 25, 66, 0.2)"}>
             Solutions
           </Link01>
-          <Link01  onClick={()=>{
+          <Link01 onClick={() => {
             handleMenuClose();
           }} borderBottom={"1px solid rgba(13, 25, 66, 0.2)"}>
             Pricing
           </Link01>
-          <Link01  onClick={()=>{
+          <Link01 onClick={() => {
+            navigate('/ContactUs');
+            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
             handleMenuClose();
           }} borderBottom={"1px solid rgba(13, 25, 66, 0.2)"}>
             Contact Us
           </Link01>
-          <Link01  onClick={()=>{
+          <Link01 onClick={() => {
             handleMenuClose();
           }} borderBottom={"1px solid rgba(13, 25, 66, 0.2)"}>
             Sign Up
           </Link01>
-          <Link01 onClick={()=>{
+          <Link01 onClick={() => {
             handleMenuClose();
           }} >
             Log In

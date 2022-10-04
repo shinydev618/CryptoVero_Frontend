@@ -4,13 +4,21 @@ import styled from "styled-components";
 import Header from "./Layouts/Header";
 import Footer from "./Layouts/Footer";
 import Landing from "./Pages/Landing";
+import ContactUs from "./Pages/ContactUs";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
     <StyledComponent>
-      <Header />
-      <Landing />
-      <Footer />
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/ContactUs" element={<ContactUs />} />
+        </Routes>
+        <Landing />
+        <Footer />
+      </BrowserRouter>
     </StyledComponent>
   );
 };

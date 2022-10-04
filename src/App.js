@@ -16,7 +16,6 @@ const App = () => {
           <Route path="/" element={<Landing />} />
           <Route path="/ContactUs" element={<ContactUs />} />
         </Routes>
-        <Landing />
         <Footer />
       </BrowserRouter>
     </StyledComponent>

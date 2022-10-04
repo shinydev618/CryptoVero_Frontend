@@ -16,8 +16,16 @@ import imgAnalysis01 from "../Assets/Images/background/analysis01.png";
 import imgBackRound01 from "../Assets/Images/background/round01.png";
 import { dataGetStartedPrice } from "../Config/data";
 import Marquee from "react-fast-marquee";
+import Slider from "react-slick";
 
 const Landing = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
   return (
     <StyledComponent>
       <PartMax01>
@@ -111,10 +119,15 @@ const Landing = () => {
         </PartDashboard01>
         <PartGetStarted01>
           <TextGetStartedTitle01>Get started for free</TextGetStartedTitle01>
+          {dataGetStartedPrice.map((each, index) => {
+            return <CustomGetStartedPriceBox data={each} key={index} />;
+          })}
           <PartPrice01>
-            {dataGetStartedPrice.map((each, index) => {
-              return <CustomGetStartedPriceBox data={each} key={index} />;
-            })}
+            <Slider {...settings}>
+              <div>123</div>
+              <div>123</div>
+              <div>123</div>
+            </Slider>
           </PartPrice01>
         </PartGetStarted01>
         <PartGenerate01>
@@ -545,6 +558,7 @@ const TextGenerateTitle01 = styled(Box)`
   @media (max-width: 1400px) {
     justify-content: center;
     text-align: center;
+    margin-top: 50px;
   }
   @media (max-width: 1024px) {
     font-size: 35px;
@@ -595,8 +609,13 @@ const PartGenerateButton01 = styled(Box)`
 const PartGenerateImage01 = styled(Box)`
   display: flex;
   width: 710px;
-
+  margin-left: 50px;
+  box-shadow: -27px 40px 122px rgba(0, 94, 149, 0.2);
+  border-radius: 8px;
   transition: 0.5s;
+  @media(max-width: 1400px) {
+    margin-left: 0px;
+  }
   @media (max-width: 1024px) {
     width: 100%;
   }

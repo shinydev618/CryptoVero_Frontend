@@ -3,6 +3,7 @@ import { Box, Modal } from "@mui/material";
 import styled from "styled-components";
 import imgLogo01 from "../Assets/Images/mark/logo01.png";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 
 const Header = () => {
   const handleMenuClose = () => setMenuOpen(false);
@@ -20,7 +21,7 @@ const Header = () => {
           <LinkEach01>Pricing</LinkEach01>
           <LinkEach01>Contact Us</LinkEach01>
           <LinkEach01>Sign Up</LinkEach01>
-          <LinkEach01>Login</LinkEach01>
+          <LinkEach01>Log In</LinkEach01>
           <ButtonSwitchLanguage01>
             <Box display={"flex"} width="100%" height="100%">
               <ButtonLeft01
@@ -49,7 +50,34 @@ const Header = () => {
         aria-describedby="modal-modal-description"
       >
         <ModalMenuBox01>
-
+          <Link01  onClick={()=>{
+            handleMenuClose();
+          }} borderBottom={"1px solid rgba(13, 25, 66, 0.2)"}>
+            Solutions
+          </Link01>
+          <Link01  onClick={()=>{
+            handleMenuClose();
+          }} borderBottom={"1px solid rgba(13, 25, 66, 0.2)"}>
+            Pricing
+          </Link01>
+          <Link01  onClick={()=>{
+            handleMenuClose();
+          }} borderBottom={"1px solid rgba(13, 25, 66, 0.2)"}>
+            Contact Us
+          </Link01>
+          <Link01  onClick={()=>{
+            handleMenuClose();
+          }} borderBottom={"1px solid rgba(13, 25, 66, 0.2)"}>
+            Sign Up
+          </Link01>
+          <Link01 onClick={()=>{
+            handleMenuClose();
+          }} >
+            Log In
+          </Link01>
+          <ButtonClose01 onClick={() => handleMenuClose()}>
+            <CloseRoundedIcon />
+          </ButtonClose01>
         </ModalMenuBox01>
       </Modal>
     </StyledComponent>
@@ -219,15 +247,14 @@ const ModalMenuBox01 = styled(Box)`
   width: 350px;
   height: 100vh;
   flex-direction: column;
-  justify-content: space-between;
   backdrop-filter: blur(3px);
-  padding: 50px;
+  padding: 150px 30px ;
   box-sizing: border-box;
   background-color: white;
   transition: box-shadow 300ms;
   transition: transform 505ms cubic-bezier(0, 0, 0.2, 1) 0ms !important;
   outline: none;
-  animation: back_animation1 0.5s 1;
+  animation: back_animation1 .5s 1;
   animation-timing-function: ease;
   animation-fill-mode: forwards;
   @keyframes back_animation1 {
@@ -240,10 +267,37 @@ const ModalMenuBox01 = styled(Box)`
   }
 
   @media (max-width: 500px) {
-    transition: 0.5s !important;
-    padding: 20px;
+    width: 300px;
+    padding: 150px 30px;
   }
 `;
+
+const ButtonClose01 = styled(Box)`
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+
+  color: #0D1942;
+  >svg{
+    font-size: 2.5rem;
+    font-weight: 700;
+  }  
+`
+const Link01 = styled(Box)`
+  display: flex;
+  font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 315.5%;
+/* or 76px */
+
+text-transform: capitalize;
+
+color: #0D1942;
+cursor: pointer;
+`
 
 // export const customBackdrop = styled(Box)`
 //   width: 100%;

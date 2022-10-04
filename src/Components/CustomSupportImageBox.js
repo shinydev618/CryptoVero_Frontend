@@ -15,6 +15,14 @@ const StyledComponent = styled(Box)`
   justify-content: center;
   align-items: center;
   margin-right: 150px;
+
+  transition: 0.5s;
+  @media (max-width: 1024px) {
+    margin-right: 100px;
+  }
+  @media (max-width: 500px) {
+    margin-right: 50px;
+  }
 `;
 
 export default CustomSupportImageBox;

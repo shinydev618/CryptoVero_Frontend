@@ -138,6 +138,7 @@ const TextTitle01 = styled(Box)`
 `;
 
 const TextDescription01 = styled(Box)`
+  height: 50px;
   margin-top: 10px;
   font-family: "Outfit";
   font-style: normal;

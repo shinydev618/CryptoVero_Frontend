@@ -53,7 +53,7 @@ const Landing = () => {
             gradient={true}
             gradientColor={[250, 249, 250]}
             // style={{ borderRadius: "20px", height: "100%" }}
-            gradientWidth={"200px"}
+            gradientWidth={"100px"}
             speed={"40"}
           >
             <CustomSupportImageBox
@@ -353,6 +353,11 @@ const PartGraphButton01 = styled(Box)`
   display: flex;
   width: 250px;
   height: 65px;
+
+  transition: 0.5s;
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 `;
 
 const PartSupportedPlatforms01 = styled(Box)`
@@ -362,6 +367,11 @@ const PartSupportedPlatforms01 = styled(Box)`
   justify-content: space-between;
   mix-blend-mode: luminosity;
   margin-top: 150px;
+
+  transition: 0.5s;
+  @media (max-width: 1024px) {
+    margin-top: 100px;
+  }
 `;
 
 const PartDashboard01 = styled(Box)`
@@ -369,13 +379,21 @@ const PartDashboard01 = styled(Box)`
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  gap: 100px;
   margin-top: 100px;
+
+  transition: 0.5s;
+  @media (max-width: 1400px) {
+    flex-direction: column;
+  }
 `;
 const PartGroupLeft01 = styled(Box)`
   display: flex;
   width: 785px;
-  height: 470px;
+  /* height: 470px; */
+  transition: 0.5s;
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
 `;
 
 const PartGroupRight01 = styled(Box)`
@@ -384,7 +402,14 @@ const PartGroupRight01 = styled(Box)`
   width: 100%;
   flex-direction: column;
   margin-left: 50px;
-  gap: 50px;
+  margin-bottom: 50px;
+
+  transition: 0.5s;
+  @media (max-width: 1400px) {
+    margin-left: 0px;
+    align-items: center;
+    margin-top: 30px;
+  }
 `;
 
 const PartTopTitleText02 = styled(Box)`
@@ -396,8 +421,19 @@ const PartTopTitleText02 = styled(Box)`
   /* or 54px */
 
   text-transform: capitalize;
+  margin-bottom: 30px;
 
   color: #0d1942;
+  transition: 0.5s;
+  @media (max-width: 1400px) {
+    text-align: center;
+  }
+  @media (max-width: 1024px) {
+    font-size: 35px;
+  }
+  @media (max-width: 500px) {
+    font-size: 32px;
+  }
 `;
 
 const PartTopContentText02 = styled(Box)`
@@ -408,6 +444,17 @@ const PartTopContentText02 = styled(Box)`
   line-height: 35px;
   /* or 194% */
   color: #716f96;
+  margin-bottom: 30px;
+  transition: 0.5s;
+  @media (max-width: 1400px) {
+    text-align: center;
+  }
+  @media (max-width: 1024px) {
+    font-size: 17px;
+  }
+  @media (max-width: 500px) {
+    font-size: 16px;
+  }
 `;
 
 const PartGetStarted01 = styled(Box)`
@@ -416,6 +463,11 @@ const PartGetStarted01 = styled(Box)`
   flex-direction: column;
   align-items: center;
   margin-top: 100px;
+
+  transition: 0.5s;
+  @media (max-width: 1024px) {
+    margin-top: 50px;
+  }
 `;
 const TextGetStartedTitle01 = styled(Box)`
   display: flex;
@@ -432,6 +484,17 @@ const TextGetStartedTitle01 = styled(Box)`
   text-transform: capitalize;
 
   color: #0d1942;
+
+  transition: 0.5s;
+  @media (max-width: 1400px) {
+    text-align: center;
+  }
+  @media (max-width: 1024px) {
+    font-size: 35px;
+  }
+  @media (max-width: 500px) {
+    font-size: 32px;
+  }
 `;
 
 const PartPrice01 = styled(Box)`
@@ -447,8 +510,12 @@ const PartGenerate01 = styled(Box)`
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  gap: 50px;
   margin-top: 100px;
+
+  transition: 0.5s;
+  @media (max-width: 1400px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 const PartGenerateText01 = styled(Box)`
@@ -473,6 +540,18 @@ const TextGenerateTitle01 = styled(Box)`
   text-transform: capitalize;
 
   color: #0d1942;
+
+  transition: 0.5s;
+  @media (max-width: 1400px) {
+    justify-content: center;
+    text-align: center;
+  }
+  @media (max-width: 1024px) {
+    font-size: 35px;
+  }
+  @media (max-width: 500px) {
+    font-size: 32px;
+  }
 `;
 
 const TextGenerateContent01 = styled(Box)`
@@ -487,6 +566,18 @@ const TextGenerateContent01 = styled(Box)`
 
   color: #716f96;
   margin-top: 50px;
+
+  transition: 0.5s;
+  @media (max-width: 1400px) {
+    justify-content: center;
+    text-align: center;
+  }
+  @media (max-width: 1024px) {
+    font-size: 17px;
+  }
+  @media (max-width: 500px) {
+    font-size: 16px;
+  }
 `;
 
 const PartGenerateButton01 = styled(Box)`
@@ -494,12 +585,21 @@ const PartGenerateButton01 = styled(Box)`
   width: 250px;
   height: 65px;
   margin-top: 50px;
+
+  transition: 0.5s;
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 `;
 
 const PartGenerateImage01 = styled(Box)`
   display: flex;
   width: 710px;
-  height: 450px;
+
+  transition: 0.5s;
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
 `;
 
 // const PartTestimonials01 = styled(Box)`
@@ -634,8 +734,12 @@ const TextCurveline01 = styled(Box)`
 const PartGroupTaxQuestion01 = styled(Box)`
   display: flex;
   width: 650px;
-  height: 650px;
   margin-top: 50px;
+
+  transition: 0.5s;
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
 `;
 
 const PartTaxQuestion01 = styled(Box)`
@@ -646,6 +750,8 @@ const PartTaxQuestion01 = styled(Box)`
   background-size: 100% 100%;
   justify-content: center;
   margin-top: 100px;
+
+  transition: 0.5s;
 `;
 
 const PartMaxTaxQuestions01 = styled(Box)`
@@ -656,7 +762,23 @@ const PartMaxTaxQuestions01 = styled(Box)`
   align-items: center;
   padding: 0px 250px;
   box-sizing: border-box;
-  gap: 100px;
+
+  transition: 0.5s;
+  @media (max-width: 1600px) {
+    padding: 0px 150px;
+  }
+  @media (max-width: 1400px) {
+    flex-direction: column;
+  }
+  @media (max-width: 1200px) {
+    padding: 0px 80px;
+  }
+  @media (max-width: 1024px) {
+    padding: 0px 50px;
+  }
+  @media (max-width: 500px) {
+    padding: 0px 30px;
+  }
 `;
 
 export default Landing;

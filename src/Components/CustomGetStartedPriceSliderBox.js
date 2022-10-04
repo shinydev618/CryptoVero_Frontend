@@ -4,7 +4,7 @@ import styled from "styled-components";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CustomMainButton from "./CustomMainButton";
 
-const CustomGetStartedPriceBox = ({ data }) => {
+const CustomGetStartedPriceSliderBox = ({ data }) => {
   return (
     <StyledComponent bgcolor={!data.popular ? "white" : "#005E95"}>
       <TextType01 color={!data.popular ? "#005E95" : "white"}>
@@ -75,8 +75,6 @@ const CustomGetStartedPriceBox = ({ data }) => {
 const StyledComponent = styled(Box)`
   display: flex;
   position: relative;
-
-  flex: 1;
   width: 100%;
   border-radius: 20px;
   padding: 50px 30px;
@@ -84,11 +82,14 @@ const StyledComponent = styled(Box)`
   flex-direction: column;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
   transition: 0.5s;
-  &:hover {
+  /* &:hover {
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+  } */
+  transition: 0.5s;
+  @media (max-width: 500px) {
+    border-radius: 15px;
+    padding: 30px 15px;
   }
-  margin-left: 10px;
-  margin-right: 10px;
 `;
 
 const PartPopular01 = styled(Box)`
@@ -112,6 +113,14 @@ const PartPopular01 = styled(Box)`
   text-align: center;
 
   color: #ffffff;
+
+  transition: 0.5s;
+  @media (max-width: 500px) {
+    width: 110px;
+    height: 30px;
+    font-size: 12px;
+    line-height: 19px;
+  }
 `;
 
 const TextType01 = styled(Box)`
@@ -122,6 +131,12 @@ const TextType01 = styled(Box)`
   line-height: 33px;
   text-transform: capitalize;
   font-feature-settings: "pnum" on, "lnum" on;
+
+  transition: 0.5s;
+  @media (max-width: 500px) {
+    font-size: 19px;
+    line-height: 24px;
+  }
 `;
 
 const TextTitle01 = styled(Box)`
@@ -137,7 +152,14 @@ const TextTitle01 = styled(Box)`
 
   text-transform: capitalize;
   font-feature-settings: "pnum" on, "lnum" on;
-`;
+
+  transition: 0.5s;
+  @media (max-width: 500px) {
+    margin-top: 10px;
+    font-size: 34px;
+    line-height: 45px;
+  }
+  `;
 
 const TextDescription01 = styled(Box)`
   height: 50px;
@@ -147,21 +169,28 @@ const TextDescription01 = styled(Box)`
   font-weight: 500;
   font-size: 21.4276px;
   line-height: 37px;
+
+  transition: 0.5s;
+  @media (max-width: 500px) {
+    height: 30px;
+    font-size: 16px;
+    line-height: 27px;
+  }
 `;
 
 const PartContent01 = styled(Box)`
   display: flex;
   width: 100%;
   flex-direction: column;
-  margin-top: 30px;
+  margin-top: 20px;
 `;
 
 const PartEachService01 = styled(Box)`
   display: flex;
   width: 100%;
-  gap: 30px;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 10px;
+  
 `;
 
 const TextEachService01 = styled(Box)`
@@ -171,14 +200,31 @@ const TextEachService01 = styled(Box)`
   font-size: 16px;
   line-height: 24px;
   /* or 148% */
+
+  transition: 0.5s;
+  @media (max-width: 500px) {
+    font-size: 12px;
+    line-height: 17px;
+  }
 `;
 const IconEachService01 = styled(Box)`
+  margin-right: 30px;
   font-family: "Outfit";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 100%;
   color: #000000;
+
+  transition: 0.5s;
+  @media (max-width: 500px) {
+    margin-right: 20px;
+    font-size: 12px;
+    line-height: 100%;
+  }
+  @media (max-width: 350px) {
+    margin-right: 10px;
+  }
 `;
 
 const PartButton01 = styled(Box)`
@@ -198,6 +244,11 @@ const STitle01 = styled(Box)`
   /* identical to box height, or 174% */
 
   text-align: center;
+  transition: 0.5s;
+  @media (max-width: 500px) {
+    font-size: 16px;
+    line-height: 27px;
+  }
 `;
 
-export default CustomGetStartedPriceBox;
+export default CustomGetStartedPriceSliderBox;

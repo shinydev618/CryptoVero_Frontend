@@ -15,6 +15,7 @@ import imgDashboard01 from "../Assets/Images/background/dashboard01.png";
 import imgAnalysis01 from "../Assets/Images/background/analysis01.png";
 import imgBackRound01 from "../Assets/Images/background/round01.png";
 import { dataGetStartedPrice } from "../Config/data";
+import Marquee from "react-fast-marquee";
 
 const Landing = () => {
   return (
@@ -48,31 +49,39 @@ const Landing = () => {
           </PartTopRight01>
         </PartTop01>
         <PartSupportedPlatforms01>
-          <CustomSupportImageBox
-            width={"180px"}
-            height={"60px"}
-            image={imgSupport01}
-          />
-          <CustomSupportImageBox
-            width={"135px"}
-            height={"40px"}
-            image={imgSupport02}
-          />
-          <CustomSupportImageBox
-            width={"145px"}
-            height={"60px"}
-            image={imgSupport03}
-          />
-          <CustomSupportImageBox
-            width={"105px"}
-            height={"25px"}
-            image={imgSupport04}
-          />
-          <CustomSupportImageBox
-            width={"155px"}
-            height={"30px"}
-            image={imgSupport05}
-          />
+          <Marquee
+            gradient={true}
+            gradientColor={[250, 249, 250]}
+            // style={{ borderRadius: "20px", height: "100%" }}
+            gradientWidth={"200px"}
+            speed={"40"}
+          >
+            <CustomSupportImageBox
+              width={"180px"}
+              height={"60px"}
+              image={imgSupport01}
+            />
+            <CustomSupportImageBox
+              width={"135px"}
+              height={"40px"}
+              image={imgSupport02}
+            />
+            <CustomSupportImageBox
+              width={"145px"}
+              height={"60px"}
+              image={imgSupport03}
+            />
+            <CustomSupportImageBox
+              width={"105px"}
+              height={"25px"}
+              image={imgSupport04}
+            />
+            <CustomSupportImageBox
+              width={"155px"}
+              height={"30px"}
+              image={imgSupport05}
+            />
+          </Marquee>
         </PartSupportedPlatforms01>
         <PartDashboard01>
           <PartGroupLeft01>

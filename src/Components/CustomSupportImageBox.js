@@ -14,6 +14,7 @@ const StyledComponent = styled(Box)`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 150px;
 `;
 
 export default CustomSupportImageBox;

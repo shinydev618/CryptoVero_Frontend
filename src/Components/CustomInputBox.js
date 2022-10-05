@@ -23,8 +23,8 @@ const StyledComponent = styled(Box)`
   background: white;
   border: 1px solid rgba(113, 111, 150, 0.2);
   border-radius: 1000px;
-  padding-left: 60px;
-  padding-right: 30px;
+  padding-left: 65px;
+  padding-right: 35px;
   box-sizing: border-box;
   outline: none;
   font-family: "Outfit";
@@ -50,6 +50,5 @@ const Icon01 = styled(Box)`
   top: 50%;
   transform: translateY(-50%);
 `;
-
 
 export default CustomInputBox;

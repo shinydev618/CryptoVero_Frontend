@@ -4,6 +4,9 @@ import imgPeople03 from "../Assets/Images/photo/laura.png";
 import imgEmail from "../Assets/Images/icons/email_circle.png";
 import imgLinkedIn from "../Assets/Images/icons/linkedIn_circle.png";
 import imgInstagram from "../Assets/Images/icons/instagram_circle.png";
+import imgEmailBig from "../Assets/Images/icons/email_circle_b.png";
+import imgPhoneBig from "../Assets/Images/icons/phone_circle_b.png";
+import imgAddressBig from "../Assets/Images/icons/address_circle_b.png";
 
 export const dataGetStartedPrice = [
   {
@@ -218,3 +221,23 @@ export const dataEmailType = [
     label: "Other",
   },
 ];
+
+export const dataContact = [
+  {
+    type:"phone",
+    contact:"+1 (234) 567-89-00",
+    icon:imgPhoneBig,
+  },
+  {
+    type:"email",
+    contact:"info@agency.com",
+    icon:imgEmailBig,
+  },
+  {
+    type:"address",
+    contact:"2247 Lunetta Street, TX 76301",
+    icon:imgAddressBig,
+  },
+
+];
+

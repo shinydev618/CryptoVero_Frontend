@@ -52,10 +52,10 @@ const Header = () => {
               </ButtonRight01>
             </Box>
           </ButtonSwitchLanguage01>
+          <ButtonMenu01 onClick={() => handleMenuOpen()}>
+            <MenuRoundedIcon />
+          </ButtonMenu01>
         </PartLink01>
-        <ButtonMenu01 onClick={() => handleMenuOpen()}>
-          <MenuRoundedIcon />
-        </ButtonMenu01>
       </PartMax01>
       <Modal
         open={menuOpen}
@@ -164,22 +164,21 @@ const PartMark01 = styled(Box)`
     width: 165px;
     height: 25px;
   }
+  @media (max-width: 400px) {
+    width: 130px;
+    height: 20px;
+  }
 `;
 
 const PartLink01 = styled(Box)`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-
-  gap: 30px;
-
-  transition: 0.5s;
-  @media (max-width: 1024px) {
-    display: none;
-  }
 `;
 
 const LinkEach01 = styled(Box)`
+  margin-left: 20px;
+  margin-right: 20px;
   font-family: "Outfit";
   font-style: normal;
   font-weight: 400;
@@ -195,6 +194,14 @@ const LinkEach01 = styled(Box)`
     color: #005e95;
     text-shadow: 0px 0px 1px black;
   }
+
+  @media (max-width: 1250px) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  @media (max-width: 1024px) {
+    display: none;
+  }
 `;
 
 const ButtonSwitchLanguage01 = styled(Box)`
@@ -207,6 +214,25 @@ const ButtonSwitchLanguage01 = styled(Box)`
   padding: 3px;
   box-sizing: border-box;
   align-items: center;
+
+  margin-left: 20px;
+  transition: 0.5s;
+  @media (max-width: 1250px) {
+    margin-left: 10px;
+  }
+  @media (max-width: 1024px) {
+    margin-left: 0px;
+    margin-right: 30px;
+    width: 100px;
+    height: 30px;
+  }
+  @media (max-width: 500px) {
+    box-shadow: 0px 5px 20px rgba(69, 62, 194, 0.25);
+    margin-right: 10px;
+  }
+  @media (max-width: 400px) {
+    width: 80px;
+  }
 `;
 
 const ButtonLeft01 = styled(Box)`
@@ -231,12 +257,22 @@ const ButtonLeft01 = styled(Box)`
   cursor: pointer;
 
   transition: 0.3s;
+
+  @media (max-width: 1024px) {
+    font-size: 14px;
+    width: 50px;
+  }
+  @media (max-width: 400px) {
+    font-size: 12px;
+    width: 40px;
+  }
 `;
 
 const ButtonRight01 = styled(Box)`
   display: flex;
   flex: 1;
   width: 100%;
+  height: 100%;
   justify-content: center;
   align-items: center;
   font-family: "Outfit";
@@ -253,8 +289,15 @@ const ButtonRight01 = styled(Box)`
   background: ${({ flag }) => (!flag ? "white" : "#005e95")};
   border-radius: 10000px;
   cursor: pointer;
-
   transition: 0.3s;
+  @media (max-width: 1024px) {
+    font-size: 14px;
+    width: 50px;
+  }
+  @media (max-width: 400px) {
+    font-size: 12px;
+    width: 40px;
+  }
 `;
 
 const ButtonMenu01 = styled(Box)`
@@ -298,7 +341,7 @@ const ModalMenuBox01 = styled(Box)`
 
   @media (max-width: 500px) {
     width: 300px;
-    padding: 150px 30px;
+    padding: 100px 30px;
   }
 `;
 
@@ -312,6 +355,14 @@ const ButtonClose01 = styled(Box)`
   > svg {
     font-size: 2.5rem;
     font-weight: 700;
+  }
+
+  transition: 0.5s;
+  @media (max-width: 400px) {
+    > svg {
+      font-size: 2rem;
+      font-weight: 700;
+    }
   }
 `;
 const Link01 = styled(Box)`
@@ -327,6 +378,11 @@ const Link01 = styled(Box)`
 
   color: #0d1942;
   cursor: pointer;
+
+  transition: 0.5s;
+  @media (max-width: 400px) {
+    font-size: 20px;
+  }
 `;
 
 // export const customBackdrop = styled(Box)`

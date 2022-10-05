@@ -133,6 +133,7 @@ const ImageLogoBack01 = styled(Box)`
 `;
 
 const TextTitle01 = styled(Box)`
+  margin-top: 30px;
   font-family: "Outfit";
   font-style: normal;
   font-weight: 600;

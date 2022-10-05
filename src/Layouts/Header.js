@@ -34,8 +34,22 @@ const Header = () => {
           >
             Contact Us
           </LinkEach01>
-          <LinkEach01>Sign Up</LinkEach01>
-          <LinkEach01>Log In</LinkEach01>
+          <LinkEach01
+            onClick={() => {
+              navigate("/SignUp");
+              window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+            }}
+          >
+            Sign Up
+          </LinkEach01>
+          <LinkEach01
+            onClick={() => {
+              navigate("/LogIn");
+              window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+            }}
+          >
+            Log In
+          </LinkEach01>
           <ButtonSwitchLanguage01>
             <Box display={"flex"} width="100%" height="100%">
               <ButtonLeft01
@@ -92,6 +106,7 @@ const Header = () => {
           </Link01>
           <Link01
             onClick={() => {
+              navigate("/SignUp");
               handleMenuClose();
             }}
             borderBottom={"1px solid rgba(13, 25, 66, 0.2)"}
@@ -100,6 +115,7 @@ const Header = () => {
           </Link01>
           <Link01
             onClick={() => {
+              navigate("/LogIn");
               handleMenuClose();
             }}
           >
@@ -117,6 +133,7 @@ const Header = () => {
 const StyledComponent = styled(Box)`
   display: flex;
   position: fixed;
+  top: 0px;
   width: 100%;
   min-height: 100px;
   justify-content: center;

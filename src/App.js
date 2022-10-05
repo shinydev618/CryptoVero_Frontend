@@ -1,22 +1,20 @@
 import React from "react";
 import { Box } from "@mui/material";
 import styled from "styled-components";
-import Header from "./Layouts/Header";
-import Footer from "./Layouts/Footer";
 import Landing from "./Pages/Landing";
 import ContactUs from "./Pages/ContactUs";
+import LogIn from "./Pages/Auth/LogIn";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
     <StyledComponent>
       <BrowserRouter>
-        <Header />
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/ContactUs" element={<ContactUs />} />
+          <Route path="/LogIn" element={<LogIn />} />
         </Routes>
-        <Footer />
       </BrowserRouter>
     </StyledComponent>
   );

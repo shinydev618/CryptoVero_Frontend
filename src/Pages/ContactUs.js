@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Box } from "@mui/material";
 import styled from "styled-components";
+import Header from "../Layouts/Header";
+import Footer from "../Layouts/Footer";
 import imgMap01 from "../Assets/Images/background/map01.png";
 import { TextField } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
@@ -14,6 +16,7 @@ const ContactUs = () => {
 
   return (
     <StyledComponent>
+      <Header />
       <PartMaxHead01>
         <PartHeader01>
           <TextTitleHeader01>Contact</TextTitleHeader01>
@@ -143,6 +146,7 @@ const ContactUs = () => {
           </PartListFAQ01>
         </PartFAQ01>
       </PartDownMax01>
+      <Footer />
     </StyledComponent>
   );
 };

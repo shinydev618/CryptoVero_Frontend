@@ -1,6 +1,8 @@
 import React from "react";
 import { Box } from "@mui/material";
 import styled from "styled-components";
+import Header from "../Layouts/Header";
+import Footer from "../Layouts/Footer";
 import CustomMainButton from "../Components/CustomMainButton";
 import CustomGetStartedPriceBox from "../Components/CustomGetStartedPriceBox";
 // import CustomEachTestimonials from "../Components/CustomEachTestimonials";
@@ -18,10 +20,10 @@ import imgBackRound01 from "../Assets/Images/background/round01.png";
 import { dataGetStartedPrice } from "../Config/data";
 import Marquee from "react-fast-marquee";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
-import KeyboardArrowLeftRoundedIcon from '@mui/icons-material/KeyboardArrowLeftRounded';
-import KeyboardArrowRightRoundedIcon from '@mui/icons-material/KeyboardArrowRightRounded';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import KeyboardArrowLeftRoundedIcon from "@mui/icons-material/KeyboardArrowLeftRounded";
+import KeyboardArrowRightRoundedIcon from "@mui/icons-material/KeyboardArrowRightRounded";
 
 const Landing = () => {
   function SampleNextArrow(props) {
@@ -53,17 +55,18 @@ const Landing = () => {
           slidesToShow: 1,
           speed: 500,
           slidesToScroll: 1,
-          centerPadding: '20px',
+          centerPadding: "20px",
           centerMode: true,
           variableWidth: false,
-        }
+        },
       },
     ],
     nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
+    prevArrow: <SamplePrevArrow />,
   };
   return (
     <StyledComponent>
+      <Header />
       <PartMax01>
         <PartTop01>
           <PartTopLeft01>
@@ -163,7 +166,9 @@ const Landing = () => {
           <PartPrice02>
             <Slider {...settings}>
               {dataGetStartedPrice.map((each, index) => {
-                return <CustomGetStartedPriceSliderBox data={each} key={index} />;
+                return (
+                  <CustomGetStartedPriceSliderBox data={each} key={index} />
+                );
               })}
             </Slider>
           </PartPrice02>
@@ -248,6 +253,7 @@ const Landing = () => {
           </PartGroupRight01>
         </PartMaxTaxQuestions01>
       </PartTaxQuestion01>
+      <Footer />
       <PartBackCircle01></PartBackCircle01>
       <PartBackCircle02></PartBackCircle02>
       <PartBackCircle03></PartBackCircle03>
@@ -572,7 +578,6 @@ const PartPrice02 = styled(Box)`
   }
 `;
 
-
 const PartGenerate01 = styled(Box)`
   display: flex;
   width: 100%;
@@ -668,7 +673,7 @@ const PartGenerateImage01 = styled(Box)`
   box-shadow: -27px 40px 122px rgba(0, 94, 149, 0.2);
   border-radius: 8px;
   transition: 0.5s;
-  @media(max-width: 1400px) {
+  @media (max-width: 1400px) {
     margin-left: 0px;
   }
   @media (max-width: 1024px) {
@@ -761,7 +766,6 @@ const PartBackCircle02 = styled(Box)`
   right: -400px;
   top: -405px;
 
-  
   transition: 0.5;
   @media (max-width: 500px) {
     display: none;
@@ -779,7 +783,6 @@ const PartBackCircle03 = styled(Box)`
   right: -400px;
   top: 800px;
 
-  
   transition: 0.5;
   @media (max-width: 500px) {
     display: none;
@@ -874,7 +877,7 @@ const PartMaxTaxQuestions01 = styled(Box)`
 
 const SliderArrowRightBox = styled(Box)`
   display: flex;
-  position:absolute;
+  position: absolute;
   right: 5px;
   top: 50%;
   transform: translateY(-50%);
@@ -883,23 +886,23 @@ const SliderArrowRightBox = styled(Box)`
   justify-content: center;
   align-items: center;
   background-color: white;
-  color: #005E95;
+  color: #005e95;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   border-radius: 100%;
   z-index: 200;
   cursor: pointer;
-  >svg{
+  > svg {
     font-size: 1.8rem;
   }
-&:active{
-  >svg{
-    font-size: 1.5rem;
+  &:active {
+    > svg {
+      font-size: 1.5rem;
+    }
   }
-}
-`
+`;
 const SliderArrowLeftBox = styled(Box)`
   display: flex;
-  position:absolute;
+  position: absolute;
   left: 5px;
   top: 50%;
   transform: translateY(-50%);
@@ -908,18 +911,18 @@ const SliderArrowLeftBox = styled(Box)`
   justify-content: center;
   align-items: center;
   background-color: white;
-  color: #005E95;
+  color: #005e95;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   border-radius: 100%;
   z-index: 200;
   cursor: pointer;
-  >svg{
+  > svg {
     font-size: 1.8rem;
   }
-&:active{
-  >svg{
-    font-size: 1.5rem;
+  &:active {
+    > svg {
+      font-size: 1.5rem;
+    }
   }
-}
-`
+`;
 export default Landing;

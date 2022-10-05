@@ -743,6 +743,11 @@ const PartBackCircle01 = styled(Box)`
   filter: blur(200px);
   left: -406px;
   top: -405px;
+
+  transition: 0.5;
+  @media (max-width: 500px) {
+    display: none;
+  }
 `;
 
 const PartBackCircle02 = styled(Box)`
@@ -755,6 +760,12 @@ const PartBackCircle02 = styled(Box)`
   filter: blur(200px);
   right: -400px;
   top: -405px;
+
+  
+  transition: 0.5;
+  @media (max-width: 500px) {
+    display: none;
+  }
 `;
 
 const PartBackCircle03 = styled(Box)`
@@ -767,6 +778,12 @@ const PartBackCircle03 = styled(Box)`
   filter: blur(200px);
   right: -400px;
   top: 800px;
+
+  
+  transition: 0.5;
+  @media (max-width: 500px) {
+    display: none;
+  }
 `;
 
 const TextCurveline01 = styled(Box)`

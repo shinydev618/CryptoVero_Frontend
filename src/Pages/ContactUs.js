@@ -4,9 +4,10 @@ import styled from "styled-components";
 import imgMap01 from "../Assets/Images/background/map01.png";
 import { TextField } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
-import { dataEmailType, dataContact } from "../Config/data";
+import { dataEmailType, dataContact, dataFAQ } from "../Config/data";
 import CustomMainButton from "../Components/CustomMainButton";
 import CustomContact from "../Components/CustomContact";
+import CustomFAQBox from "../Components/CustomFAQBox";
 
 const ContactUs = () => {
   const [emailType, setEmailType] = useState("Subject");
@@ -121,12 +122,26 @@ const ContactUs = () => {
       </PartMap01>
       <PartDownMax01>
         <PartContact01>
-          {dataContact.map((each, index)=>{
-            return(
-              <CustomContact data={each} key={index} />
-            )
+          {dataContact.map((each, index) => {
+            return <CustomContact data={each} key={index} />;
           })}
         </PartContact01>
+        <PartFAQ01>
+          <PartTextFAQ01>
+            <TextFAQTitle01>FAQ</TextFAQTitle01>
+            <TextFAQName01>Frequently Asked Questions</TextFAQName01>
+            <TextDescription01>
+              Justo, nisl praesent mauris integer lorem eu, duis. Dolor arcu
+              quis diam consectetur etiam fusce non sollicitudin. Feugiat enim
+              augue.
+            </TextDescription01>
+          </PartTextFAQ01>
+          <PartListFAQ01>
+            {dataFAQ.map((each, index) => {
+              return <CustomFAQBox key={index} data={each} />;
+            })}
+          </PartListFAQ01>
+        </PartFAQ01>
       </PartDownMax01>
     </StyledComponent>
   );
@@ -355,14 +370,13 @@ const ButtonSubmitNow01 = styled(Box)`
 
 const PartDownMax01 = styled(Box)`
   display: flex;
-  position: relative;
+  flex-direction: column;
   max-width: 1920px;
   width: 100%;
   padding: 0px 250px;
   box-sizing: border-box;
   margin-top: 150px;
-  justify-content: center;
-
+  margin-bottom: 150px;
 
   transition: 0.5s;
   @media (max-width: 1600px) {
@@ -373,6 +387,8 @@ const PartDownMax01 = styled(Box)`
   }
   @media (max-width: 1024px) {
     padding: 0px 50px;
+    flex-direction: column;
+    margin-top: 600px;
   }
   @media (max-width: 500px) {
     padding: 0px 30px;
@@ -382,5 +398,103 @@ const PartDownMax01 = styled(Box)`
 const PartContact01 = styled(Box)`
   display: flex;
   width: 100%;
+
+  transition: 0.5s;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
+`;
+
+const PartFAQ01 = styled(Box)`
+  display: flex;
+  width: 100%;
+  margin-top: 150px;
+
+  transition: 0.5s;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
+`;
+
+const PartTextFAQ01 = styled(Box)`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  margin-right: 50px;
+  transition: 0.5s;
+  @media (max-width: 1024px) {
+    margin-right: none;
+  }
+`;
+
+const PartListFAQ01 = styled(Box)`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  transition: 0.5s;
+  @media (max-width: 1024px) {
+    margin-top: 30px;
+  }
+`;
+
+const TextFAQTitle01 = styled(Box)`
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21.3333px;
+  line-height: 43px;
+  /* identical to box height, or 200% */
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #005e95;
+
+  transition: 0.5s;
+  @media (max-width: 1024px) {
+    font-size: 18px;
+  }
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+`;
+
+const TextFAQName01 = styled(Box)`
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 136%;
+  /* or 54px */
+  text-transform: capitalize;
+  color: #0d1942;
+  margin-top: 20px;
+  transition: 0.5s;
+  @media (max-width: 1024px) {
+    font-size: 35px;
+  }
+  @media (max-width: 500px) {
+    font-size: 32px;
+  }
+`;
+
+const TextDescription01 = styled(Box)`
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 43px;
+  /* or 215% */
+  color: #716f96;
+  margin-top: 50px;
+  transition: 0.5s;
+  @media (max-width: 1024px) {
+    font-size: 18px;
+    margin-top: 30px;
+  }
+  @media (max-width: 500px) {
+    font-size: 16px;
+    margin-top: 20px;
+  }
 `;
 export default ContactUs;

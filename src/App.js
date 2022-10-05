@@ -28,7 +28,7 @@ const StyledComponent = styled(Box)`
   height: 100%;
   overflow-x: hidden;
   flex-direction: column;
-  background-color: white;
+  background-color: #faf9ff;
 `;
 
 export default App;

@@ -224,20 +224,41 @@ export const dataEmailType = [
 
 export const dataContact = [
   {
-    type:"phone",
-    contact:"+1 (234) 567-89-00",
-    icon:imgPhoneBig,
+    type: "phone",
+    contact: "+1 (234) 567-89-00",
+    icon: imgPhoneBig,
   },
   {
-    type:"email",
-    contact:"info@agency.com",
-    icon:imgEmailBig,
+    type: "email",
+    contact: "info@agency.com",
+    icon: imgEmailBig,
   },
   {
-    type:"address",
-    contact:"2247 Lunetta Street, TX 76301",
-    icon:imgAddressBig,
+    type: "address",
+    contact: "2247 Lunetta Street, TX 76301",
+    icon: imgAddressBig,
   },
-
 ];
 
+export const dataFAQ = [
+  {
+    title: "Mattis et magna elementum nunc.",
+    description:
+      "Facilisis sed sed laoreet morbi semper nec. Condimentum ultricies condimentum pellentesque velit nibh leo nunc. Pellentesque urna, fermentum tincidunt volutpat gravida mattis iaculis a, placerat. Iaculis malesuada et eu ultrices vitae amet. Integer ultrices quis sodales.",
+  },
+  {
+    title: "Adipiscing dui ut nisi rhoncus.",
+    description:
+      "Facilisis sed sed laoreet morbi semper nec. Condimentum ultricies condimentum pellentesque velit nibh leo nunc. Pellentesque urna, fermentum tincidunt volutpat gravida mattis iaculis a, placerat. Iaculis malesuada et eu ultrices vitae amet. Integer ultrices quis sodales.",
+  },
+  {
+    title: "Donec faucibus ac erat.",
+    description:
+      "Facilisis sed sed laoreet morbi semper nec. Condimentum ultricies condimentum pellentesque velit nibh leo nunc. Pellentesque urna, fermentum tincidunt volutpat gravida mattis iaculis a, placerat. Iaculis malesuada et eu ultrices vitae amet. Integer ultrices quis sodales.",
+  },
+  {
+    title: "Erat mattis morbi aenean nisl.",
+    description:
+      "Facilisis sed sed laoreet morbi semper nec. Condimentum ultricies condimentum pellentesque velit nibh leo nunc. Pellentesque urna, fermentum tincidunt volutpat gravida mattis iaculis a, placerat. Iaculis malesuada et eu ultrices vitae amet. Integer ultrices quis sodales.",
+  },
+];

@@ -36,6 +36,12 @@ const StyledComponent = styled(Box)`
   @media (max-width: 1200px) {
     padding: 20px 40px;
   }
+  @media (max-width: 1204px) {
+    padding: 35px 30px;
+  }
+  @media (max-width: 500px) {
+    padding: 20px 20px;
+  }
 `;
 
 const PartUp01 = styled(Box)`
@@ -55,6 +61,14 @@ const PartIcon01 = styled(Box)`
     width: 70px;
     height: 70px;
   }
+  @media (max-width: 1024px) {
+    width: 60px;
+    height: 60px;
+  }
+  @media (max-width: 500px) {
+    width: 50px;
+    height: 50px;
+  }
 `;
 
 const PartName01 = styled(Box)`
@@ -69,6 +83,13 @@ const PartName01 = styled(Box)`
   text-transform: uppercase;
 
   color: #005e95;
+  transition: 0.5s;
+  @media (max-width: 1024px) {
+    font-size: 18px;
+  }
+  @media (max-width: 500px) {
+    font-size: 16px;
+  }
 `;
 
 const PartDown01 = styled(Box)`
@@ -82,8 +103,20 @@ const PartDown01 = styled(Box)`
   font-size: 26.6667px;
   line-height: 43px;
   /* identical to box height, or 160% */
+  
 
   color: #0d1942;
+
+  transition: 0.5s;
+  @media (max-width: 1024px) {
+    height: none;
+    align-items: center;
+    font-size: 23px;
+  }
+  @media (max-width: 500px) {
+    margin-top: 10px;
+    font-size: 20px;
+  }
 `;
 
 export default CustomContact;

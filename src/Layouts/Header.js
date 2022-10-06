@@ -12,6 +12,7 @@ const Header = () => {
   const handleMenuOpen = () => setMenuOpen(true);
   const [menuOpen, setMenuOpen] = useState(false);
   const [flagLanguage, setFlagLanguage] = useState(true);
+
   return (
     <StyledComponent>
       <PartMax01>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box } from "@mui/material";
 import styled from "styled-components";
 import imgLogoBack01 from "../../Assets/Images/background/login_human01.png";
@@ -10,83 +10,236 @@ import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { useNavigate } from "react-router-dom";
+import Header from "../../Layouts/Header";
 
 const LogIn = () => {
   const navigate = useNavigate();
+
+  const detectViewport = () => {
+    return window.innerWidth >= 1024 ? "desktop" : "mobile";
+  };
+  const [viewport, setViewport] = useState(detectViewport());
+  const changeViewport = () => {
+    setViewport(detectViewport());
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", changeViewport);
+    return () => {
+      window.removeEventListener("resize", changeViewport);
+    };
+  }, []);
   return (
     <StyledComponent>
-      <PartMax01>
-        <PartImage01>
-          <ImageLogoBack01>
-            <img src={imgLogoBack01} width={"100%"} height={"100%"} alt="" />
-          </ImageLogoBack01>
-          <TextTitle01>Hey there, Welcome aboard</TextTitle01>
-          <TextDescription01>
-            just a couple of clicks and we start
-          </TextDescription01>
-          <ButtonBack01
-            onClick={() => {
-              navigate("/");
-              window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-            }}
-          >
-            <CustomMainButton
-              width={"100%"}
-              height={"100%"}
-              text={"Back"}
-              backColor={""}
-              color={"white"}
-              border={"2px solid white"}
-              borderRadius={"100px"}
-              boxShadow={"0px 0px 0px white"}
-            />
-          </ButtonBack01>
-        </PartImage01>
+      {viewport === "desktop" ? (
+        <PartMax01>
+          <PartImage01>
+            <ImageLogoBack01>
+              <img src={imgLogoBack01} width={"100%"} height={"100%"} alt="" />
+            </ImageLogoBack01>
+            <TextTitle01>Hey there, Welcome aboard</TextTitle01>
+            <TextDescription01>
+              just a couple of clicks and we start
+            </TextDescription01>
+            <ButtonBack01
+              onClick={() => {
+                navigate("/");
+                window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+              }}
+            >
+              <CustomMainButton
+                width={"100%"}
+                height={"100%"}
+                text={"Back"}
+                backColor={""}
+                color={"white"}
+                border={"2px solid white"}
+                borderRadius={"100px"}
+                boxShadow={"0px 0px 0px white"}
+              />
+            </ButtonBack01>
+          </PartImage01>
 
-        <PartLogin01>
-          <PartContent01>
-            <TextLogin01>Sign Up To Get Started</TextLogin01>
-            <InputBox01>
-              <CustomInputBox
-                width={"100%"}
-                height={"100%"}
-                text={"Name"}
-                icon={<PersonOutlineOutlinedIcon />}
-                type={"text"}
-              />
-            </InputBox01>
-            <InputBox01>
-              <CustomInputBox
-                width={"100%"}
-                height={"100%"}
-                text={"Email"}
-                icon={<EmailOutlinedIcon />}
-                type={"text"}
-              />
-            </InputBox01>
+          <PartLogin01>
+            <PartContent01>
+              <TextLogin01>Sign Up To Get Started</TextLogin01>
+              <InputBox01>
+                <CustomInputBox
+                  width={"100%"}
+                  height={"100%"}
+                  text={"Name"}
+                  icon={<PersonOutlineOutlinedIcon />}
+                  type={"text"}
+                />
+              </InputBox01>
+              <InputBox01>
+                <CustomInputBox
+                  width={"100%"}
+                  height={"100%"}
+                  text={"Email"}
+                  icon={<EmailOutlinedIcon />}
+                  type={"text"}
+                />
+              </InputBox01>
 
-            <InputBox01>
-              <CustomInputBox
-                width={"100%"}
-                height={"100%"}
-                text={"Password"}
-                icon={<LockOutlinedIcon />}
-                type={"password"}
-              />
-            </InputBox01>
-            <InputBox01>
-              <CustomInputBox
-                width={"100%"}
-                height={"100%"}
-                text={"Confirm Password"}
-                icon={<LockOutlinedIcon />}
-                type={"password"}
-              />
-            </InputBox01>
-         
-          </PartContent01>
-        </PartLogin01>
-      </PartMax01>
+              <InputBox01>
+                <CustomInputBox
+                  width={"100%"}
+                  height={"100%"}
+                  text={"Password"}
+                  icon={<LockOutlinedIcon />}
+                  type={"password"}
+                />
+              </InputBox01>
+              <InputBox01>
+                <CustomInputBox
+                  width={"100%"}
+                  height={"100%"}
+                  text={"Confirm Password"}
+                  icon={<LockOutlinedIcon />}
+                  type={"password"}
+                />
+              </InputBox01>
+              <TextAlert01>Type your email.</TextAlert01>
+              <ButtonLogin01>
+                <CustomMainButton
+                  width={"100%"}
+                  height={"100%"}
+                  text={"Sign Up"}
+                  backColor={"#005E95"}
+                  color={"white"}
+                  borderRadius={"100px"}
+                  boxShadow={"0px 22px 55px rgba(0, 94, 149, 0.46)"}
+                />
+              </ButtonLogin01>
+              <PartBorder01>
+                <PartLine01></PartLine01>
+                <TextOr01>Or</TextOr01>
+                <PartLine01></PartLine01>
+              </PartBorder01>
+              <PartOtherSign01>
+                <EachSign01 mr={"20px"}>
+                  <IconEachSign01>
+                    <img
+                      src={imgGoogle01}
+                      width={"100%"}
+                      height={"100%"}
+                      alt={""}
+                    />
+                  </IconEachSign01>
+                  <TextEachSign01>Google</TextEachSign01>
+                </EachSign01>
+                <EachSign01>
+                  <IconEachSign01>
+                    <img
+                      src={imgFacebook01}
+                      width={"100%"}
+                      height={"100%"}
+                      alt={""}
+                    />
+                  </IconEachSign01>
+                  <TextEachSign01>Facebook</TextEachSign01>
+                </EachSign01>
+              </PartOtherSign01>
+              <PartAccountSign01>
+                <TextLeft01>Already have an account?</TextLeft01>
+                <TextRight01>Log In</TextRight01>
+              </PartAccountSign01>
+            </PartContent01>
+          </PartLogin01>
+        </PartMax01>
+      ) : (
+        <PartMobileSignUp>
+          <Header />
+          <PartLogin01>
+            <PartContent01>
+              <TextLogin01>Sign Up To Get Started</TextLogin01>
+              <InputBox01>
+                <CustomInputBox
+                  width={"100%"}
+                  height={"100%"}
+                  text={"Name"}
+                  icon={<PersonOutlineOutlinedIcon />}
+                  type={"text"}
+                />
+              </InputBox01>
+              <InputBox01>
+                <CustomInputBox
+                  width={"100%"}
+                  height={"100%"}
+                  text={"Email"}
+                  icon={<EmailOutlinedIcon />}
+                  type={"text"}
+                />
+              </InputBox01>
+
+              <InputBox01>
+                <CustomInputBox
+                  width={"100%"}
+                  height={"100%"}
+                  text={"Password"}
+                  icon={<LockOutlinedIcon />}
+                  type={"password"}
+                />
+              </InputBox01>
+              <InputBox01>
+                <CustomInputBox
+                  width={"100%"}
+                  height={"100%"}
+                  text={"Confirm Password"}
+                  icon={<LockOutlinedIcon />}
+                  type={"password"}
+                />
+              </InputBox01>
+              <TextAlert01>Type your email.</TextAlert01>
+              <ButtonLogin01>
+                <CustomMainButton
+                  width={"100%"}
+                  height={"100%"}
+                  text={"Sign Up"}
+                  backColor={"#005E95"}
+                  color={"white"}
+                  borderRadius={"100px"}
+                  boxShadow={"0px 22px 55px rgba(0, 94, 149, 0.46)"}
+                />
+              </ButtonLogin01>
+              <PartBorder01>
+                <PartLine01></PartLine01>
+                <TextOr01>Or</TextOr01>
+                <PartLine01></PartLine01>
+              </PartBorder01>
+              <PartOtherSign01>
+                <EachSign01 mr={"20px"}>
+                  <IconEachSign01>
+                    <img
+                      src={imgGoogle01}
+                      width={"100%"}
+                      height={"100%"}
+                      alt={""}
+                    />
+                  </IconEachSign01>
+                  <TextEachSign01>Google</TextEachSign01>
+                </EachSign01>
+                <EachSign01>
+                  <IconEachSign01>
+                    <img
+                      src={imgFacebook01}
+                      width={"100%"}
+                      height={"100%"}
+                      alt={""}
+                    />
+                  </IconEachSign01>
+                  <TextEachSign01>Facebook</TextEachSign01>
+                </EachSign01>
+              </PartOtherSign01>
+              <PartAccountSign01>
+                <TextLeft01>Already have an account?</TextLeft01>
+                <TextRight01>Log In</TextRight01>
+              </PartAccountSign01>
+            </PartContent01>
+          </PartLogin01>
+        </PartMobileSignUp>
+      )}
     </StyledComponent>
   );
 };
@@ -96,6 +249,11 @@ const StyledComponent = styled(Box)`
   width: 100%;
   height: 100vh;
   justify-content: center;
+
+  /* transition: 0.5s;
+  @media (max-height: 900px) {
+    height: 100%;
+  } */
 `;
 
 const PartMax01 = styled(Box)`
@@ -143,6 +301,18 @@ const PartContent01 = styled(Box)`
   transition: 0.5s;
   @media (max-width: 1400px) {
     width: 400px;
+  }
+  @media (max-width: 1024px) {
+    width: 600px;
+  }
+  @media (max-width: 700px) {
+    width: 400px;
+  }
+  @media (max-width: 500px) {
+    width: 320px;
+  }
+  @media (max-width: 350px) {
+    width: 300px;
   }
 `;
 
@@ -208,6 +378,14 @@ const TextLogin01 = styled(Box)`
   text-transform: capitalize;
   margin-bottom: 30px;
   color: #0d1942;
+
+  transition: 0.5s;
+  @media (max-width: 1024px) {
+    font-size: 28px;
+  }
+  @media (max-width: 500px) {
+    font-size: 24px;
+  }
 `;
 
 const InputBox01 = styled(Box)`
@@ -219,6 +397,15 @@ const InputBox01 = styled(Box)`
   transition: 0.5s;
   @media (max-width: 1400px) {
     height: 60px;
+  }
+  @media (max-width: 1024px) {
+    height: 70px;
+  }
+  @media (max-width: 700px) {
+    height: 60px;
+  }
+  @media (max-width: 500px) {
+    height: 50px;
   }
 `;
 
@@ -242,6 +429,10 @@ const TextAlert01 = styled(Box)`
   @media (max-width: 1400px) {
     font-size: 16px;
   }
+  transition: 0.5s;
+  @media (max-width: 500px) {
+    font-size: 14px;
+  }
 `;
 
 const ButtonLogin01 = styled(Box)`
@@ -253,6 +444,15 @@ const ButtonLogin01 = styled(Box)`
   transition: 0.5s;
   @media (max-width: 1400px) {
     height: 60px;
+  }
+  @media (max-width: 1024px) {
+    height: 70px;
+  }
+  @media (max-width: 700px) {
+    height: 60px;
+  }
+  @media (max-width: 500px) {
+    height: 50px;
   }
 `;
 
@@ -310,6 +510,16 @@ const EachSign01 = styled(Box)`
     box-shadow: 0px 0px 5px black;
     text-shadow: 0px 0px 0px #005e95;
   }
+  transition: 0.5s;
+  @media (max-width: 1024px) {
+    height: 70px;
+  }
+  @media (max-width: 700px) {
+    height: 60px;
+  }
+  @media (max-width: 500px) {
+    height: 50px;
+  }
 `;
 
 const IconEachSign01 = styled(Box)`
@@ -317,6 +527,17 @@ const IconEachSign01 = styled(Box)`
   width: 30px;
   height: 30px;
   margin-right: 20px;
+  transition: 0.5s;
+  @media (max-width: 1024px) {
+  }
+  @media (max-width: 700px) {
+    width: 25px;
+    height: 25px;
+  }
+  @media (max-width: 500px) {
+    width: 20px;
+    height: 20px;
+  }
 `;
 
 const TextEachSign01 = styled(Box)`
@@ -332,6 +553,17 @@ const TextEachSign01 = styled(Box)`
   text-align: center;
 
   color: #005e95;
+
+  transition: .5s;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+  @media (max-width: 700px) {
+    font-size: 18px;
+  }
+  @media (max-width: 500px) {
+    font-size: 16px;
+  }
 `;
 
 const PartAccountSign01 = styled(Box)`
@@ -344,6 +576,17 @@ const PartAccountSign01 = styled(Box)`
   font-weight: 400;
   font-size: 18px;
   line-height: 23px;
+
+  transition: .5s;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+  @media (max-width: 700px) {
+    font-size: 18px;
+  }
+  @media (max-width: 500px) {
+    font-size: 16px;
+  }
 `;
 
 const TextLeft01 = styled(Box)`
@@ -361,5 +604,12 @@ const TextRight01 = styled(Box)`
   &:active {
     text-shadow: 0px 0px 0px;
   }
+`;
+
+const PartMobileSignUp = styled(Box)`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* height: 100%; */
 `;
 export default LogIn;

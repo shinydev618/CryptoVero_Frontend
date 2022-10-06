@@ -6,10 +6,11 @@ import CustomInputBox from "../../Components/CustomInputBox";
 import CustomMainButton from "../../Components/CustomMainButton";
 import imgGoogle01 from "../../Assets/Images/icons/google01.png";
 import imgFacebook01 from "../../Assets/Images/icons/facebook01.png";
+import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 
-const SignUp = () => {
+const LogIn = () => {
   return (
     <StyledComponent>
       <PartMax01>
@@ -25,8 +26,17 @@ const SignUp = () => {
 
         <PartLogin01>
           <PartContent01>
-            <TextLogin01>Log In to Continue</TextLogin01>
-            <InputEmail01>
+            <TextLogin01>Sign Up To Get Started</TextLogin01>
+            <InputBox01>
+              <CustomInputBox
+                width={"100%"}
+                height={"100%"}
+                text={"Name"}
+                icon={<PersonOutlineOutlinedIcon />}
+                type={"text"}
+              />
+            </InputBox01>
+            <InputBox01>
               <CustomInputBox
                 width={"100%"}
                 height={"100%"}
@@ -34,8 +44,9 @@ const SignUp = () => {
                 icon={<EmailOutlinedIcon />}
                 type={"text"}
               />
-            </InputEmail01>
-            <InputPassword01>
+            </InputBox01>
+
+            <InputBox01>
               <CustomInputBox
                 width={"100%"}
                 height={"100%"}
@@ -43,13 +54,22 @@ const SignUp = () => {
                 icon={<LockOutlinedIcon />}
                 type={"password"}
               />
-            </InputPassword01>
+            </InputBox01>
+            <InputBox01>
+              <CustomInputBox
+                width={"100%"}
+                height={"100%"}
+                text={"Confirm Password"}
+                icon={<LockOutlinedIcon />}
+                type={"password"}
+              />
+            </InputBox01>
             <TextAlert01>Type your email.</TextAlert01>
             <ButtonLogin01>
               <CustomMainButton
                 width={"100%"}
                 height={"100%"}
-                text={"Log In"}
+                text={"Sign Up"}
                 backColor={"#005E95"}
                 color={"white"}
                 borderRadius={"100px"}
@@ -86,8 +106,8 @@ const SignUp = () => {
               </EachSign01>
             </PartOtherSign01>
             <PartAccountSign01>
-              <TextLeft01>Don't have an account?</TextLeft01>
-              <TextRight01>Sign Up</TextRight01>
+              <TextLeft01>Already have an account?</TextLeft01>
+              <TextRight01>Log In</TextRight01>
             </PartAccountSign01>
           </PartContent01>
         </PartLogin01>
@@ -201,23 +221,11 @@ const TextLogin01 = styled(Box)`
 
   text-align: center;
   text-transform: capitalize;
-
+margin-bottom: 30px;
   color: #0d1942;
 `;
 
-const InputEmail01 = styled(Box)`
-  display: flex;
-  width: 100%;
-  height: 70px;
-  margin-top: 50px;
-
-  transition: 0.5s;
-  @media (max-width: 1400px) {
-    height: 60px;
-  }
-`;
-
-const InputPassword01 = styled(Box)`
+const InputBox01 = styled(Box)`
   display: flex;
   width: 100%;
   height: 70px;
@@ -369,4 +377,4 @@ const TextRight01 = styled(Box)`
     text-shadow: 0px 0px 0px;
   }
 `;
-export default SignUp;
+export default LogIn;

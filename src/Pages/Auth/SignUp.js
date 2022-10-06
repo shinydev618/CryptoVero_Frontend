@@ -83,51 +83,7 @@ const LogIn = () => {
                 type={"password"}
               />
             </InputBox01>
-            <TextAlert01>Type your email.</TextAlert01>
-            <ButtonLogin01>
-              <CustomMainButton
-                width={"100%"}
-                height={"100%"}
-                text={"Sign Up"}
-                backColor={"#005E95"}
-                color={"white"}
-                borderRadius={"100px"}
-                boxShadow={"0px 22px 55px rgba(0, 94, 149, 0.46)"}
-              />
-            </ButtonLogin01>
-            <PartBorder01>
-              <PartLine01></PartLine01>
-              <TextOr01>Or</TextOr01>
-              <PartLine01></PartLine01>
-            </PartBorder01>
-            <PartOtherSign01>
-              <EachSign01 mr={"20px"}>
-                <IconEachSign01>
-                  <img
-                    src={imgGoogle01}
-                    width={"100%"}
-                    height={"100%"}
-                    alt={""}
-                  />
-                </IconEachSign01>
-                <TextEachSign01>Google</TextEachSign01>
-              </EachSign01>
-              <EachSign01>
-                <IconEachSign01>
-                  <img
-                    src={imgFacebook01}
-                    width={"100%"}
-                    height={"100%"}
-                    alt={""}
-                  />
-                </IconEachSign01>
-                <TextEachSign01>Facebook</TextEachSign01>
-              </EachSign01>
-            </PartOtherSign01>
-            <PartAccountSign01>
-              <TextLeft01>Already have an account?</TextLeft01>
-              <TextRight01>Log In</TextRight01>
-            </PartAccountSign01>
+         
           </PartContent01>
         </PartLogin01>
       </PartMax01>

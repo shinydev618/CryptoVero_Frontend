@@ -8,8 +8,10 @@ import imgGoogle01 from "../../Assets/Images/icons/google01.png";
 import imgFacebook01 from "../../Assets/Images/icons/facebook01.png";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+  const navigate = useNavigate();
   return (
     <StyledComponent>
       <PartMax01>
@@ -21,6 +23,23 @@ const SignUp = () => {
           <TextDescription01>
             just a couple of clicks and we start
           </TextDescription01>
+          <ButtonBack01
+            onClick={() => {
+              navigate("/");
+              window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+            }}
+          >
+            <CustomMainButton
+              width={"100%"}
+              height={"100%"}
+              text={"Back"}
+              backColor={""}
+              color={"white"}
+              border={"2px solid white"}
+              borderRadius={"100px"}
+              boxShadow={"0px 0px 0px white"}
+            />
+          </ButtonBack01>
         </PartImage01>
 
         <PartLogin01>
@@ -121,6 +140,15 @@ const PartImage01 = styled(Box)`
   @media (max-width: 1400px) {
     flex: 1;
   }
+`;
+
+const ButtonBack01 = styled(Box)`
+  display: flex;
+  position: absolute;
+  left: 50px;
+  top: 50px;
+  height: 40px;
+  width: 90px;
 `;
 
 const PartLogin01 = styled(Box)`

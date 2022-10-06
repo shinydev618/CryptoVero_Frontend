@@ -151,93 +151,95 @@ const LogIn = () => {
       ) : (
         <PartMobileSignUp>
           <Header />
-          <PartLogin01>
-            <PartContent01>
-              <TextLogin01>Sign Up To Get Started</TextLogin01>
-              <InputBox01>
-                <CustomInputBox
-                  width={"100%"}
-                  height={"100%"}
-                  text={"Name"}
-                  icon={<PersonOutlineOutlinedIcon />}
-                  type={"text"}
-                />
-              </InputBox01>
-              <InputBox01>
-                <CustomInputBox
-                  width={"100%"}
-                  height={"100%"}
-                  text={"Email"}
-                  icon={<EmailOutlinedIcon />}
-                  type={"text"}
-                />
-              </InputBox01>
+          <MaxMobile01>
+            <PartLogin01>
+              <PartContent01>
+                <TextLogin01>Sign Up To Get Started</TextLogin01>
+                <InputBox01>
+                  <CustomInputBox
+                    width={"100%"}
+                    height={"100%"}
+                    text={"Name"}
+                    icon={<PersonOutlineOutlinedIcon />}
+                    type={"text"}
+                  />
+                </InputBox01>
+                <InputBox01>
+                  <CustomInputBox
+                    width={"100%"}
+                    height={"100%"}
+                    text={"Email"}
+                    icon={<EmailOutlinedIcon />}
+                    type={"text"}
+                  />
+                </InputBox01>
 
-              <InputBox01>
-                <CustomInputBox
-                  width={"100%"}
-                  height={"100%"}
-                  text={"Password"}
-                  icon={<LockOutlinedIcon />}
-                  type={"password"}
-                />
-              </InputBox01>
-              <InputBox01>
-                <CustomInputBox
-                  width={"100%"}
-                  height={"100%"}
-                  text={"Confirm Password"}
-                  icon={<LockOutlinedIcon />}
-                  type={"password"}
-                />
-              </InputBox01>
-              <TextAlert01>Type your email.</TextAlert01>
-              <ButtonLogin01>
-                <CustomMainButton
-                  width={"100%"}
-                  height={"100%"}
-                  text={"Sign Up"}
-                  backColor={"#005E95"}
-                  color={"white"}
-                  borderRadius={"100px"}
-                  boxShadow={"0px 22px 55px rgba(0, 94, 149, 0.46)"}
-                />
-              </ButtonLogin01>
-              <PartBorder01>
-                <PartLine01></PartLine01>
-                <TextOr01>Or</TextOr01>
-                <PartLine01></PartLine01>
-              </PartBorder01>
-              <PartOtherSign01>
-                <EachSign01 mr={"20px"}>
-                  <IconEachSign01>
-                    <img
-                      src={imgGoogle01}
-                      width={"100%"}
-                      height={"100%"}
-                      alt={""}
-                    />
-                  </IconEachSign01>
-                  <TextEachSign01>Google</TextEachSign01>
-                </EachSign01>
-                <EachSign01>
-                  <IconEachSign01>
-                    <img
-                      src={imgFacebook01}
-                      width={"100%"}
-                      height={"100%"}
-                      alt={""}
-                    />
-                  </IconEachSign01>
-                  <TextEachSign01>Facebook</TextEachSign01>
-                </EachSign01>
-              </PartOtherSign01>
-              <PartAccountSign01>
-                <TextLeft01>Already have an account?</TextLeft01>
-                <TextRight01>Log In</TextRight01>
-              </PartAccountSign01>
-            </PartContent01>
-          </PartLogin01>
+                <InputBox01>
+                  <CustomInputBox
+                    width={"100%"}
+                    height={"100%"}
+                    text={"Password"}
+                    icon={<LockOutlinedIcon />}
+                    type={"password"}
+                  />
+                </InputBox01>
+                <InputBox01>
+                  <CustomInputBox
+                    width={"100%"}
+                    height={"100%"}
+                    text={"Confirm Password"}
+                    icon={<LockOutlinedIcon />}
+                    type={"password"}
+                  />
+                </InputBox01>
+                <TextAlert01>Type your email.</TextAlert01>
+                <ButtonLogin01>
+                  <CustomMainButton
+                    width={"100%"}
+                    height={"100%"}
+                    text={"Sign Up"}
+                    backColor={"#005E95"}
+                    color={"white"}
+                    borderRadius={"100px"}
+                    boxShadow={"0px 22px 55px rgba(0, 94, 149, 0.46)"}
+                  />
+                </ButtonLogin01>
+                <PartBorder01>
+                  <PartLine01></PartLine01>
+                  <TextOr01>Or</TextOr01>
+                  <PartLine01></PartLine01>
+                </PartBorder01>
+                <PartOtherSign01>
+                  <EachSign01 mr={"20px"}>
+                    <IconEachSign01>
+                      <img
+                        src={imgGoogle01}
+                        width={"100%"}
+                        height={"100%"}
+                        alt={""}
+                      />
+                    </IconEachSign01>
+                    <TextEachSign01>Google</TextEachSign01>
+                  </EachSign01>
+                  <EachSign01>
+                    <IconEachSign01>
+                      <img
+                        src={imgFacebook01}
+                        width={"100%"}
+                        height={"100%"}
+                        alt={""}
+                      />
+                    </IconEachSign01>
+                    <TextEachSign01>Facebook</TextEachSign01>
+                  </EachSign01>
+                </PartOtherSign01>
+                <PartAccountSign01>
+                  <TextLeft01>Already have an account?</TextLeft01>
+                  <TextRight01>Log In</TextRight01>
+                </PartAccountSign01>
+              </PartContent01>
+            </PartLogin01>
+          </MaxMobile01>
         </PartMobileSignUp>
       )}
     </StyledComponent>
@@ -250,10 +252,10 @@ const StyledComponent = styled(Box)`
   height: 100vh;
   justify-content: center;
 
-  /* transition: 0.5s;
-  @media (max-height: 900px) {
+  transition: 0.5s;
+  @media (max-width: 1024px) {
     height: 100%;
-  } */
+  }
 `;
 
 const PartMax01 = styled(Box)`
@@ -286,12 +288,44 @@ const ButtonBack01 = styled(Box)`
   width: 90px;
 `;
 
+const MaxMobile01 = styled(Box)`
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 0px 50px;
+  box-sizing: border-box;
+  margin-top: 130px;
+  margin-bottom: 50px;
+
+  transition: 0.5s;
+  @media (max-height: 1024px) {
+    height: 100%;
+  }
+  @media (max-width: 500px) {
+    padding: 0px 20px;
+  }
+  @media (max-width: 350px) {
+    padding: 0px 10px;
+  }
+`;
+
 const PartLogin01 = styled(Box)`
   display: flex;
   flex: 1;
   justify-content: center;
   align-items: center;
   background-color: #faf9ff;
+
+  transition: 0.5s;
+  @media (max-width: 1024px) {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    box-shadow: 0px 0px 31px rgba(13, 25, 66, 0.13);
+    border-radius: 20px;
+    padding: 50px 0px;
+    box-sizing: border-box;
+  }
 `;
 
 const PartContent01 = styled(Box)`
@@ -299,20 +333,24 @@ const PartContent01 = styled(Box)`
   flex-direction: column;
   width: 450px;
   transition: 0.5s;
+
   @media (max-width: 1400px) {
     width: 400px;
   }
   @media (max-width: 1024px) {
     width: 600px;
   }
+  @media (max-width: 800px) {
+    width: 500px;
+  }
   @media (max-width: 700px) {
     width: 400px;
   }
-  @media (max-width: 500px) {
+  @media (max-width: 550px) {
     width: 320px;
   }
-  @media (max-width: 350px) {
-    width: 300px;
+  @media (max-width: 400px) {
+    width: 260px;
   }
 `;
 
@@ -554,7 +592,7 @@ const TextEachSign01 = styled(Box)`
 
   color: #005e95;
 
-  transition: .5s;
+  transition: 0.5s;
   @media (max-width: 1024px) {
     font-size: 20px;
   }
@@ -577,7 +615,7 @@ const PartAccountSign01 = styled(Box)`
   font-size: 18px;
   line-height: 23px;
 
-  transition: .5s;
+  transition: 0.5s;
   @media (max-width: 1024px) {
     font-size: 20px;
   }
@@ -610,6 +648,5 @@ const PartMobileSignUp = styled(Box)`
   display: flex;
   flex-direction: column;
   width: 100%;
-  /* height: 100%; */
 `;
 export default LogIn;

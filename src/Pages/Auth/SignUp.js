@@ -6,6 +6,7 @@ import CustomInputBox from "../../Components/CustomInputBox";
 import CustomMainButton from "../../Components/CustomMainButton";
 import imgGoogle01 from "../../Assets/Images/icons/google01.png";
 import imgFacebook01 from "../../Assets/Images/icons/facebook01.png";
+import imgMobileBackSignUp from "../../Assets/Images/background/signup_mobile01.png";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
@@ -150,6 +151,9 @@ const LogIn = () => {
         </PartMax01>
       ) : (
         <PartMobileSignUp>
+          <ImageBack01>
+            <img src={imgMobileBackSignUp} width={"100%"} height={'100%'} alt="" />
+          </ImageBack01>
           <Header />
           <MaxMobile01>
             <PartLogin01>
@@ -296,7 +300,7 @@ const MaxMobile01 = styled(Box)`
   box-sizing: border-box;
   margin-top: 130px;
   margin-bottom: 50px;
-
+  z-index: 90;
   transition: 0.5s;
   @media (max-height: 1024px) {
     height: 100%;
@@ -648,5 +652,13 @@ const PartMobileSignUp = styled(Box)`
   display: flex;
   flex-direction: column;
   width: 100%;
+  position: relative;
+`;
+
+const ImageBack01 = styled(Box)`
+  display: flex;
+  width: 100%;
+  position: absolute;
+  top: 60px;
 `;
 export default LogIn;

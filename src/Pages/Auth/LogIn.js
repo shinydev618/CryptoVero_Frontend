@@ -4,6 +4,8 @@ import styled from "styled-components";
 import imgLogoBack01 from "../../Assets/Images/background/login_human01.png";
 import CustomInputBox from "../../Components/CustomInputBox";
 import CustomMainButton from "../../Components/CustomMainButton";
+import imgGoogle01 from "../../Assets/Images/icons/google01.png";
+import imgFacebook01 from "../../Assets/Images/icons/facebook01.png";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 
@@ -42,6 +44,7 @@ const LogIn = () => {
                 type={"password"}
               />
             </InputPassword01>
+            <TextAlert01>Type your email.</TextAlert01>
             <ButtonLogin01>
               <CustomMainButton
                 width={"100%"}
@@ -58,17 +61,34 @@ const LogIn = () => {
               <TextOr01>Or</TextOr01>
               <PartLine01></PartLine01>
             </PartBorder01>
-            {/* <PartOtherSign01>
-          <EachSign01>
-            <img src={imgApple01} width={"100%"} height={"100%"} alt={""} />
-          </EachSign01>
-          <EachSign01>
-            <img src={imgGoogle01} width={"100%"} height={"100%"} alt={""} />
-          </EachSign01>
-          <EachSign01>
-            <img src={imgFacebook01} width={"100%"} height={"100%"} alt={""} />
-          </EachSign01>
-        </PartOtherSign01> */}
+            <PartOtherSign01>
+              <EachSign01 mr={"20px"}>
+                <IconEachSign01>
+                  <img
+                    src={imgGoogle01}
+                    width={"100%"}
+                    height={"100%"}
+                    alt={""}
+                  />
+                </IconEachSign01>
+                <TextEachSign01>Google</TextEachSign01>
+              </EachSign01>
+              <EachSign01>
+                <IconEachSign01>
+                  <img
+                    src={imgFacebook01}
+                    width={"100%"}
+                    height={"100%"}
+                    alt={""}
+                  />
+                </IconEachSign01>
+                <TextEachSign01>Facebook</TextEachSign01>
+              </EachSign01>
+            </PartOtherSign01>
+            <PartAccountSign01>
+              <TextLeft01>Don't have an account?</TextLeft01>
+              <TextRight01>Sign Up</TextRight01>
+            </PartAccountSign01>
           </PartContent01>
         </PartLogin01>
       </PartMax01>
@@ -209,11 +229,33 @@ const InputPassword01 = styled(Box)`
   }
 `;
 
+const TextAlert01 = styled(Box)`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  margin-top: 10px;
+  height: 25px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  /* identical to box height */
+
+  /* #F63E48 */
+  color: #f63e48;
+  transition: 0.5s;
+  @media (max-width: 1400px) {
+    font-size: 16px;
+  }
+`;
+
 const ButtonLogin01 = styled(Box)`
   display: flex;
   width: 100%;
   height: 70px;
-  margin-top: 30px;
+  margin-top: 10px;
 
   transition: 0.5s;
   @media (max-width: 1400px) {
@@ -250,15 +292,81 @@ const TextOr01 = styled(Box)`
 const PartOtherSign01 = styled(Box)`
   display: flex;
   width: 100%;
-  justify-content: space-evenly;
+  margin-top: 30px;
+  justify-content: space-between;
 `;
 
 const EachSign01 = styled(Box)`
   display: flex;
-  width: 45px;
-  height: 45px;
+  flex: 1;
+  height: 60px;
   justify-content: center;
   align-items: center;
+  background: #ffffff;
+  border: 1px solid rgba(113, 111, 150, 0.2);
+  border-radius: 1000px;
+
   cursor: pointer;
+
+  transition: 0.3s;
+  &:hover {
+    box-shadow: 0px 0px 10px black;
+    text-shadow: 0px 0px 3px #005e95;
+  }
+  &:active {
+    box-shadow: 0px 0px 5px black;
+    text-shadow: 0px 0px 0px #005e95;
+  }
+`;
+
+const IconEachSign01 = styled(Box)`
+  display: flex;
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+`;
+
+const TextEachSign01 = styled(Box)`
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #005e95;
+`;
+
+const PartAccountSign01 = styled(Box)`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 30px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+`;
+
+const TextLeft01 = styled(Box)`
+  margin-right: 10px;
+  color: #716f96;
+`;
+const TextRight01 = styled(Box)`
+  color: #005e95;
+
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    text-shadow: 0px 0px 3px;
+  }
+  &:active {
+    text-shadow: 0px 0px 0px;
+  }
 `;
 export default LogIn;

@@ -152,7 +152,12 @@ const LogIn = () => {
       ) : (
         <PartMobileSignUp>
           <ImageBack01>
-            <img src={imgMobileBackSignUp} width={"100%"} height={'100%'} alt="" />
+            <img
+              src={imgMobileBackSignUp}
+              width={"100%"}
+              height={"100%"}
+              alt=""
+            />
           </ImageBack01>
           <Header />
           <MaxMobile01>

@@ -3,6 +3,7 @@ import { Box } from "@mui/material";
 import styled from "styled-components";
 import Sidebar from "../../Layouts/Tax/Sidebar";
 import Header from "../../Layouts/Tax/Header";
+import Dashboard from "./Dashboard";
 import { useParams } from "react-router-dom";
 
 const TaxHome = () => {
@@ -12,11 +13,7 @@ const TaxHome = () => {
   let component;
   switch (step) {
     case "dashboard":
-      component = (
-        <Box display={"flex"} mt={"90px"}>
-          123123
-        </Box>
-      );
+      component = <Dashboard />;
       break;
     // case 2:
     //   component =
@@ -28,11 +25,7 @@ const TaxHome = () => {
     //   component =
     //   break;
     default:
-      component = (
-        <Box display={"flex"} mt={"90px"}>
-          other
-        </Box>
-      );
+      component = <Dashboard />;
   }
 
   return (
@@ -40,7 +33,7 @@ const TaxHome = () => {
       <Sidebar />
       <PartRight01>
         <Header />
-        {component}
+        <PartContent>{component}</PartContent>
       </PartRight01>
     </StyledComponent>
   );
@@ -63,6 +56,17 @@ const PartRight01 = styled(Box)`
   box-shadow: -28px 0px 68px #005080;
   border-radius: 60px 0px 0px 0px;
   z-index: 70;
+`;
+
+const PartContent = styled(Box)`
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin-top: 90px;
+  padding: 70px;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(113, 111, 150, 0.2);
+
 `;
 
 export default TaxHome;

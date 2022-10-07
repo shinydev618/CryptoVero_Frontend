@@ -3,12 +3,11 @@ import { Box } from "@mui/material";
 import styled from "styled-components";
 
 const Dashboard = () => {
-  return <StyledComponent></StyledComponent>;
+  return <StyledComponent>12312</StyledComponent>;
 };
 
 const StyledComponent = styled(Box)`
   display: flex;
-  flex: 1;
   width: 100%;
   height: 100%;
 `;

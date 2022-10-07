@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Box } from "@mui/material";
 import styled from "styled-components";
 import imgLogoBack01 from "../../Assets/Images/background/login_human01.png";
@@ -6,111 +6,151 @@ import CustomInputBox from "../../Components/CustomInputBox";
 import CustomMainButton from "../../Components/CustomMainButton";
 import imgGoogle01 from "../../Assets/Images/icons/google01.png";
 import imgFacebook01 from "../../Assets/Images/icons/facebook01.png";
+import imgComingSoon01 from "../../Assets/Images/background/coming_soon01.png";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { useNavigate } from "react-router-dom";
+import Header from "../../Layouts/Header";
 
 const SignUp = () => {
   const navigate = useNavigate();
+
+  const detectViewport = () => {
+    return window.innerWidth >= 1024 ? "desktop" : "mobile";
+  };
+  const [viewport, setViewport] = useState(detectViewport());
+  const changeViewport = () => {
+    setViewport(detectViewport());
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", changeViewport);
+    return () => {
+      window.removeEventListener("resize", changeViewport);
+    };
+  });
+
   return (
     <StyledComponent>
-      <PartMax01>
-        <PartImage01>
-          <ImageLogoBack01>
-            <img src={imgLogoBack01} width={"100%"} height={"100%"} alt="" />
-          </ImageLogoBack01>
-          <TextTitle01>Hey there, Welcome aboard</TextTitle01>
-          <TextDescription01>
-            just a couple of clicks and we start
-          </TextDescription01>
-          <ButtonBack01
-            onClick={() => {
-              navigate("/");
-              window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-            }}
-          >
-            <CustomMainButton
-              width={"100%"}
-              height={"100%"}
-              text={"Back"}
-              backColor={""}
-              color={"white"}
-              border={"2px solid white"}
-              borderRadius={"100px"}
-              boxShadow={"0px 0px 0px white"}
-            />
-          </ButtonBack01>
-        </PartImage01>
-
-        <PartLogin01>
-          <PartContent01>
-            <TextLogin01>Log In to Continue</TextLogin01>
-            <InputEmail01>
-              <CustomInputBox
-                width={"100%"}
-                height={"100%"}
-                text={"Email"}
-                icon={<EmailOutlinedIcon />}
-                type={"text"}
-              />
-            </InputEmail01>
-            <InputPassword01>
-              <CustomInputBox
-                width={"100%"}
-                height={"100%"}
-                text={"Password"}
-                icon={<LockOutlinedIcon />}
-                type={"password"}
-              />
-            </InputPassword01>
-            <TextAlert01>Type your email.</TextAlert01>
-            <ButtonLogin01>
+      {viewport === "desktop" ? (
+        <PartMax01>
+          <PartImage01>
+            <ImageLogoBack01>
+              <img src={imgLogoBack01} width={"100%"} height={"100%"} alt="" />
+            </ImageLogoBack01>
+            <TextTitle01>Hey there, Welcome aboard</TextTitle01>
+            <TextDescription01>
+              just a couple of clicks and we start
+            </TextDescription01>
+            <ButtonBack01
+              onClick={() => {
+                navigate("/");
+                window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+              }}
+            >
               <CustomMainButton
                 width={"100%"}
                 height={"100%"}
-                text={"Log In"}
-                backColor={"#005E95"}
+                text={"Back"}
+                backColor={""}
                 color={"white"}
+                border={"2px solid white"}
                 borderRadius={"100px"}
-                boxShadow={"0px 22px 55px rgba(0, 94, 149, 0.46)"}
+                boxShadow={"0px 0px 0px white"}
               />
-            </ButtonLogin01>
-            <PartBorder01>
-              <PartLine01></PartLine01>
-              <TextOr01>Or</TextOr01>
-              <PartLine01></PartLine01>
-            </PartBorder01>
-            <PartOtherSign01>
-              <EachSign01 mr={"20px"}>
-                <IconEachSign01>
-                  <img
-                    src={imgGoogle01}
-                    width={"100%"}
-                    height={"100%"}
-                    alt={""}
-                  />
-                </IconEachSign01>
-                <TextEachSign01>Google</TextEachSign01>
-              </EachSign01>
-              <EachSign01>
-                <IconEachSign01>
-                  <img
-                    src={imgFacebook01}
-                    width={"100%"}
-                    height={"100%"}
-                    alt={""}
-                  />
-                </IconEachSign01>
-                <TextEachSign01>Facebook</TextEachSign01>
-              </EachSign01>
-            </PartOtherSign01>
-            <PartAccountSign01>
-              <TextLeft01>Don't have an account?</TextLeft01>
-              <TextRight01>Sign Up</TextRight01>
-            </PartAccountSign01>
-          </PartContent01>
-        </PartLogin01>
-      </PartMax01>
+            </ButtonBack01>
+          </PartImage01>
+
+          <PartLogin01>
+            <PartContent01>
+              <TextLogin01>Log In to Continue</TextLogin01>
+              <InputEmail01>
+                <CustomInputBox
+                  width={"100%"}
+                  height={"100%"}
+                  text={"Email"}
+                  icon={<EmailOutlinedIcon />}
+                  type={"text"}
+                />
+              </InputEmail01>
+              <InputPassword01>
+                <CustomInputBox
+                  width={"100%"}
+                  height={"100%"}
+                  text={"Password"}
+                  icon={<LockOutlinedIcon />}
+                  type={"password"}
+                />
+              </InputPassword01>
+              <TextAlert01>Type your email.</TextAlert01>
+              <ButtonLogin01>
+                <CustomMainButton
+                  width={"100%"}
+                  height={"100%"}
+                  text={"Log In"}
+                  backColor={"#005E95"}
+                  color={"white"}
+                  borderRadius={"100px"}
+                  boxShadow={"0px 22px 55px rgba(0, 94, 149, 0.46)"}
+                />
+              </ButtonLogin01>
+              <PartBorder01>
+                <PartLine01></PartLine01>
+                <TextOr01>Or</TextOr01>
+                <PartLine01></PartLine01>
+              </PartBorder01>
+              <PartOtherSign01>
+                <EachSign01 mr={"20px"}>
+                  <IconEachSign01>
+                    <img
+                      src={imgGoogle01}
+                      width={"100%"}
+                      height={"100%"}
+                      alt={""}
+                    />
+                  </IconEachSign01>
+                  <TextEachSign01>Google</TextEachSign01>
+                </EachSign01>
+                <EachSign01>
+                  <IconEachSign01>
+                    <img
+                      src={imgFacebook01}
+                      width={"100%"}
+                      height={"100%"}
+                      alt={""}
+                    />
+                  </IconEachSign01>
+                  <TextEachSign01>Facebook</TextEachSign01>
+                </EachSign01>
+              </PartOtherSign01>
+              <PartAccountSign01>
+                <TextLeft01>Don't have an account?</TextLeft01>
+                <TextRight01>Sign Up</TextRight01>
+              </PartAccountSign01>
+            </PartContent01>
+          </PartLogin01>
+        </PartMax01>
+      ) : (
+        <>
+          <Header />
+          <PartMobileMax01>
+            <PartMobileContent01>
+              <IamgeComingSoon01>
+                <img
+                  src={imgComingSoon01}
+                  width={"100%"}
+                  height={"100%"}
+                  alt=""
+                />
+              </IamgeComingSoon01>
+              <TextComingSoon01>
+                Please log in on Desktop, Mobile
+              </TextComingSoon01>
+              <TextComingBorder01>Coming Soon</TextComingBorder01>
+            </PartMobileContent01>
+          </PartMobileMax01>
+        </>
+      )}
     </StyledComponent>
   );
 };
@@ -120,6 +160,12 @@ const StyledComponent = styled(Box)`
   width: 100%;
   height: 100vh;
   justify-content: center;
+
+  transition: 0.5s;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const PartMax01 = styled(Box)`
@@ -397,4 +443,80 @@ const TextRight01 = styled(Box)`
     text-shadow: 0px 0px 0px;
   }
 `;
+
+const PartMobileMax01 = styled(Box)`
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
+  box-sizing: border-box;
+  margin-top: 60px;
+  align-items: center;
+  justify-content: center;
+`;
+
+const PartMobileContent01 = styled(Box)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 0.401392px solid rgba(113, 111, 150, 0.2);
+  box-shadow: 0px 19px 34px rgba(0, 94, 149, 0.09), 0px -7px 0px #005e95;
+  border-radius: 19px;
+`;
+
+const IamgeComingSoon01 = styled(Box)`
+  display: flex;
+  width: 125px;
+  height: 125px;
+`;
+
+const TextComingSoon01 = styled(Box)`
+  width: 300px;
+  margin-top: 50px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 150%;
+  /* or 48px */
+
+  text-align: center;
+  text-transform: capitalize;
+
+  color: #0d1942;
+`;
+
+const TextComingBorder01 = styled(Box)`
+  position: relative;
+  width: 200px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 150%;
+  /* or 48px */
+
+  text-align: center;
+  text-transform: capitalize;
+  color: #005e95;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    border: solid 2px #005e95;
+    border-color: #005e95 transparent transparent transparent;
+    border-radius: 70%;
+  }
+`;
+
 export default SignUp;

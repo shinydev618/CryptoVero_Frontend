@@ -29,7 +29,7 @@ const LogIn = () => {
     return () => {
       window.removeEventListener("resize", changeViewport);
     };
-  }, []);
+  });
   return (
     <StyledComponent>
       {viewport === "desktop" ? (

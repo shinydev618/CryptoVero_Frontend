@@ -39,7 +39,7 @@ const SignUp = () => {
     }
     setMsgAlert("Success!");
     setTimeout(() => {
-      navigate("/");
+      navigate("/TaxHome");
     }, 2000);
     let logInData = {
       email: email,

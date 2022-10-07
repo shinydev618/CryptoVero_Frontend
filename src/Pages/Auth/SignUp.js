@@ -53,6 +53,10 @@ const LogIn = () => {
       setMsgAlert("Password doesn't match.");
       return;
     }
+    setMsgAlert("Success!");
+    setTimeout(() => {
+      navigate("/LogIn");
+    }, 2000);
     let signUpData = {
       name: name,
       email: email,
@@ -198,7 +202,13 @@ const LogIn = () => {
               </PartOtherSign01>
               <PartAccountSign01>
                 <TextLeft01>Already have an account?</TextLeft01>
-                <TextRight01>Log In</TextRight01>
+                <TextRight01
+                  onClick={() => {
+                    navigate("/LogIn");
+                  }}
+                >
+                  Log In
+                </TextRight01>
               </PartAccountSign01>
             </PartContent01>
           </PartLogin01>
@@ -306,7 +316,13 @@ const LogIn = () => {
                 </PartOtherSign01>
                 <PartAccountSign01>
                   <TextLeft01>Already have an account?</TextLeft01>
-                  <TextRight01>Log In</TextRight01>
+                  <TextRight01
+                    onClick={() => {
+                      navigate("/LogIn");
+                    }}
+                  >
+                    Log In
+                  </TextRight01>
                 </PartAccountSign01>
               </PartContent01>
             </PartLogin01>

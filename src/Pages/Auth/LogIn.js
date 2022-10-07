@@ -37,6 +37,10 @@ const SignUp = () => {
       setMsgAlert("Type your password.");
       return;
     }
+    setMsgAlert("Success!");
+    setTimeout(() => {
+      navigate("/");
+    }, 2000);
     let logInData = {
       email: email,
       password: password,
@@ -158,7 +162,13 @@ const SignUp = () => {
               </PartOtherSign01>
               <PartAccountSign01>
                 <TextLeft01>Don't have an account?</TextLeft01>
-                <TextRight01>Sign Up</TextRight01>
+                <TextRight01
+                  onClick={() => {
+                    navigate("/SignUp");
+                  }}
+                >
+                  Sign Up
+                </TextRight01>
               </PartAccountSign01>
             </PartContent01>
           </PartLogin01>

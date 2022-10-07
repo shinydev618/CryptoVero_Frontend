@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { Box } from "@mui/material";
 import styled from "styled-components";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 
 const TaxHome = () => {
-  const { step: stepParam } = useParams();
-  let stepNumber = Number(stepParam || 1);
-  const [step, setStep] = useState(stepNumber);
-  let component;
+  // const { step: stepParam } = useParams();
+  // let stepNumber = Number(stepParam || 1);
+  // const [step, setStep] = useState(stepNumber);
+  // let component;
   // switch (step) {
   //   case 1:
   //     component = (
@@ -20,16 +20,16 @@ const TaxHome = () => {
   //     );
   //     break;
   //   case 2:
-  //     component = 
+  //     component =
   //     break
   //   case 3:
-  //     component = 
+  //     component =
   //     break
   //   case 4:
-  //     component = 
+  //     component =
   //     break;
   //   default:
-  //     component = 
+  //     component =
   // }
 
   return <StyledComponent></StyledComponent>;

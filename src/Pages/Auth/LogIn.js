@@ -29,7 +29,7 @@ const SignUp = () => {
     }
     if (email !== "") {
       if (!isValidEmail(email)) {
-        setMsgAlert("Invalid email, check it again!");
+        setMsgAlert("Invalid email, check it again.");
         return;
       }
     }
@@ -37,11 +37,11 @@ const SignUp = () => {
       setMsgAlert("Type your password.");
       return;
     }
-    let loginData = {
+    let logInData = {
       email: email,
       password: password,
     };
-    console.log(loginData);
+    console.log(logInData);
   };
 
   const detectViewport = () => {

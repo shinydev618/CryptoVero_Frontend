@@ -15,6 +15,52 @@ import Header from "../../Layouts/Header";
 
 const LogIn = () => {
   const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [repassword, setRepassword] = useState("");
+  const [msgAlert, setMsgAlert] = useState("");
+
+  const isValidEmail = (email) => {
+    return /\S+@\S+\.\S+/.test(email);
+  };
+
+  const handleSignUp = () => {
+    if (name === "") {
+      setMsgAlert("Type your name.");
+      return;
+    }
+    if (email === "") {
+      setMsgAlert("Type your email.");
+      return;
+    }
+    if (email !== "") {
+      if (!isValidEmail(email)) {
+        setMsgAlert("Invalid email, check it again.");
+        return;
+      }
+    }
+    if (password === "") {
+      setMsgAlert("Type your password.");
+      return;
+    }
+    if (repassword === "") {
+      setMsgAlert("Type your confirm password.");
+      return;
+    }
+
+    if (password !== repassword) {
+      setMsgAlert("Password doesn't match.");
+      return;
+    }
+    let signUpData = {
+      name: name,
+      email: email,
+      password: password,
+      repassword: repassword,
+    };
+    console.log(signUpData);
+  };
 
   const detectViewport = () => {
     return window.innerWidth >= 1024 ? "desktop" : "mobile";
@@ -71,6 +117,8 @@ const LogIn = () => {
                   text={"Name"}
                   icon={<PersonOutlineOutlinedIcon />}
                   type={"text"}
+                  value={name}
+                  action={setName}
                 />
               </InputBox01>
               <InputBox01>
@@ -80,6 +128,8 @@ const LogIn = () => {
                   text={"Email"}
                   icon={<EmailOutlinedIcon />}
                   type={"text"}
+                  value={email}
+                  action={setEmail}
                 />
               </InputBox01>
 
@@ -90,6 +140,8 @@ const LogIn = () => {
                   text={"Password"}
                   icon={<LockOutlinedIcon />}
                   type={"password"}
+                  value={password}
+                  action={setPassword}
                 />
               </InputBox01>
               <InputBox01>
@@ -99,10 +151,12 @@ const LogIn = () => {
                   text={"Confirm Password"}
                   icon={<LockOutlinedIcon />}
                   type={"password"}
+                  value={repassword}
+                  action={setRepassword}
                 />
               </InputBox01>
-              <TextAlert01>Type your email.</TextAlert01>
-              <ButtonLogin01>
+              <TextAlert01>{msgAlert}</TextAlert01>
+              <ButtonLogin01 onClick={() => handleSignUp()}>
                 <CustomMainButton
                   width={"100%"}
                   height={"100%"}
@@ -171,6 +225,8 @@ const LogIn = () => {
                     text={"Name"}
                     icon={<PersonOutlineOutlinedIcon />}
                     type={"text"}
+                    value={name}
+                    action={setName}
                   />
                 </InputBox01>
                 <InputBox01>
@@ -180,6 +236,8 @@ const LogIn = () => {
                     text={"Email"}
                     icon={<EmailOutlinedIcon />}
                     type={"text"}
+                    value={email}
+                    action={setEmail}
                   />
                 </InputBox01>
 
@@ -190,6 +248,8 @@ const LogIn = () => {
                     text={"Password"}
                     icon={<LockOutlinedIcon />}
                     type={"password"}
+                    value={password}
+                    action={setPassword}
                   />
                 </InputBox01>
                 <InputBox01>
@@ -199,10 +259,12 @@ const LogIn = () => {
                     text={"Confirm Password"}
                     icon={<LockOutlinedIcon />}
                     type={"password"}
+                    value={repassword}
+                    action={setRepassword}
                   />
                 </InputBox01>
-                <TextAlert01>Type your email.</TextAlert01>
-                <ButtonLogin01>
+                <TextAlert01>{msgAlert}</TextAlert01>
+                <ButtonLogin01 onClick={() => handleSignUp()}>
                   <CustomMainButton
                     width={"100%"}
                     height={"100%"}

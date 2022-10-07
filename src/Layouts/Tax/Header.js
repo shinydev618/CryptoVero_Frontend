@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { Box } from "@mui/material";
 import styled from "styled-components";
 import imgProfile01 from "../../Assets/Images/icons/profile01.jpg";
-import { RiNotification2Line,RiLogoutCircleLine } from "react-icons/ri";
+import { RiNotification2Line, RiLogoutCircleLine } from "react-icons/ri";
 import BellIcon from "react-bell-icon";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   const [flagAlertOver, setFlagAlertOver] = useState(false);
 
   return (
@@ -33,7 +35,11 @@ const Header = () => {
         </PartImageProfile01>
         <TextUsername01>Rhonnie</TextUsername01>
       </PartUser01>
-      <PartLogOut>
+      <PartLogOut
+        onClick={() => {
+          navigate("/");
+        }}
+      >
         <IconLogOut>
           <RiLogoutCircleLine />
         </IconLogOut>

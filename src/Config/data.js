@@ -7,6 +7,10 @@ import imgInstagram from "../Assets/Images/icons/instagram_circle.png";
 import imgEmailBig from "../Assets/Images/icons/email_circle_b.png";
 import imgPhoneBig from "../Assets/Images/icons/phone_circle_b.png";
 import imgAddressBig from "../Assets/Images/icons/address_circle_b.png";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
+import NextWeekIcon from "@mui/icons-material/NextWeek";
+import TaskIcon from "@mui/icons-material/Task";
 
 export const dataGetStartedPrice = [
   {
@@ -260,5 +264,24 @@ export const dataFAQ = [
     title: "Erat mattis morbi aenean nisl.",
     description:
       "Facilisis sed sed laoreet morbi semper nec. Condimentum ultricies condimentum pellentesque velit nibh leo nunc. Pellentesque urna, fermentum tincidunt volutpat gravida mattis iaculis a, placerat. Iaculis malesuada et eu ultrices vitae amet. Integer ultrices quis sodales.",
+  },
+];
+
+export const dataTaxLink = [
+  {
+    text: "Dashboard",
+    image: <DashboardIcon />,
+  },
+  {
+    text: "Taxes",
+    image: <WorkHistoryIcon />,
+  },
+  {
+    text: "Transactions",
+    image: <NextWeekIcon />,
+  },
+  {
+    text: "Holdings",
+    image: <TaskIcon />,
   },
 ];

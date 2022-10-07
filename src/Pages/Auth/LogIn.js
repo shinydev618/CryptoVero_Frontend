@@ -14,6 +14,35 @@ import Header from "../../Layouts/Header";
 
 const SignUp = () => {
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [msgAlert, setMsgAlert] = useState("");
+
+  const isValidEmail = (email) => {
+    return /\S+@\S+\.\S+/.test(email);
+  };
+
+  const handleLogin = () => {
+    if (email === "") {
+      setMsgAlert("Type your email.");
+      return;
+    }
+    if (email !== "") {
+      if (!isValidEmail(email)) {
+        setMsgAlert("Invalid email, check it again!");
+        return;
+      }
+    }
+    if (password === "") {
+      setMsgAlert("Type your password.");
+      return;
+    }
+    let loginData = {
+      email: email,
+      password: password,
+    };
+    console.log(loginData);
+  };
 
   const detectViewport = () => {
     return window.innerWidth >= 1024 ? "desktop" : "mobile";
@@ -71,6 +100,8 @@ const SignUp = () => {
                   text={"Email"}
                   icon={<EmailOutlinedIcon />}
                   type={"text"}
+                  value={email}
+                  action={setEmail}
                 />
               </InputEmail01>
               <InputPassword01>
@@ -80,10 +111,12 @@ const SignUp = () => {
                   text={"Password"}
                   icon={<LockOutlinedIcon />}
                   type={"password"}
+                  value={password}
+                  action={setPassword}
                 />
               </InputPassword01>
-              <TextAlert01>Type your email.</TextAlert01>
-              <ButtonLogin01>
+              <TextAlert01>{msgAlert}</TextAlert01>
+              <ButtonLogin01 onClick={() => handleLogin()}>
                 <CustomMainButton
                   width={"100%"}
                   height={"100%"}

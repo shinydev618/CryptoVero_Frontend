@@ -2,7 +2,7 @@ import React from "react";
 import { Box } from "@mui/material";
 import styled from "styled-components";
 
-const CustomInputBox = ({ width, height, icon, text, type }) => {
+const CustomInputBox = ({ width, height, icon, text, type, value, action }) => {
   return (
     <Box display={"flex"} width={"100%"} height={"100%"} position={"relative"}>
       <StyledComponent
@@ -11,6 +11,10 @@ const CustomInputBox = ({ width, height, icon, text, type }) => {
         placeholder={text}
         width={width}
         height={height}
+        value={value}
+        onChange={(e) => {
+          action(e.target.value);
+        }}
       ></StyledComponent>
       <Icon01>{icon}</Icon01>
     </Box>

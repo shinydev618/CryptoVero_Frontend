@@ -5,6 +5,7 @@ import Landing from "./Pages/Landing";
 import ContactUs from "./Pages/ContactUs";
 import LogIn from "./Pages/Auth/LogIn";
 import SignUp from "./Pages/Auth/SignUp";
+import Tax from "./Pages/Tax";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/ContactUs" element={<ContactUs />} />
           <Route path="/LogIn" element={<LogIn />} />
           <Route path="/SignUp" element={<SignUp />} />
+          <Route path="/Tax/:step" element={<Tax />} />
         </Routes>
       </BrowserRouter>
     </StyledComponent>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box } from "@mui/material";
 import styled from "styled-components";
 import CustomLinkButtonTax from "../../Components/Tax/CustomLinkButtonTax";
@@ -6,6 +6,13 @@ import imgMark01 from "../../Assets/Images/mark/logo_white_01.png";
 import { dataTaxLink } from "../../Config/data";
 
 const Sidebar = () => {
+  const [flagClickLink, setFlagClickLink] = useState([
+    true,
+    false,
+    false,
+    false,
+  ]);
+
   return (
     <StyledComponent>
       <ImageMark01>
@@ -14,7 +21,15 @@ const Sidebar = () => {
       <PartLink01>
         {dataTaxLink.map((each, index) => {
           return (
-            <CustomLinkButtonTax data={each} key={index} onClick={() => {}}  />
+            <CustomLinkButtonTax
+              data={each}
+              key={index}
+              onClick={() => {}}
+              flagclick={flagClickLink[index]}
+              setFlagClickLink={setFlagClickLink}
+              length={dataTaxLink.length}
+              index={index}
+            />
           );
         })}
       </PartLink01>

@@ -2,9 +2,22 @@ import React from "react";
 import { Box } from "@mui/material";
 import styled from "styled-components";
 
-const CustomLinkButtonTax = ({ data }) => {
+const CustomLinkButtonTax = ({
+  data,
+  flagclick,
+  setFlagClickLink,
+  index,
+  length,
+}) => {
   return (
-    <StyledComponent>
+    <StyledComponent
+      flagclick={flagclick ? 1 : 0}
+      onClick={() => {
+        let array = new Array(length).fill(false);
+        array[index] = true;
+        setFlagClickLink(array);
+      }}
+    >
       <PartIcon01>{data?.image}</PartIcon01>
       <PartText01>{data?.text}</PartText01>
     </StyledComponent>
@@ -23,6 +36,8 @@ const StyledComponent = styled(Box)`
   color: white;
   cursor: pointer;
 
+  background-color: ${({ flagclick }) =>
+    flagclick ? "rgba(255, 255, 255, 0.15)" : "none"};
   transition: 0.5s;
   &:hover {
     background-color: rgba(255, 255, 255, 0.15);

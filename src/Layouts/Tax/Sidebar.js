@@ -3,6 +3,7 @@ import { Box } from "@mui/material";
 import styled from "styled-components";
 import CustomLinkButtonTax from "../../Components/Tax/CustomLinkButtonTax";
 import imgMark01 from "../../Assets/Images/mark/logo_white_01.png";
+import { dataTaxLink } from "../../Config/data";
 
 const Sidebar = () => {
   return (
@@ -11,6 +12,11 @@ const Sidebar = () => {
         <img src={imgMark01} width={"100%"} alt="" />
       </ImageMark01>
       <PartLink01>
+        {dataTaxLink.map((each, index) => {
+          return (
+            <CustomLinkButtonTax data={each} key={index} onClick={() => {}}  />
+          );
+        })}
         <CustomLinkButtonTax></CustomLinkButtonTax>
       </PartLink01>
     </StyledComponent>
@@ -38,6 +44,6 @@ const PartLink01 = styled(Box)`
   display: flex;
   width: 100%;
   flex-direction: column;
-  margin-top: 160px;
+  margin-top: 70px;
 `;
 export default Sidebar;

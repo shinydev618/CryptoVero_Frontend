@@ -11,6 +11,8 @@ import DashboardIcon from "@mui/icons-material/Dashboard";
 import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
 import NextWeekIcon from "@mui/icons-material/NextWeek";
 import TaskIcon from "@mui/icons-material/Task";
+import imgChart01 from "../Assets/Images/icons/chart01.png";
+import imgChart02 from "../Assets/Images/icons/chart02.png";
 
 export const dataGetStartedPrice = [
   {
@@ -285,3 +287,35 @@ export const dataTaxLink = [
     image: <TaskIcon />,
   },
 ];
+
+export const dataTaxStatic = {
+  dashboard: [
+    {
+      value: "844.92",
+      text: "Total market value",
+      icon: imgChart01,
+    },
+    {
+      value: "-$13.50",
+      text: "Total 2022 realized gains/losses",
+      icon: imgChart02,
+    },
+  ],
+  taxes: [
+    {
+      value: "-$5,345.21",
+      text: "ACTUAL ACQUISITION GAINS/LOSSES",
+      icon: {},
+    },
+    {
+      value: "$13.50",
+      text: "DEEMED ACQUISITION GAINS/LOSSES",
+      icon: {},
+    },
+    {
+      value: "$9.50",
+      text: "Total income",
+      icon: {},
+    },
+  ],
+};

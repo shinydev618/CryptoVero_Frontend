@@ -17,7 +17,6 @@ const Sidebar = () => {
             <CustomLinkButtonTax data={each} key={index} onClick={() => {}}  />
           );
         })}
-        <CustomLinkButtonTax></CustomLinkButtonTax>
       </PartLink01>
     </StyledComponent>
   );

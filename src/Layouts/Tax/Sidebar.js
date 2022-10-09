@@ -5,7 +5,7 @@ import CustomLinkButtonTax from "../../Components/Tax/CustomLinkButtonTax";
 import imgMark01 from "../../Assets/Images/mark/logo_white_01.png";
 import { dataTaxLink } from "../../Config/data";
 
-const Sidebar = () => {
+const Sidebar = ({setStep}) => {
   const [flagClickLink, setFlagClickLink] = useState([
     true,
     false,
@@ -29,6 +29,7 @@ const Sidebar = () => {
               setFlagClickLink={setFlagClickLink}
               length={dataTaxLink.length}
               index={index}
+              setStep={setStep}
             />
           );
         })}

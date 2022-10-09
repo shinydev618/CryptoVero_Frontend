@@ -2,11 +2,11 @@ import React from "react";
 import { Box } from "@mui/material";
 import styled from "styled-components";
 
-const Dashboard = () => {
+const Transactions = () => {
   return (
     <StyledComponent>
       <PartHeader01>
-      <TextHeader01>Dashboard</TextHeader01>
+      <TextHeader01>Transactions</TextHeader01>
       <PartHeadRight01>
 Right
       </PartHeadRight01>
@@ -47,4 +47,4 @@ const PartHeadRight01 = styled(Box)`
   display: flex;
 
 `
-export default Dashboard;
+export default Transactions;

@@ -1,36 +1,39 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 import { Box } from "@mui/material";
 import styled from "styled-components";
 import Sidebar from "../../Layouts/Tax/Sidebar";
 import Header from "../../Layouts/Tax/Header";
 import Dashboard from "./Dashboard";
-import { useParams } from "react-router-dom";
+import Taxes from "./Taxes";
+import Transactions from "./Transactions";
+import Holdings from "./Holdings";
 
 const TaxHome = () => {
   const { step: stepParam } = useParams();
-  let stepNumber = Number(stepParam || "dashboard");
+  let stepNumber = stepParam || "Dashboard";
   const [step, setStep] = useState(stepNumber);
   let component;
   switch (step) {
-    case "dashboard":
+    case "Dashboard":
       component = <Dashboard />;
       break;
-    // case 2:
-    //   component =
-    //   break
-    // case 3:
-    //   component =
-    //   break
-    // case 4:
-    //   component =
-    //   break;
+    case "Taxes":
+      component = <Taxes />;
+      break;
+    case "Transactions":
+      component = <Transactions />;
+      break;
+    case "Holdings":
+      component = <Holdings />;
+      break;
     default:
       component = <Dashboard />;
   }
 
   return (
     <StyledComponent>
-      <Sidebar />
+      <Sidebar setStep={setStep} />
       <PartRight01>
         <Header />
         <PartContent>{component}</PartContent>
@@ -66,7 +69,6 @@ const PartContent = styled(Box)`
   padding: 70px;
   box-sizing: border-box;
   border-top: 1px solid rgba(113, 111, 150, 0.2);
-
 `;
 
 export default TaxHome;

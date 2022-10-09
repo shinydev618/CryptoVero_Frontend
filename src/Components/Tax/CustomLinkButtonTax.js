@@ -8,6 +8,7 @@ const CustomLinkButtonTax = ({
   setFlagClickLink,
   index,
   length,
+  setStep
 }) => {
   return (
     <StyledComponent
@@ -16,6 +17,7 @@ const CustomLinkButtonTax = ({
         let array = new Array(length).fill(false);
         array[index] = true;
         setFlagClickLink(array);
+        setStep(data.text);
       }}
     >
       <PartIcon01>{data?.image}</PartIcon01>

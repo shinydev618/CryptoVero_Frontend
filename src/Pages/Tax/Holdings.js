@@ -2,16 +2,13 @@ import React from "react";
 import { Box } from "@mui/material";
 import styled from "styled-components";
 
-const Dashboard = () => {
+const Holdings = () => {
   return (
     <StyledComponent>
       <PartHeader01>
-      <TextHeader01>Dashboard</TextHeader01>
-      <PartHeadRight01>
-Right
-      </PartHeadRight01>
+        <TextHeader01>Holdings</TextHeader01>
+        <PartHeadRight01>Right</PartHeadRight01>
       </PartHeader01>
-
     </StyledComponent>
   );
 };
@@ -28,7 +25,7 @@ const PartHeader01 = styled(Box)`
   width: 100%;
   justify-content: space-between;
   align-items: center;
-`
+`;
 
 const TextHeader01 = styled(Box)`
   display: flex;
@@ -45,6 +42,5 @@ const TextHeader01 = styled(Box)`
 
 const PartHeadRight01 = styled(Box)`
   display: flex;
-
-`
-export default Dashboard;
+`;
+export default Holdings;

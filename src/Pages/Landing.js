@@ -93,7 +93,12 @@ const Landing = () => {
             </PartTopButton01>
           </PartTopLeft01>
           <PartTopRight01>
-            <img src={imgIllustration0101} width={"100%"} height={"100%"} alt="" />
+            <img
+              src={imgIllustration0101}
+              width={"100%"}
+              height={"100%"}
+              alt=""
+            />
           </PartTopRight01>
         </PartTop01>
         <PartSupportedPlatforms01>
@@ -228,7 +233,12 @@ const Landing = () => {
       <PartTaxQuestion01>
         <PartMaxTaxQuestions01>
           <PartGroupTaxQuestion01>
-            <img src={imgIllustration0102} width={"100%"} height={"100%"} alt="" />
+            <img
+              src={imgIllustration0102}
+              width={"100%"}
+              height={"100%"}
+              alt=""
+            />
           </PartGroupTaxQuestion01>
           <PartGroupRight01>
             <PartTopTitleText02>

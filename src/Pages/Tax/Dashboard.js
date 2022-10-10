@@ -1,17 +1,21 @@
 import React from "react";
 import { Box } from "@mui/material";
 import styled from "styled-components";
+import CustomStatic from "../../Components/Tax/CustomStatic";
+import { dataTaxStatic } from "../../Config/data";
 
 const Dashboard = () => {
   return (
     <StyledComponent>
       <PartHeader01>
-      <TextHeader01>Dashboard</TextHeader01>
-      <PartHeadRight01>
-Right
-      </PartHeadRight01>
+        <TextHeader01>Dashboard</TextHeader01>
+        <PartHeadRight01>Right</PartHeadRight01>
       </PartHeader01>
-
+      <PartStatic01>
+        {dataTaxStatic.dashboard.map((each, index) => {
+          return <CustomStatic key={index} data={each} />;
+        })}
+      </PartStatic01>
     </StyledComponent>
   );
 };
@@ -28,7 +32,8 @@ const PartHeader01 = styled(Box)`
   width: 100%;
   justify-content: space-between;
   align-items: center;
-`
+;
+`;
 
 const TextHeader01 = styled(Box)`
   display: flex;
@@ -45,6 +50,12 @@ const TextHeader01 = styled(Box)`
 
 const PartHeadRight01 = styled(Box)`
   display: flex;
+`;
 
-`
+const PartStatic01 = styled(Box)`
+  display: flex;
+  margin-top: 50px;
+  gap: 60px;
+  align-items: center;
+`;
 export default Dashboard;

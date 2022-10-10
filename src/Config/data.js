@@ -294,11 +294,13 @@ export const dataTaxStatic = {
       value: "844.92",
       text: "Total market value",
       icon: imgChart01,
+      color: "#B1DD34",
     },
     {
       value: "-$13.50",
       text: "Total 2022 realized gains/losses",
       icon: imgChart02,
+      color: "#5E56E8",
     },
   ],
   taxes: [
@@ -306,16 +308,19 @@ export const dataTaxStatic = {
       value: "-$5,345.21",
       text: "ACTUAL ACQUISITION GAINS/LOSSES",
       icon: {},
+      color: "#EF6565",
     },
     {
       value: "$13.50",
       text: "DEEMED ACQUISITION GAINS/LOSSES",
       icon: {},
+      color: "#71E03D",
     },
     {
       value: "$9.50",
       text: "Total income",
       icon: {},
+      color: "#005E95",
     },
   ],
 };

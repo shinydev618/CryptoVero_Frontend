@@ -32,6 +32,10 @@ const StyledComponent = styled(Box)`
   @media (max-width: 1650px) {
     padding: 40px 40px;
   }
+
+  &:hover{
+    box-shadow: 0px 0px 15px black;
+  }
 `;
 
 const PartLeft01 = styled(Box)`
@@ -41,8 +45,7 @@ const PartLeft01 = styled(Box)`
   justify-content: space-between;
 `;
 const PartRight01 = styled(Box)`
-    min-width: 75px;
-    min-height : 75px;
+
 `;
 
 const PartValue01 = styled(Box)`

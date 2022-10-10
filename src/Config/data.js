@@ -324,3 +324,55 @@ export const dataTaxStatic = {
     },
   ],
 };
+
+export const dataChartDashboard = [
+  {
+    axisX: "Jan",
+    axisY: "10",
+    value01: "14",
+  },
+  {
+    axisX: "Feb",
+    axisY: "20",
+    value01: "20",
+  },
+  {
+    axisX: "Mar",
+    axisY: "30",
+    value01: "24",
+  },
+  {
+    axisX: "Apr",
+    axisY: "40",
+    value01: "18",
+  },
+  {
+    axisX: "May",
+    axisY: "50",
+    value01: "32",
+  },
+  {
+    axisX: "Jun",
+    value01: "36",
+  },
+  {
+    axisX: "Jul",
+    value01: "45",
+  },
+  {
+    axisX: "Sep",
+    value01: "39",
+  },
+  {
+    axisX: "Oct",
+    value01: "28",
+  },
+  {
+    axisX: "Nov",
+    value01: "35",
+  },
+  {
+    axisX: "Dec",
+    value01: "15",
+  },
+];

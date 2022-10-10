@@ -6,6 +6,8 @@ import CustomStatic from "../../Components/Tax/CustomStatic";
 import { TextField } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
 import CustomMainButton from "../../Components/CustomMainButton";
+import imgBook01 from "../../Assets/Images/icons/book_green01.png";
+import imgBook02 from "../../Assets/Images/icons/book_red01.png";
 
 const Taxes = () => {
   const [flagSelectYear, setFlagSelectYear] = useState("2022");
@@ -57,7 +59,86 @@ const Taxes = () => {
             </PartRightContent01>
           </PartHeaderTransaction01>
           <PartContentDown01>
-            <PartIRS01>123</PartIRS01>
+            <PartSuspendisse01>
+              <PartUpSuspendisse01>
+                <PartIRSLeft01>
+                  <ImageBook01>
+                    <img
+                      src={imgBook02}
+                      width={"100%"}
+                      height={"100%"}
+                      alt=""
+                    />
+                  </ImageBook01>
+                  <TextIncome01>
+                    Suspendisse mattis sed quisque leo.
+                  </TextIncome01>
+                </PartIRSLeft01>
+                <PartIRSRight01>
+                  <ButtonDownload01>
+                    <CustomMainButton
+                      width={"100%"}
+                      height={"100%"}
+                      text={"Learn more"}
+                      backColor={"#005E95"}
+                      color={"white"}
+                      borderRadius={"100px"}
+                      border={"1px solid #005E95"}
+                      fontSize={"16px"}
+                    />
+                  </ButtonDownload01>
+                </PartIRSRight01>
+              </PartUpSuspendisse01>
+              <PartDownSuspendisse01>
+                Purus nibh urna, gravida nisi quis volutpat. Risus vulputate et
+                turpis et. Sit risus porttitor tincidunt commodo, amet, lacus
+                velit sed. Est tellus, quis nibh vitae vulputate
+              </PartDownSuspendisse01>
+            </PartSuspendisse01>
+            <PartIRS01>
+              <PartIRSLeft01>
+                <ImageBook01>
+                  <img src={imgBook01} width={"100%"} height={"100%"} alt="" />
+                </ImageBook01>
+                <TextIncome01>IRS</TextIncome01>
+              </PartIRSLeft01>
+              <PartIRSRight01>
+                <ButtonDownload01>
+                  <CustomMainButton
+                    width={"100%"}
+                    height={"100%"}
+                    text={"Download"}
+                    backColor={"#005E95"}
+                    color={"white"}
+                    borderRadius={"100px"}
+                    border={"1px solid #005E95"}
+                    fontSize={"16px"}
+                  />
+                </ButtonDownload01>
+              </PartIRSRight01>
+            </PartIRS01>
+            <PartIRS01>
+              <PartIRSLeft01>
+                <ImageBook01>
+                  <img src={imgBook01} width={"100%"} height={"100%"} alt="" />
+                </ImageBook01>
+                <TextIncome01>Income Report</TextIncome01>
+              </PartIRSLeft01>
+              <PartIRSRight01>
+                <ButtonDownload01>
+                  <CustomMainButton
+                    width={"100%"}
+                    height={"100%"}
+                    text={"Download"}
+                    backColor={"#005E95"}
+                    color={"white"}
+                    borderRadius={"100px"}
+                    border={"1px solid #005E95"}
+                    fontSize={"16px"}
+                  />
+                </ButtonDownload01>
+              </PartIRSRight01>
+            </PartIRS01>
           </PartContentDown01>
         </PartContentLeft01>
         <PartContentRight01>
@@ -194,16 +275,22 @@ const PartRightContent01 = styled(Box)`
   align-items: center;
 `;
 
-const ButtonLearnMore01 = styled(Box)`
+const ButtonDownload01 = styled(Box)`
   display: flex;
   width: 155px;
+  height: 40px;
+`;
+
+const ButtonLearnMore01 = styled(Box)`
+  display: flex;
+  width: 150px;
   height: 40px;
 `;
 
 const PartContentDown01 = styled(Box)`
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  flex-direction: column;
   box-sizing: border-box;
 `;
 
@@ -250,9 +337,71 @@ const TextContentDownRight01 = styled(Box)`
 
 const PartIRS01 = styled(Box)`
   display: flex;
+  width: 100%;
   padding: 20px 30px;
   box-sizing: border-box;
   border-top: 1px solid rgba(113, 111, 150, 0.2);
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const PartIRSLeft01 = styled(Box)`
+  display: flex;
+  align-items: center;
+`;
+const PartIRSRight01 = styled(Box)`
+  display: flex;
+  align-items: center;
+`;
+const ImageBook01 = styled(Box)`
+  display: flex;
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+`;
+
+const TextIncome01 = styled(Box)`
+  display: flex;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 28px;
+  /* identical to box height */
+
+  text-transform: capitalize;
+  font-feature-settings: "pnum" on, "lnum" on;
+
+  color: #0d1942;
+`;
+
+const PartSuspendisse01 = styled(Box)`
+  display: flex;
+  width: 100%;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  flex-direction: column;
+`;
+
+const PartUpSuspendisse01 = styled(Box)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const PartDownSuspendisse01 = styled(Box)`
+  display: flex;
+  margin-top: 20px;
+  padding-left: 70px;
+  box-sizing: border-box;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 32px;
+  /* or 178% */
+
+  color: #716f96;
 `;
 
 export default Taxes;

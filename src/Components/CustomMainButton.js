@@ -10,7 +10,7 @@ const CustomMainButton = ({
   color,
   borderRadius,
   border,
-  boxShadow,
+  boxShadow,fontSize
 }) => {
   return (
     <StyledComponent
@@ -21,6 +21,7 @@ const CustomMainButton = ({
       borderRadius={borderRadius}
       border={border}
       boxShadow={boxShadow}
+      fontSize={fontSize}
     >
       {text}
     </StyledComponent>
@@ -34,7 +35,6 @@ const StyledComponent = styled(Box)`
   font-family: "Outfit";
   font-style: normal;
   font-weight: 700;
-  font-size: 18px;
   line-height: 28px;
   /* identical to box height, or 156% */
 

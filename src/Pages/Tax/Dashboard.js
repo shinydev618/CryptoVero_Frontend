@@ -81,13 +81,14 @@ const Dashboard = ({ setStep, setFlagClickLink }) => {
                 color={"#005E95"}
                 borderRadius={"100px"}
                 border={"1px solid #005E95"}
+                fontSize={"16px"}
                 // boxShadow={"0px 22px 55px rgba(0, 94, 149, 0.46)"}
               />
             </ButtonRightViewall01>
           </RightHeaderPart02>
         </PartHeaderTransaction01>
         <PartTableTransaction01>
-          <CustomTransfterTable />
+          <CustomTransfterTable data={new Array(4).fill(null)} />
         </PartTableTransaction01>
       </PartTransactions01>
     </StyledComponent>

@@ -376,3 +376,12 @@ export const dataChartDashboard = [
     value01: "15",
   },
 ];
+
+export const dataSelectTransaction = {
+  type: ["Any Type", "Type01", "Type02", "Type03"],
+  flag: ["Any Flag", "True", "False"],
+  source: ["Any Source", "Source01", "Source02", "Source03"],
+  currency: ["Any Currency", "Bitcoin", "Ethereum", "BSC", "Polygon"],
+  date: ["Any Date", "2022 yrs", "2021 yrs"],
+  orderBy:['Newest', 'Oldest']
+};

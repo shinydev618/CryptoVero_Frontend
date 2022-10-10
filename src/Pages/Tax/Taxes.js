@@ -1,15 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box } from "@mui/material";
 import styled from "styled-components";
 import { dataTaxStatic } from "../../Config/data";
 import CustomStatic from "../../Components/Tax/CustomStatic";
+import { TextField } from "@mui/material";
+import MenuItem from "@mui/material/MenuItem";
 
 const Taxes = () => {
+  const [flagSelectYear, setFlagSelectYear] = useState("2022");
+
   return (
     <StyledComponent>
       <PartHeader01>
         <TextHeader01>Taxes</TextHeader01>
-        <PartHeadRight01>Right</PartHeadRight01>
+        <PartHeadRight01>
+          <TextField
+            select
+            onChange={(e) => {
+              setFlagSelectYear(e.target.value);
+            }}
+            sx={{ width: "145px", height: "50px", color: "#716F96" }}
+            value={flagSelectYear}
+            SelectProps={{
+              renderValue: (value) => flagSelectYear,
+            }}
+          >
+            <MenuItem value={"2022"}>2022</MenuItem>
+            <MenuItem value={"2020"}>2021</MenuItem>
+            <MenuItem value={"2019"}>2020</MenuItem>
+          </TextField>
+        </PartHeadRight01>
       </PartHeader01>
       <PartStatic01>
         {dataTaxStatic.taxes.map((each, index) => {

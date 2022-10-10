@@ -49,7 +49,7 @@ const Transactions = () => {
             <CustomMainButton
               width={"100%"}
               height={"100%"}
-              text={"Export transaction"}
+              text={"Add transaction"}
               backColor={"white"}
               border={"1px solid #005E95"}
               color={"#005E95"}

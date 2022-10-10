@@ -22,7 +22,7 @@ const Dashboard = ({ setStep, setFlagClickLink }) => {
     <StyledComponent>
       <PartHeader01>
         <TextHeader01>Dashboard</TextHeader01>
-        <PartHeadRight01>Right</PartHeadRight01>
+        <PartHeadRight01></PartHeadRight01>
       </PartHeader01>
       <PartStatic01>
         {dataTaxStatic.dashboard.map((each, index) => {

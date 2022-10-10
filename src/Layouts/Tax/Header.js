@@ -51,9 +51,7 @@ const Header = () => {
 
 const StyledComponent = styled(Box)`
   display: flex;
-  position: fixed;
-  left: 0px;
-  top: 0px;
+  /* position: fixed; */
   width: 100%;
   min-height: 90px;
   height: 90px;

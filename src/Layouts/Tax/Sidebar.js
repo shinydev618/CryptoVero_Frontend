@@ -5,13 +5,8 @@ import CustomLinkButtonTax from "../../Components/Tax/CustomLinkButtonTax";
 import imgMark01 from "../../Assets/Images/mark/logo_white_01.png";
 import { dataTaxLink } from "../../Config/data";
 
-const Sidebar = ({setStep}) => {
-  const [flagClickLink, setFlagClickLink] = useState([
-    true,
-    false,
-    false,
-    false,
-  ]);
+const Sidebar = ({ setStep, flagClickLink,setFlagClickLink }) => {
+
 
   return (
     <StyledComponent>

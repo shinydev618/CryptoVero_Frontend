@@ -8,7 +8,8 @@ import CustomGetStartedPriceBox from "../Components/CustomGetStartedPriceBox";
 // import CustomEachTestimonials from "../Components/CustomEachTestimonials";
 import CustomSupportImageBox from "../Components/CustomSupportImageBox";
 import CustomGetStartedPriceSliderBox from "../Components/CustomGetStartedPriceSliderBox";
-import imgComputer from "../Assets/Images/background/playing with a computer.png";
+import imgIllustration0101 from "../Assets/Images/background/Crypt Vero1 IllustrationTransparent.png";
+import imgIllustration0102 from "../Assets/Images/background/Crypt Vero2 IllustrationTransparent.png";
 import imgSupport01 from "../Assets/Images/mark/support01.png";
 import imgSupport02 from "../Assets/Images/mark/support02.png";
 import imgSupport03 from "../Assets/Images/mark/support03.png";
@@ -92,7 +93,7 @@ const Landing = () => {
             </PartTopButton01>
           </PartTopLeft01>
           <PartTopRight01>
-            <img src={imgComputer} width={"100%"} height={"100%"} alt="" />
+            <img src={imgIllustration0101} width={"100%"} height={"100%"} alt="" />
           </PartTopRight01>
         </PartTop01>
         <PartSupportedPlatforms01>
@@ -227,7 +228,7 @@ const Landing = () => {
       <PartTaxQuestion01>
         <PartMaxTaxQuestions01>
           <PartGroupTaxQuestion01>
-            <img src={imgComputer} width={"100%"} height={"100%"} alt="" />
+            <img src={imgIllustration0102} width={"100%"} height={"100%"} alt="" />
           </PartGroupTaxQuestion01>
           <PartGroupRight01>
             <PartTopTitleText02>

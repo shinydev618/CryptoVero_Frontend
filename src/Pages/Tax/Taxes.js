@@ -56,7 +56,9 @@ const Taxes = () => {
               </ButtonLearnMore01>
             </PartRightContent01>
           </PartHeaderTransaction01>
-          <PartContentDown01></PartContentDown01>
+          <PartContentDown01>
+            <PartIRS01>123</PartIRS01>
+          </PartContentDown01>
         </PartContentLeft01>
         <PartContentRight01>
           <PartHeaderTransaction01>
@@ -74,9 +76,26 @@ const Taxes = () => {
                   fontSize={"16px"}
                 />
               </ButtonLearnMore01>
+              <ButtonEdit01>
+                <CustomMainButton
+                  width={"100%"}
+                  height={"100%"}
+                  text={"edit"}
+                  backColor={"white"}
+                  color={"#005E95"}
+                  borderRadius={"100px"}
+                  border={"1px solid #005E95"}
+                  fontSize={"16px"}
+                />
+              </ButtonEdit01>
             </PartRightContent01>
           </PartHeaderTransaction01>
-          <PartContentDown01></PartContentDown01>
+          <PartContentDown01>
+            <TextContentDownLeft01>Accounting Method</TextContentDownLeft01>
+            <TextContentDownRight01>
+              FIFO Accounting Method
+            </TextContentDownRight01>
+          </PartContentDown01>
         </PartContentRight01>
       </PartContent01>
     </StyledComponent>
@@ -143,14 +162,14 @@ const PartContentRight01 = styled(Box)`
   width: 100%;
   border-radius: 20px;
   border: 1px solid rgba(113, 111, 150, 0.2);
-  flex-directiocolumnn
+  flex-direction: column;
 `;
 
 const PartHeaderTransaction01 = styled(Box)`
   display: flex;
   width: 100%;
   height: 95px;
-  padding: 0px 60px;
+  padding: 0px 30px;
   box-sizing: border-box;
   align-items: center;
   justify-content: space-between;
@@ -184,6 +203,56 @@ const ButtonLearnMore01 = styled(Box)`
 const PartContentDown01 = styled(Box)`
   display: flex;
   width: 100%;
+  justify-content: space-between;
+  box-sizing: border-box;
+`;
+
+const ButtonEdit01 = styled(Box)`
+  display: flex;
+  width: 85px;
+  height: 40px;
+  margin-left: 20px;
+`;
+
+const TextContentDownLeft01 = styled(Box)`
+  display: flex;
+  margin-left: 30px;
+  margin-top: 20px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 28px;
+  /* identical to box height */
+
+  text-transform: capitalize;
+  font-feature-settings: "pnum" on, "lnum" on;
+
+  color: #0d1942;
+`;
+const TextContentDownRight01 = styled(Box)`
+  display: flex;
+  margin-right: 30px;
+  margin-top: 20px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 28px;
+  /* identical to box height */
+
+  text-align: right;
+  text-transform: capitalize;
+  font-feature-settings: "pnum" on, "lnum" on;
+
+  color: #0d1942;
+`;
+
+const PartIRS01 = styled(Box)`
+  display: flex;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(113, 111, 150, 0.2);
 `;
 
 export default Taxes;

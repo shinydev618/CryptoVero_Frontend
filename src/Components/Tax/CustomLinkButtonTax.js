@@ -8,7 +8,7 @@ const CustomLinkButtonTax = ({
   setFlagClickLink,
   index,
   length,
-  setStep
+  setStep,
 }) => {
   return (
     <StyledComponent
@@ -43,6 +43,7 @@ const StyledComponent = styled(Box)`
   transition: 0.5s;
   &:hover {
     background-color: rgba(255, 255, 255, 0.15);
+    text-shadow: 0px 0px 10px;
   }
 `;
 
@@ -61,6 +62,7 @@ const PartText01 = styled(Box)`
   line-height: 25px;
 
   color: #ffffff;
+
 `;
 
 export default CustomLinkButtonTax;

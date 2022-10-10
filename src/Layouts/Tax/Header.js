@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Box } from "@mui/material";
 import styled from "styled-components";
 import imgProfile01 from "../../Assets/Images/icons/profile01.jpg";
-import { RiNotification2Line, RiLogoutCircleLine } from "react-icons/ri";
+import { RiLogoutCircleLine } from "react-icons/ri";
 import BellIcon from "react-bell-icon";
 import { useNavigate } from "react-router-dom";
 

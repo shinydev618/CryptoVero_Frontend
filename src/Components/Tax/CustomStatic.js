@@ -33,8 +33,8 @@ const StyledComponent = styled(Box)`
     padding: 40px 40px;
   }
 
-  &:hover{
-    box-shadow: 0px 0px 15px black;
+  &:hover {
+    box-shadow: 0px 0px 20px black;
   }
 `;
 
@@ -44,9 +44,7 @@ const PartLeft01 = styled(Box)`
   flex-direction: column;
   justify-content: space-between;
 `;
-const PartRight01 = styled(Box)`
-
-`;
+const PartRight01 = styled(Box)``;
 
 const PartValue01 = styled(Box)`
   display: flex;

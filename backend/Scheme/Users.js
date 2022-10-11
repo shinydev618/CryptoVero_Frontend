@@ -22,6 +22,7 @@ const UserSchema = new mongoose.Schema({
   permission: {
     type: Boolean,
     require: true,
+    default: true,
   },
 });
 

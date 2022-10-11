@@ -11,6 +11,7 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { useNavigate } from "react-router-dom";
 import Header from "../../Layouts/Header";
+import { actionLogIn } from "../../Redux/Actions/Auth";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -37,15 +38,38 @@ const SignUp = () => {
       setMsgAlert("Type your password.");
       return;
     }
-    setMsgAlert("Success!");
-    setTimeout(() => {
-      navigate("/TaxHome/Dashboard");
-    }, 2000);
+    // setMsgAlert("Success!");
+    // setTimeout(() => {
+    //   navigate("/TaxHome/Dashboard");
+    // }, 2000);
     let dataLogIn = {
       email: email,
       password: password,
     };
     console.log(dataLogIn);
+
+    actionLogIn(dataLogIn).then((res) => {
+      console.log(res);
+      if (res.message === "no_user") {
+        setMsgAlert("Can't find user.");
+        return;
+      }
+      if (res.message === "no_permission") {
+        setMsgAlert("Wait for approval.");
+        return;
+      }
+      if (res.message === "wrong_pass") {
+        setMsgAlert("Password is wrong.");
+        return;
+      }
+      if (res.message === "success") {
+        console.log(res.token);
+        setMsgAlert("Success!");
+        // setTimeout(() => {
+        //   navigate("/TaxHome/Dashboard");
+        // }, 2000);
+      }
+    });
   };
 
   const detectViewport = () => {

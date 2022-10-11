@@ -56,6 +56,7 @@ router.post("/signup", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
+  console.log(req.body)
   userModel.findOne({ email: req.body.email }).then((data) => {
     if (!data) return res.json({ message: "no_user" });
     else {

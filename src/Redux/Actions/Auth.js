@@ -3,7 +3,7 @@ import axios from "axios";
 export function actionLogIn(dataLogIn) {
   console.log(dataLogIn);
   return axios.post("/api/auth/login", dataLogIn).then((res) => {
-    return res.data.success;
+    return res.data;
   });
 }
 

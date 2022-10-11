@@ -42,7 +42,7 @@ router.post("/signup", (req, res) => {
                   if (err) console.log(err);
                   else {
                     res.json({
-                      message: "message",
+                      message: "success",
                     });
                   }
                 });
@@ -75,7 +75,7 @@ router.post("/login", (req, res) => {
             };
             jwt.sign(payload, keys.secretOrKey, (err, token) => {
               return res.json({
-                message: "message",
+                message: "success",
                 jwtToken: token,
               });
             });

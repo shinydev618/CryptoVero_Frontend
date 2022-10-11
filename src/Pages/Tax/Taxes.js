@@ -172,10 +172,12 @@ const Taxes = () => {
             </PartRightContent01>
           </PartHeaderTransaction01>
           <PartContentDown01>
-            <TextContentDownLeft01>Accounting Method</TextContentDownLeft01>
-            <TextContentDownRight01>
-              FIFO Accounting Method
-            </TextContentDownRight01>
+            <Box display={"flex"} justifyContent={"space-between"}>
+              <TextContentDownLeft01>Accounting Method</TextContentDownLeft01>
+              <TextContentDownRight01>
+                FIFO Accounting Method
+              </TextContentDownRight01>
+            </Box>
           </PartContentDown01>
         </PartContentRight01>
       </PartContent01>

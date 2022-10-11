@@ -46,10 +46,8 @@ const SignUp = () => {
       email: email,
       password: password,
     };
-    console.log(dataLogIn);
 
     actionLogIn(dataLogIn).then((res) => {
-      console.log(res);
       if (res.message === "no_user") {
         setMsgAlert("Can't find user.");
         return;
@@ -63,11 +61,17 @@ const SignUp = () => {
         return;
       }
       if (res.message === "success") {
-        console.log(res.jwtToken);
+        let userInfo = {
+          name: res.name,
+          token: res.jwtToken,
+        };
+
+        console.log(userInfo)
+        localStorage.setItem("userInfo", JSON.stringify(userInfo));
         setMsgAlert("Success!");
-        setTimeout(() => {
-          navigate("/TaxHome/Dashboard");
-        }, 2000);
+        // setTimeout(() => {
+        //   navigate("/TaxHome/Dashboard");
+        // }, 2000);
       }
     });
   };

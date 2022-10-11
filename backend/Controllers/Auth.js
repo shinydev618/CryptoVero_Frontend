@@ -77,6 +77,7 @@ router.post("/login", (req, res) => {
               return res.json({
                 message: "success",
                 jwtToken: token,
+                name: payload.name,
               });
             });
           } else {

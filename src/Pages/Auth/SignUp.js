@@ -54,19 +54,28 @@ const LogIn = () => {
       setMsgAlert("Password doesn't match.");
       return;
     }
-    // setMsgAlert("Success!");
-    // setTimeout(() => {
-    //   navigate("/LogIn");
-    // }, 2000);
     let dataSignUp = {
       name: name,
       email: email,
       password: password,
       repassword: repassword,
     };
-    actionSignUp(dataSignUp).then(res=>{
-      console.log(res.message)
-    })
+    actionSignUp(dataSignUp).then((res) => {
+      if (res.message === "same_user") {
+        setMsgAlert("Duplicated Name");
+        return;
+      }
+      if (res.message === "same_email") {
+        setMsgAlert("Duplicated Email");
+        return;
+      }
+      if (res.message === "success") {
+        setMsgAlert("Success!");
+        setTimeout(() => {
+          navigate("/LogIn");
+        }, 2000);
+      }
+    });
   };
 
   const detectViewport = () => {

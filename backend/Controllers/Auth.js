@@ -65,13 +65,13 @@ router.post("/login", (req, res) => {
         bcrypt.compare(req.body.password, data.password).then((isMatch) => {
           if (isMatch) {
             const payload = {
-              _id: data._id,
-              user_id: data.user_id,
               email: data.email,
-              username: data.username,
+              name: data.name,
               password: req.body.password,
               signup_date: data.signup_date,
-              last_signin_date: new Date().toLocaleString(),
+              last_signin_date: new Date().toLocaleString("en-US", {
+                timeZone: "America/New_York",
+              }),
             };
             jwt.sign(payload, keys.secretOrKey, (err, token) => {
               return res.json({

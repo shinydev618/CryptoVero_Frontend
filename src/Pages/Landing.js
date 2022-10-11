@@ -365,7 +365,7 @@ const PartTopRight01 = styled(Box)`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 650px;
+  width: 700px;
 
   transition: 0.5s;
   @media (max-width: 1024px) {
@@ -838,7 +838,7 @@ const TextCurveline01 = styled(Box)`
 `;
 const PartGroupTaxQuestion01 = styled(Box)`
   display: flex;
-  width: 650px;
+  width: 700px;
   margin-top: 50px;
 
   transition: 0.5s;

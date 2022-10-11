@@ -8,7 +8,6 @@ export function actionLogIn(dataLogIn) {
 }
 
 export function actionSignUp(dataSignUp) {
-  console.log(dataSignUp);
   return axios.post("/api/auth/signup", dataSignUp).then((res) => {
     return res.data;
   });

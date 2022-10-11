@@ -65,7 +65,7 @@ const LogIn = () => {
       repassword: repassword,
     };
     actionSignUp(dataSignUp).then(res=>{
-      console.log(res)
+      console.log(res.message)
     })
   };
 

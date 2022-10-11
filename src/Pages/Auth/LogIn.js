@@ -63,11 +63,11 @@ const SignUp = () => {
         return;
       }
       if (res.message === "success") {
-        console.log(res.token);
+        console.log(res.jwtToken);
         setMsgAlert("Success!");
-        // setTimeout(() => {
-        //   navigate("/TaxHome/Dashboard");
-        // }, 2000);
+        setTimeout(() => {
+          navigate("/TaxHome/Dashboard");
+        }, 2000);
       }
     });
   };

@@ -60,22 +60,26 @@ const LogIn = () => {
       password: password,
       repassword: repassword,
     };
-    actionSignUp(dataSignUp).then((res) => {
-      if (res.message === "same_user") {
-        setMsgAlert("Duplicated Name");
-        return;
-      }
-      if (res.message === "same_email") {
-        setMsgAlert("Duplicated Email");
-        return;
-      }
-      if (res.message === "success") {
-        setMsgAlert("Success!");
-        setTimeout(() => {
-          navigate("/LogIn");
-        }, 2000);
-      }
-    });
+    setMsgAlert("Success!");
+    setTimeout(() => {
+      navigate("/LogIn");
+    }, 2000);
+    // actionSignUp(dataSignUp).then((res) => {
+    //   if (res.message === "same_user") {
+    //     setMsgAlert("Duplicated Name");
+    //     return;
+    //   }
+    //   if (res.message === "same_email") {
+    //     setMsgAlert("Duplicated Email");
+    //     return;
+    //   }
+    //   if (res.message === "success") {
+    //     setMsgAlert("Success!");
+    //     setTimeout(() => {
+    //       navigate("/LogIn");
+    //     }, 2000);
+    //   }
+    // });
   };
 
   const detectViewport = () => {

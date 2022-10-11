@@ -41,11 +41,11 @@ const SignUp = () => {
     setTimeout(() => {
       navigate("/TaxHome/Dashboard");
     }, 2000);
-    let logInData = {
+    let dataLogIn = {
       email: email,
       password: password,
     };
-    console.log(logInData);
+    console.log(dataLogIn);
   };
 
   const detectViewport = () => {

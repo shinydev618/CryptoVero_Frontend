@@ -12,6 +12,7 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { useNavigate } from "react-router-dom";
 import Header from "../../Layouts/Header";
+import { actionSignUp } from "../../Redux/Actions/Auth";
 
 const LogIn = () => {
   const navigate = useNavigate();
@@ -53,17 +54,19 @@ const LogIn = () => {
       setMsgAlert("Password doesn't match.");
       return;
     }
-    setMsgAlert("Success!");
-    setTimeout(() => {
-      navigate("/LogIn");
-    }, 2000);
-    let signUpData = {
+    // setMsgAlert("Success!");
+    // setTimeout(() => {
+    //   navigate("/LogIn");
+    // }, 2000);
+    let dataSignUp = {
       name: name,
       email: email,
       password: password,
       repassword: repassword,
     };
-    console.log(signUpData);
+    actionSignUp(dataSignUp).then(res=>{
+      console.log(res)
+    })
   };
 
   const detectViewport = () => {

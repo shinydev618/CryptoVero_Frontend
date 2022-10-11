@@ -1,12 +1,6 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-let counter = 0;
 const UserSchema = new mongoose.Schema({
-  user_id: {
-    type: Number,
-    require: true,
-    default: () => counter++,
-  },
   username: {
     type: String,
     require: true,
@@ -28,9 +22,9 @@ const UserSchema = new mongoose.Schema({
   permission: {
     type: Boolean,
     require: true,
-  }
+  },
 });
 
-const User = mongoose.model('users', UserSchema);
+const User = mongoose.model("users", UserSchema);
 
 module.exports = User;

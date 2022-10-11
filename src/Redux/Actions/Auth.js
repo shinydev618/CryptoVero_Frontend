@@ -1,13 +1,15 @@
-import axios from 'axios';
+import axios from "axios";
 
-export function signup(signup_data: any) {
-  return axios.post('/api/auth/signup', signup_data).then(res => {
+export function actionLogIn(dataLogIn) {
+  console.log(dataLogIn);
+  return axios.post("/api/auth/login", dataLogIn).then((res) => {
     return res.data.success;
   });
 }
 
-export function signin(signin_data: any) {
-  return axios.post('/api/auth/signin', signin_data).then(res => {
+export function actionSignUp(dataSignUp) {
+  console.log(dataSignUp);
+  return axios.post("/api/auth/signup", dataSignUp).then((res) => {
     return res.data;
   });
 }

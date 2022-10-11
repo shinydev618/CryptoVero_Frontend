@@ -6,6 +6,7 @@ import ContactUs from "./Pages/ContactUs";
 import LogIn from "./Pages/Auth/LogIn";
 import SignUp from "./Pages/Auth/SignUp";
 import TaxHome from "./Pages/Tax/TaxHome";
+import "./Redux/api";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 

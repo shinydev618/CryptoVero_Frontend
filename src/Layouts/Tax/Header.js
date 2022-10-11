@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 const Header = () => {
   const navigate = useNavigate();
   const [flagAlertOver, setFlagAlertOver] = useState(false);
+  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
   return (
     <StyledComponent>
@@ -33,7 +34,7 @@ const Header = () => {
         <PartImageProfile01>
           <img src={imgProfile01} width={"100%"} height={"100%"} alt="" />
         </PartImageProfile01>
-        <TextUsername01>Rhonnie</TextUsername01>
+        <TextUsername01>{userInfo.name}</TextUsername01>
       </PartUser01>
       <PartLogOut
         onClick={() => {

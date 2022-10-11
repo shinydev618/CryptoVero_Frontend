@@ -66,12 +66,11 @@ const SignUp = () => {
           token: res.jwtToken,
         };
 
-        console.log(userInfo)
         localStorage.setItem("userInfo", JSON.stringify(userInfo));
         setMsgAlert("Success!");
-        // setTimeout(() => {
-        //   navigate("/TaxHome/Dashboard");
-        // }, 2000);
+        setTimeout(() => {
+          navigate("/TaxHome/Dashboard");
+        }, 2000);
       }
     });
   };

@@ -15,11 +15,17 @@ const App = () => {
     <StyledComponent>
       <BrowserRouter>
         <Routes>
+          {/* <Route path="*" element={<LogIn to="/LogIn" replace />} /> */}
           <Route path="/" element={<Landing />} />
           <Route path="/ContactUs" element={<ContactUs />} />
           <Route path="/LogIn" element={<LogIn />} />
           <Route path="/SignUp" element={<SignUp />} />
-          <Route path="/TaxHome/:step" element={<TaxHome />} />
+          <Route
+            path="/TaxHome/:step"
+            element={
+              localStorage.getItem("userInfo") ? <TaxHome /> : <LogIn />
+            }
+          />
         </Routes>
       </BrowserRouter>
     </StyledComponent>

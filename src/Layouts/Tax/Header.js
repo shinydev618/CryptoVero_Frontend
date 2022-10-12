@@ -34,10 +34,11 @@ const Header = () => {
         <PartImageProfile01>
           <img src={imgProfile01} width={"100%"} height={"100%"} alt="" />
         </PartImageProfile01>
-        <TextUsername01>{userInfo.name}</TextUsername01>
+        <TextUsername01>{userInfo?.name}</TextUsername01>
       </PartUser01>
       <PartLogOut
         onClick={() => {
+          localStorage.removeItem('userInfo');
           navigate("/");
         }}
       >

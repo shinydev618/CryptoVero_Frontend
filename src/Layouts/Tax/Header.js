@@ -39,6 +39,7 @@ const Header = () => {
       <PartLogOut
         onClick={() => {
           localStorage.removeItem('userInfo');
+          window.location.reload();
           navigate("/");
         }}
       >

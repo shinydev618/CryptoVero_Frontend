@@ -70,6 +70,7 @@ const SignUp = () => {
         setMsgAlert("Success!");
         setTimeout(() => {
           navigate("/TaxHome/Dashboard");
+          window.location.reload();
         }, 2000);
       }
     });

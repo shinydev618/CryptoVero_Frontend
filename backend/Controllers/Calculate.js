@@ -150,7 +150,34 @@ Promise.all( [
             } ) )
         } )
 
-   
+        lineReader.on( 'close', () => {
+            Promise.all( promises )
+            .then( () => {
+                const receipt = createReceipt(receiptUser.id,moment.tz( "12/1/2017", "MM/D/YYYY", store.timeZone ).format())
+
+                receipt.LineItems = lineItems.map( lineItem => {
+                    lineItem.receiptId = receipt.id;
+
+                    const numTransactions = lineItem.Transactions.length;
+
+                    lineItem.Transactions.forEach( transaction => {
+                        transaction.receiptId = receipt.id
+
+                        transaction.QuantitySold = (lineItem.quantity * lineItem.ProductVariation.quantity);
+
+                        delete transaction.Item
+                        delete transaction.Package
+                        delete transaction.Product
+                        delete transaction.ProductVariation
+                    } )
+                    
+                    delete lineItem.Product
+                    delete lineItem.ProductVariation
+
+                    return lineItem
+                } )
+                
+                return createBackendReceipt({receipt})
             } )
             .catch( console.log )
         } )

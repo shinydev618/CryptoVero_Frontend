@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Box } from "@mui/material";
 import styled from "styled-components";
 import CustomMainButton from "../../Components/CustomMainButton";
@@ -27,6 +28,12 @@ const Transactions = () => {
   const [flagSelectOrderBy, setFlagSelectOrderBy] = useState(
     dataSelectTransaction.orderBy[0]
   );
+
+  useEffect(() => {
+    return axios.get("/api/trading/tx_covalent", { address: "0xa79e63e78eec28741e711f89a672a4c40876ebf3" }).then((res) => {
+      console.log(res.data);
+    });
+  })
 
   return (
     <StyledComponent>

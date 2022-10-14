@@ -29,7 +29,9 @@ router.get("/tx_covalent", (req, res) => {
   };
   fetch(url, options)
     .then(res => res.json())
-    .then(json => console.log(json))
+    .then(json => {
+      return res.json(json);
+    })
     .catch(err => console.error('error:' + err));
 });
 

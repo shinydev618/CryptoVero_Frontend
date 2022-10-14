@@ -18,4 +18,19 @@ router.get("/tx", (req, res) => {
     .catch(err => console.error('error:' + err));
 });
 
+router.get("/tx_covalent", (req, res) => {
+  const base_url = 'https://api.covalenthq.com/v1/1';
+  const url = `${base_url}/address/${req.query.address}/transactions_v2/?key=${process.env.Covalent_API_KEY}`
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+    }
+  };
+  fetch(url, options)
+    .then(res => res.json())
+    .then(json => console.log(json))
+    .catch(err => console.error('error:' + err));
+});
+
 module.exports = router;

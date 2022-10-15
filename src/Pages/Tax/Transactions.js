@@ -34,8 +34,11 @@ const Transactions = () => {
   }, []);
 
   async function fetchTransactions() {
-    axios.get("/api/trading/tx_covalent", { address: "0xa79e63e78eec28741e711f89a672a4c40876ebf3" }).then((res) => {
-      console.log(res.data);
+    const params = {
+      address: "0xa79e63e78eec28741e711f89a672a4c40876ebf3"
+    }
+    axios.get("/api/trading/tx_covalent", { params }).then((res) => {
+      console.log(res.data.data);
     });
   }
 

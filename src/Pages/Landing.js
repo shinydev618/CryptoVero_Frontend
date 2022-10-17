@@ -8,8 +8,8 @@ import CustomGetStartedPriceBox from "../Components/CustomGetStartedPriceBox";
 // import CustomEachTestimonials from "../Components/CustomEachTestimonials";
 import CustomSupportImageBox from "../Components/CustomSupportImageBox";
 import CustomGetStartedPriceSliderBox from "../Components/CustomGetStartedPriceSliderBox";
-import imgIllustration0101 from "../Assets/Images/background/Crypt Vero1 IllustrationTransparent.png";
-import imgIllustration0102 from "../Assets/Images/background/Crypt Vero2 IllustrationTransparent.png";
+import imgIllustration0101 from "../Assets/Images/background/Hero1.png";
+import imgIllustration0102 from "../Assets/Images/background/Hero2.png";
 import imgSupport01 from "../Assets/Images/mark/support01.png";
 import imgSupport02 from "../Assets/Images/mark/support02.png";
 import imgSupport03 from "../Assets/Images/mark/support03.png";
@@ -838,7 +838,7 @@ const TextCurveline01 = styled(Box)`
 `;
 const PartGroupTaxQuestion01 = styled(Box)`
   display: flex;
-  width: 700px;
+  width: 600px;
   margin-top: 50px;
 
   transition: 0.5s;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import styled from "styled-components";
 
 const CSVReader = ({ setReportData }) => {
@@ -60,15 +60,15 @@ const CSVReader = ({ setReportData }) => {
           accept={".csv"}
           ref={hiddenFileInput}
           onChange={fileSelected}
+          style={{ display: "none" }}
         />
-
-        <button
+        <StyledButton
           onClick={(e) => {
             openCSV(e);
           }}
         >
-          Read
-        </button>
+          Import CSV
+        </StyledButton>
       </form>
     </StyledComponent>
   );
@@ -78,9 +78,20 @@ const StyledComponent = styled(Box)`
   align-items: center;
   box-sizing: border-box;
   justify-content: space-between;
-  border: 1px solid rgba(113, 111, 150, 0.2);
-  border-radius: 20px;
   padding: 10px 20px;
+`;
+
+const StyledButton = styled(Button)`
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: space-between;
+  border: 1px solid rgba(113, 111, 150, 0.2) !important;
+  border-radius: 20px !important;
+  padding: 10px 20px !important;
+
+  &:hover {
+    box-shadow: 0px 0px 2px black;
+  }
 `;
 
 export default CSVReader;

@@ -16,13 +16,16 @@ import {
 } from "recharts";
 import CustomMainButton from "../../Components/CustomMainButton";
 import CustomTransfterTable from "../../Components/Tax/CustomTransfterTable";
+import CSVReader from "../../Components/Tax/CSVReader";
 
 const Dashboard = ({ setStep, setFlagClickLink }) => {
   return (
     <StyledComponent>
       <PartHeader01>
         <TextHeader01>Dashboard</TextHeader01>
-        <PartHeadRight01></PartHeadRight01>
+        <PartHeadRight01>
+          <CSVReader />
+        </PartHeadRight01>
       </PartHeader01>
       <PartStatic01>
         {dataTaxStatic.dashboard.map((each, index) => {
@@ -52,8 +55,8 @@ const Dashboard = ({ setStep, setFlagClickLink }) => {
               <Line
                 type="monotone"
                 dataKey="value01"
-                // stroke="#8884d8"
-                // activeDot={{ r: 8 }}
+              // stroke="#8884d8"
+              // activeDot={{ r: 8 }}
               />
             </LineChart>
           </ResponsiveContainer>
@@ -82,7 +85,7 @@ const Dashboard = ({ setStep, setFlagClickLink }) => {
                 borderRadius={"100px"}
                 border={"1px solid #005E95"}
                 fontSize={"16px"}
-                // boxShadow={"0px 22px 55px rgba(0, 94, 149, 0.46)"}
+              // boxShadow={"0px 22px 55px rgba(0, 94, 149, 0.46)"}
               />
             </ButtonRightViewall01>
           </RightHeaderPart02>

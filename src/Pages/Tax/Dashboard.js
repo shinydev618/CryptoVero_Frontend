@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box } from "@mui/material";
 import styled from "styled-components";
 import CustomStatic from "../../Components/Tax/CustomStatic";
@@ -19,12 +19,13 @@ import CustomTransfterTable from "../../Components/Tax/CustomTransfterTable";
 import CSVReader from "../../Components/Tax/CSVReader";
 
 const Dashboard = ({ setStep, setFlagClickLink }) => {
+  const [reportData, setReportData] = useState([]);
   return (
     <StyledComponent>
       <PartHeader01>
         <TextHeader01>Dashboard</TextHeader01>
         <PartHeadRight01>
-          <CSVReader />
+          <CSVReader setReportData={setReportData} />
         </PartHeadRight01>
       </PartHeader01>
       <PartStatic01>
@@ -91,7 +92,7 @@ const Dashboard = ({ setStep, setFlagClickLink }) => {
           </RightHeaderPart02>
         </PartHeaderTransaction01>
         <PartTableTransaction01>
-          <CustomTransfterTable data={new Array(4).fill(null)} />
+          <CustomTransfterTable data={reportData} />
         </PartTableTransaction01>
       </PartTransactions01>
     </StyledComponent>

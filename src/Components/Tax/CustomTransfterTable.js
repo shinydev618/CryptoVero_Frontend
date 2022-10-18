@@ -29,21 +29,21 @@ const CustomTransfterTable = ({ data }) => {
                 <BoxTransfterOut01>
                   <BoxIconTransfter01></BoxIconTransfter01>
                   <BoxTextTransfter01>
-                    <TextUpTransfter01>Transfer Out</TextUpTransfter01>
+                    <TextUpTransfter01>{each.type === "buy" ? "Transfer Out" : "Transfer In"}</TextUpTransfter01>
                     <TextDownTransfter01>Coinbase</TextDownTransfter01>
                   </BoxTextTransfter01>
                 </BoxTransfterOut01>
               </TableCell>
               <TableCell align="left">
-                <BoxDate01>04/04/2022</BoxDate01>
+                <BoxDate01>{each.time}</BoxDate01>
               </TableCell>
               <TableCell align="left">
                 <BoxPrice01>
-                  <TextPrice01>2,423 USD</TextPrice01>
+                  <TextPrice01>{parseFloat(each.cost).toFixed(2)} USD</TextPrice01>
                   <TextArrowRight01>
                     <HiOutlineArrowNarrowRight />
                   </TextArrowRight01>
-                  <TextPrice01>2,823 USD</TextPrice01>
+                  <TextPrice01>{parseFloat(each.cost / each.price).toFixed(2)} USD</TextPrice01>
                 </BoxPrice01>
               </TableCell>
               <TableCell align="left">

@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import { Box } from "@mui/material";
 import styled from "styled-components";
 
-const CSVReader = () => {
+const CSVReader = ({ setReportData }) => {
   const [file, setFile] = useState();
-  const [reportData, setReportData] = useState([]);
-  const [headerData, setHeaderData] = useState([]);
+  // const [headerData, setHeaderData] = useState([]);
   const fileReader = new FileReader();
 
   const fileSelected = (e) => {
@@ -30,16 +29,16 @@ const CSVReader = () => {
     const array = csvRows.map(i => {
       const values = i.split(",");
       const obj = csvHeader.reduce((object, header, index) => {
-        object[header] = values[index];
+        object[header?.replace(/['"]+/g, '')] = values[index]?.replace(/['"]+/g, '');
         return object;
       }, {});
       return obj;
     });
 
+    array.pop();
     setReportData(array);
-    const headerKeys = Object.keys(Object.assign({}, ...array));
-    setHeaderData(headerKeys);
-    console.log(headerKeys, array);
+    // const headerKeys = Object.keys(Object.assign({}, ...array));
+    // setHeaderData(headerKeys);
   };
 
   return (

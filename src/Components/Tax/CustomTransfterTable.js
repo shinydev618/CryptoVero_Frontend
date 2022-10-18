@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import styled from "styled-components";
 import { Box } from "@mui/material";
 import Table from "@mui/material/Table";
@@ -9,6 +10,31 @@ import TableRow from "@mui/material/TableRow";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 
 const CustomTransfterTable = ({ data }) => {
+  const [pairs, setPairs] = useState("");
+
+  useEffect(() => {
+    if (data?.length > 0) {
+      let pairs = "";
+      data.map(item => {
+        pairs += item.pair;
+        pairs += ",";
+        return pairs;
+      });
+      getPairs(pairs.slice(0, -1));
+    }
+  }, [data]);
+
+
+  function getPairs(pairs) {
+    const params = {
+      pairs: pairs
+    }
+    axios.get("/api/kraken/pair", { params }).then((res) => {
+      setPairs(res.data.result);
+      return res.data.result;
+    });
+  }
+
   return (
     <TableContainer width={"100%"}>
       <Table sx={{ minWidth: 1024 }}>
@@ -39,11 +65,11 @@ const CustomTransfterTable = ({ data }) => {
               </TableCell>
               <TableCell align="left">
                 <BoxPrice01>
-                  <TextPrice01>{parseFloat(each.cost).toFixed(2)} USD</TextPrice01>
+                  <TextPrice01>{parseFloat(each.cost).toFixed(2)} {pairs[each.pair]?.quote}</TextPrice01>
                   <TextArrowRight01>
                     <HiOutlineArrowNarrowRight />
                   </TextArrowRight01>
-                  <TextPrice01>{parseFloat(each.cost / each.price).toFixed(2)} USD</TextPrice01>
+                  <TextPrice01>{parseFloat(each.cost / each.price).toFixed(2)} {pairs[each.pair]?.base}</TextPrice01>
                 </BoxPrice01>
               </TableCell>
               <TableCell align="left">

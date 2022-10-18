@@ -4,6 +4,8 @@ import styled from "styled-components";
 
 const CSVReader = () => {
   const [file, setFile] = useState();
+  const [reportData, setReportData] = useState([]);
+  const [headerData, setHeaderData] = useState([]);
   const fileReader = new FileReader();
 
   const fileSelected = (e) => {
@@ -15,10 +17,29 @@ const CSVReader = () => {
     if (file) {
       fileReader.onload = function (event) {
         const csvOutput = event.target.result;
-        console.log(csvOutput);
+        getReportData(csvOutput)
       };
       fileReader.readAsText(file);
     }
+  };
+
+  const getReportData = (csvData) => {
+    const csvHeader = csvData.slice(0, csvData.indexOf("\n")).split(",");
+    const csvRows = csvData.slice(csvData.indexOf("\n") + 1).split("\n");
+
+    const array = csvRows.map(i => {
+      const values = i.split(",");
+      const obj = csvHeader.reduce((object, header, index) => {
+        object[header] = values[index];
+        return object;
+      }, {});
+      return obj;
+    });
+
+    setReportData(array);
+    const headerKeys = Object.keys(Object.assign({}, ...array));
+    setHeaderData(headerKeys);
+    console.log(headerKeys, array);
   };
 
   return (

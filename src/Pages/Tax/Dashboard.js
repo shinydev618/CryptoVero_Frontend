@@ -68,7 +68,7 @@ const Dashboard = ({ setStep, setFlagClickLink }) => {
           <TextHeaderTransaction01>Transactions</TextHeaderTransaction01>
           <RightHeaderPart02>
             <TextRightTransactions01>
-              1,114 Transactions
+              {reportData.length} Transactions
             </TextRightTransactions01>
             <ButtonRightViewall01
               onClick={() => {

@@ -1,45 +1,55 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Box } from "@mui/material";
 import styled from "styled-components";
 
 const CSVReader = ({ setReportData }) => {
   const [file, setFile] = useState();
   // const [headerData, setHeaderData] = useState([]);
-  const fileReader = new FileReader();
+  const hiddenFileInput = React.useRef(null);
 
-  const fileSelected = (e) => {
-    setFile(e.target.files[0]);
-  };
+  useEffect(() => {
+    const fileReader = new FileReader();
 
-  const readCSV = (e) => {
-    e.preventDefault();
-    if (file) {
+    const getReportData = (csvData) => {
+      const csvHeader = csvData.slice(0, csvData.indexOf("\n")).split(",");
+      const csvRows = csvData.slice(csvData.indexOf("\n") + 1).split("\n");
+
+      const array = csvRows.map(i => {
+        const values = i.split(",");
+        const obj = csvHeader.reduce((object, header, index) => {
+          object[header?.replace(/['"]+/g, '')] = values[index]?.replace(/['"]+/g, '');
+          return object;
+        }, {});
+        return obj;
+      });
+
+      array.pop();
+      setReportData(array);
+      // const headerKeys = Object.keys(Object.assign({}, ...array));
+      // setHeaderData(headerKeys);
+    };
+
+    function readCSV() {
       fileReader.onload = function (event) {
         const csvOutput = event.target.result;
         getReportData(csvOutput)
       };
       fileReader.readAsText(file);
+    };
+
+    if (file) {
+      readCSV();
     }
+  }, [file, setReportData])
+
+  const fileSelected = (e) => {
+    setFile(e.target.files[0]);
   };
 
-  const getReportData = (csvData) => {
-    const csvHeader = csvData.slice(0, csvData.indexOf("\n")).split(",");
-    const csvRows = csvData.slice(csvData.indexOf("\n") + 1).split("\n");
-
-    const array = csvRows.map(i => {
-      const values = i.split(",");
-      const obj = csvHeader.reduce((object, header, index) => {
-        object[header?.replace(/['"]+/g, '')] = values[index]?.replace(/['"]+/g, '');
-        return object;
-      }, {});
-      return obj;
-    });
-
-    array.pop();
-    setReportData(array);
-    // const headerKeys = Object.keys(Object.assign({}, ...array));
-    // setHeaderData(headerKeys);
-  };
+  const openCSV = (e) => {
+    e.preventDefault();
+    hiddenFileInput.current.click();
+  }
 
   return (
     <StyledComponent>
@@ -48,12 +58,13 @@ const CSVReader = ({ setReportData }) => {
           type={"file"}
           id={"csvFileInput"}
           accept={".csv"}
+          ref={hiddenFileInput}
           onChange={fileSelected}
         />
 
         <button
           onClick={(e) => {
-            readCSV(e);
+            openCSV(e);
           }}
         >
           Read
